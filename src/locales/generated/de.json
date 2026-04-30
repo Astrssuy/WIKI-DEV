@@ -1,0 +1,530 @@
+[
+  {
+    "id": "inicio",
+    "title": "Heim",
+    "icon": "◆",
+    "summary": "Willkommen und Tastaturkürzel.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Ein Entwickler-Wiki mit modularen Dokumenten, schneller Suche und einer CRT-Terminal-Atmosphäre. Benutzen Sie die Tastatur wie früher. Wechseln Sie die Sprache in der oberen Leiste."
+      },
+      {
+        "type": "list",
+        "title": "Verknüpfungen",
+        "items": [
+          "„/“ – Fokussierung auf die Suche im Seitenleistenmenü",
+          "„f“ – Fokus-In-Section-Blockfilter",
+          "„Esc“ – löscht die aktive Suche (Menü oder Abschnitt)",
+          "„1-9“ – zum Abschnitt springen (gefilterte Menüreihenfolge)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "interfaz",
+    "title": "Schnittstelle",
+    "icon": "▣",
+    "summary": "UI-Themen-Hub – Öffnen Sie Unterelemente in der Seitenleiste für tiefere Einblicke.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Dieses Kapitel enthält praktische Hinweise zum Erstellen von Browserschnittstellen. Die Seitenleiste verschachtelt Themen unter „Schnittstelle“: Wählen Sie „React“, „Vite“, „CSS“, „Bootstrap“, „Tailwind CSS“, „TypeScript für UI“ oder „Barrierefreiheit“. Jede Unterseite ist eine eigenständige Dokumentation, die Sie mit „f“ innerhalb des Artikels filtern können."
+      },
+      {
+        "type": "list",
+        "title": "Themen (Untermenü)",
+        "items": [
+          "Reagieren – Komponenten, Hooks, Zustand und Ökosystemgrundlagen.",
+          "Vite – Entwicklungsserver, HMR, Konfiguration und Produktions-Builds.",
+          "CSS – Layout, Kaskade, benutzerdefinierte Eigenschaften und Reaktionsmuster.",
+          "Bootstrap – Raster, Komponenten, Anpassung, Kompromisse.",
+          "Tailwind CSS – Arbeitsablauf, Konfiguration und Komposition des Dienstprogramms.",
+          "TypeScript für UI – Eingabehilfen, Eingrenzung und Strenge mit Komponenten.",
+          "Barrierefreiheit – WCAG-orientierte Muster, ARIA und Tastaturunterstützung."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "interfaz-react",
+    "parentId": "interfaz",
+    "title": "Reagieren",
+    "icon": "⚛",
+    "summary": "Komponenten, JSX, Hooks und wie Daten zum DOM fließen.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "React modelliert die Benutzeroberfläche als Baum von Komponenten. Jede Komponente ist eine Funktion (oder Klasse), die eine Beschreibung der Benutzeroberfläche (JSX) zurückgibt. React gleicht den vorherigen Baum mit dem nächsten ab und aktualisiert das DOM stapelweise. Sie denken in Zustand und Requisiten, nicht in manueller DOM-Mutation."
+      },
+      {
+        "type": "list",
+        "title": "Kernideen",
+        "items": [
+          "„props“ – Eingaben vom übergeordneten Element; Behandle sie beim Kind unveränderlich.",
+          "„Zustand“ – Werte, die sich im Laufe der Zeit ändern; Beim Aktualisieren des Status wird ein erneutes Rendern geplant.",
+          "Einseitiger Datenfluss – Daten fließen nach unten; Ereignisse fließen über Rückrufe nach oben.",
+          "Schlüssel in Listen – stabile Schlüssel helfen dabei, Listenelemente über mehrere Renderings hinweg abzugleichen."
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "tsx",
+        "code": "function Counter({ step = 1 }: { step?: number }) {\n  const [n, setN] = React.useState(0);\n  return (\n    <button type=\"button\" onClick={() => setN((x) => x + step)}>\n      Count: {n}\n    </button>\n  );\n}"
+      },
+      {
+        "type": "list",
+        "title": "Haken, die Sie täglich verwenden",
+        "items": [
+          "„useState“ – lokaler Zustand; Das Updater-Formular vermeidet veraltete Schließungen im asynchronen Code.",
+          "„useEffect“ – mit der Außenwelt synchronisieren; Aufräumen in der Return-Funktion.",
+          "`useMemo` / `useCallback` — Werte/Funktionen zwischenspeichern; Verwendung, wenn die Profilerstellung einen Nutzen zeigt.",
+          "„useRef“ – veränderbare Box oder DOM-Handle; Das Ändern von „.current“ führt nicht zum erneuten Rendern.",
+          "„useId“ – stabile IDs für Labels und „aria-labelledby“ (SSR-sicher)."
+        ]
+      },
+      {
+        "type": "text",
+        "content": "Serverkomponenten (React 18+/Frameworks) laufen auf dem Server und streamen HTML- oder RSC-Nutzlasten; Client-Komponenten kümmern sich um die Interaktivität. Bevorzugen Sie bei Formularen natives Verhalten und progressive Verbesserung; Bibliotheken wie React Hook Form lassen sich gut mit Validierungsschemata (Zod) kombinieren."
+      },
+      {
+        "type": "list",
+        "title": "Ökosystem & Qualität",
+        "items": [
+          "Routing – React Router oder Framework-Router (Next.js, Remix) für URLs und Datenlader.",
+          "Testen – React Testing Library: Stellen Sie fest, was Benutzer sehen, nicht Implementierungsdetails.",
+          "Strikter Modus – ruft einige Lebenszyklen in der Entwicklung doppelt auf, um unsichere Nebenwirkungen aufzudecken."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "interfaz-vite",
+    "parentId": "interfaz",
+    "title": "Vite",
+    "icon": "⚡",
+    "summary": "Schneller Entwicklungsserver, natives ESM und Rollup-basierte Produktions-Builds.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Vite trennt Entwicklung und Produktion: In dev stellt es den Quellcode als native ES-Module bereit und verwendet esbuild, um Abhängigkeiten vorab zu bündeln. Hot Module Replacement (HMR) aktualisiert Module ohne vollständiges Neuladen. Produktions-Builds verwenden Rollup zum Code-Splitting und Tree-Shaking."
+      },
+      {
+        "type": "list",
+        "title": "Warum es sich schnell anfühlt",
+        "items": [
+          "Beim Kaltstart wird vermieden, dass die gesamte App vor der Bereitstellung gebündelt wird.",
+          "Abhängigkeiten werden einmal vorgebündelt; Ihre Quellbearbeitungen bleiben in der Entwicklung entbündelt.",
+          "Die HMR-Grenze ist nach Möglichkeit das bearbeitete Modul."
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "ts",
+        "code": "// vite.config.ts (conceptual)\nimport { defineConfig } from \"vite\";\nimport react from \"@vitejs/plugin-react\";\n\nexport default defineConfig({\n  plugins: [react()],\n  server: { port: 5173 },\n  build: { sourcemap: true },\n});"
+      },
+      {
+        "type": "list",
+        "title": "Konfigurationshinweise",
+        "items": [
+          "„vite.config.*“ – Plugins, Aliase, Proxy für Ihre API, HTTPS für lokale Entwickler.",
+          "„import.meta.env“ – Env-Variablen mit dem Präfix „VITE_“ werden dem Client-Code zugänglich gemacht.",
+          "Assets – Dateien für gehashte URLs importieren; Große Vermögenswerte können statisch in der „Öffentlichkeit“ leben.",
+          "„base“ – wird bei der Bereitstellung unter einem Unterpfad (z. B. GitHub Pages) festgelegt."
+        ]
+      },
+      {
+        "type": "text",
+        "content": "Verwenden Sie die offiziellen Plugins für React, Vue oder Svelte. Befolgen Sie bei gemischten SSR-Frameworks die Vite-Integration dieses Frameworks. Wenn Sie reine Produktionsprobleme debuggen, führen Sie „vite build && vite Preview“ aus, um die Rollup-Ausgabe lokal bereitzustellen."
+      }
+    ]
+  },
+  {
+    "id": "interfaz-css",
+    "parentId": "interfaz",
+    "title": "CSS",
+    "icon": "◫",
+    "summary": "Kaskade, Layout, benutzerdefinierte Eigenschaften und Reaktionsmuster.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "CSS beschreibt die Präsentation: Selektoren zielen auf Elemente ab, die Kaskade löst Konflikte und das Box-Modell plus Formatierungskontexte (Block, Flex, Raster) bestimmen das Layout. Modernes CSS bevorzugt logische Eigenschaften, „gap“, „clamp()“ und Containerabfragen für eine wartbare, reaktionsfähige Benutzeroberfläche."
+      },
+      {
+        "type": "list",
+        "title": "Layout-Toolbox",
+        "items": [
+          "Flexbox – eine Achse; Ideal für Symbolleisten, zum Zentrieren und zum Einwickeln von Spänen.",
+          "Raster – Zeilen und Spalten zusammen; „minmax“ + „auto-fit“/„auto-fill“ für Kartenraster.",
+          "„Position“ – „relativ“/„absolut“ für Überlagerungen; „sticky“ für Abschnittsüberschriften."
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "css",
+        "code": ":root {\n  --space: clamp(0.5rem, 2vw, 1.25rem);\n  --fg: #0f172a;\n}\n.stack {\n  display: flex;\n  flex-direction: column;\n  gap: var(--space);\n  color: var(--fg);\n}"
+      },
+      {
+        "type": "list",
+        "title": "Wartbarkeit",
+        "items": [
+          "Bevorzugen Sie Klassen-Hooks gegenüber tiefen „article div div“-Selektoren.",
+          "Benutzerdefinierte Eigenschaften kaskadieren – Theme schaltet die Aktualisierung einmal auf „:root“ oder „[data-theme]“ um.",
+          "„@layer“ – Zurücksetzen, Komponenten und Dienstprogramme vorhersehbar anordnen.",
+          "Verwenden Sie „@media (prefers-reduced-motion: Reduce)“, um die Animation abzuschwächen."
+        ]
+      },
+      {
+        "type": "text",
+        "content": "Messen Sie Farbe und Layout in DevTools, wenn Sie Listen und Animationen polieren. Bevorzugen Sie „Transformation“ und „Opazität“ für Bewegung; Vermeiden Sie Layout-Thrashing, indem Sie Layout-Eigenschaften nach Schreibvorgängen im selben Frame lesen."
+      }
+    ]
+  },
+  {
+    "id": "interfaz-bootstrap",
+    "parentId": "interfaz",
+    "title": "Bootstrap",
+    "icon": "▢",
+    "summary": "Rastersystem, vorgefertigte Komponenten und Sass-Variablen.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Bootstrap ist ein CSS- (und optionales JS-)Toolkit: ein responsives Raster, Typografie, Schaltflächen, Formulare, Navigationsleisten, Modalitäten und mehr. Sie versenden gemeinsame Designentscheidungen schnell; Der Kompromiss ist ein wiedererkennbares Aussehen, es sei denn, Sie passen es an."
+      },
+      {
+        "type": "list",
+        "title": "Nutze es gut",
+        "items": [
+          "Raster – Zeilen und „col-*“-Haltepunkte; Bevorzugen Sie Dienstprogramme („d-flex“, „gap-*“) für kleine Änderungen.",
+          "Komponenten – Lesen Sie die Dokumente für erforderliches Markup und „data-bs-*“-Hooks.",
+          "Anpassung – Sass-Variablen überschreiben und neu erstellen oder Bootstrap 5+ mit CSS-Variablen verwenden, sofern verfügbar."
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "html",
+        "code": "<div class=\"container py-4\">\n  <div class=\"row g-3\">\n    <div class=\"col-md-6\">\n      <div class=\"card shadow-sm\"><div class=\"card-body\">Panel A</div></div>\n    </div>\n    <div class=\"col-md-6\">\n      <div class=\"card shadow-sm\"><div class=\"card-body\">Panel B</div></div>\n    </div>\n  </div>\n</div>"
+      },
+      {
+        "type": "text",
+        "content": "Koppeln Sie es mit Ihrem Bundler (Vite, Webpack), um nur die SCSS-Teile zu importieren, die Sie benötigen, oder beginnen Sie mit dem CDN für Prototypen. Behalten Sie aus Gründen der Barrierefreiheit die korrekten Rollen und Bezeichnungen bei. Die JS-Plugins von Bootstrap verwalten den Fokus für Modals/Offcanvas – vermeiden Sie es, dieses Verhalten durch Ad-hoc-Z-Index-Stacks zu unterbrechen."
+      }
+    ]
+  },
+  {
+    "id": "interfaz-tailwind",
+    "parentId": "interfaz",
+    "title": "Rückenwind-CSS",
+    "icon": "≈",
+    "summary": "Utility-First-Styling, JIT-Compiler und Design-Tokens in der Konfiguration.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Tailwind generiert CSS aus Klassennamen, die Sie in das Markup eingeben: Abstand, Farbe, Flex, Raster, Typografie, Zustände („hover:“, „focus:“) und responsive Präfixe („md:“). Der Compiler scannt Ihre Dateien und gibt nur das aus, was Sie verwenden."
+      },
+      {
+        "type": "list",
+        "title": "Arbeitsablauf",
+        "items": [
+          "„tailwind.config“ – Theme erweitern (Farben, Schriftarten, Abstände), Plugins hinzufügen, „Inhalt“-Pfade festlegen.",
+          "Bevorzugen Sie die Komposition mit „@apply“ sparsam im Komponenten-CSS; Versorgungsunternehmen sorgen dafür, dass die Colocation offensichtlich bleibt.",
+          "Verwenden Sie „clsx“ oder „twMerge“, um bedingte Klassen sicher zusammenzuführen."
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "html",
+        "code": "<button\n  class=\"inline-flex items-center gap-2 rounded-md bg-cyan-600 px-3 py-2\n         text-sm font-medium text-white hover:bg-cyan-500 focus-visible:outline\n         focus-visible:ring-2 focus-visible:ring-cyan-400\"\n  type=\"button\"\n>\n  Save\n</button>"
+      },
+      {
+        "type": "text",
+        "content": "Rückenwind kommt bei Designsystem-ähnlichen Apps zum Tragen, bei denen Abstände und Farbverläufe konsistent bleiben. Wenn sich das Markup verrauscht anfühlt, extrahieren Sie wiederholte Muster in Framework-Komponenten (React/Vue) und belassen Sie die Dienstprogramme in den JSX-Vorlagen dieser Komponenten."
+      }
+    ]
+  },
+  {
+    "id": "interfaz-typescript",
+    "parentId": "interfaz",
+    "title": "Typoskript",
+    "icon": "⊤",
+    "summary": "Typen für Requisiten, Ereignisse und sicherere Refaktoren im Komponentencode.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "TypeScript fügt JavaScript statische Typen hinzu. Im UI-Code dokumentieren Typen Komponentenverträge (Requisiten, Rückrufe), fangen unmögliche Zustände vor der Laufzeit ab und schalten sicherere Refaktoren über große Codebasen hinweg frei, wenn sie mit strengen Compileroptionen gepaart werden."
+      },
+      {
+        "type": "list",
+        "title": "Compiler-Optionen, die für Apps wichtig sind",
+        "items": [
+          "„streng“ – aktiviert die wichtigsten Sicherheitsflags; Ich bevorzuge es bei Greenfield-Projekten.",
+          "„noImplicitAny“ – zeigt untypisierte Werte an, die Fehler verbergen.",
+          "„strictNullChecks“ – „null“/„undefiniert“ muss explizit behandelt werden."
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "tsx",
+        "code": "type ButtonProps = {\n  variant?: \"primary\" | \"ghost\";\n  children: React.ReactNode;\n  onClick?: () => void;\n};\n\nexport function Button({ variant = \"primary\", children, onClick }: ButtonProps) {\n  return (\n    <button type=\"button\" data-variant={variant} onClick={onClick}>\n      {children}\n    </button>\n  );\n}"
+      },
+      {
+        "type": "list",
+        "title": "Muster",
+        "items": [
+          "Diskriminierte Gewerkschaften für den UI-Status – `type View = { status: \"ok\"; Daten: T } | { Status: „Fehler“; msg: string }`.",
+          "„satisfies“ – Literaltypen beibehalten und gleichzeitig mit einer breiteren Schnittstelle prüfen.",
+          "Ereignishandler – verwenden Sie „React.MouseEvent<HTMLButtonElement>“ (oder Framework-Äquivalente) anstelle von „any“."
+        ]
+      },
+      {
+        "type": "text",
+        "content": "Generieren Sie nach Möglichkeit Typen aus OpenAPI oder GraphQL, damit Client und Server übereinstimmen. Verwenden Sie für Umgebungsvariablen Module, die beim Start validieren, anstatt überall „als String“ umzuwandeln."
+      }
+    ]
+  },
+  {
+    "id": "interfaz-a11y",
+    "parentId": "interfaz",
+    "title": "Zugänglichkeit",
+    "icon": "◎",
+    "summary": "Inklusive Benutzeroberfläche: Tastatur, Bildschirmleseprogramme, Kontrast und WCAG-orientierte Gewohnheiten.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Zugängliche Schnittstellen funktionieren für Benutzer von Tastaturen und unterstützenden Technologien, nicht nur für Zeiger. WCAG-Richtlinien (wahrnehmbar, bedienbar, verständlich, robust) geben überprüfbare Kriterien vor; Die gesetzlichen Anforderungen in vielen Regionen entsprechen WCAG 2.1 Level AA."
+      },
+      {
+        "type": "list",
+        "title": "Nicht verhandelbar",
+        "items": [
+          "Tastatur – alle Aktionen sind mit Tab/Umschalt+Tab erreichbar; Modalitäten fangen den Fokus ein, bis er geschlossen wird.",
+          "Fokus sichtbar – Ersetzen Sie die Standardkontur durch einen klaren benutzerdefinierten Ring, wenn Sie einen neuen Stil benötigen.",
+          "Beschriftungen – jedes Steuerelement hat einen programmatischen Namen („label“, „aria-label“ oder „aria-labelledby“).",
+          "Farbkontrast – Text und UI-Grafiken erfüllen Kontrastverhältnisse; Verlassen Sie sich für die Bedeutung nicht allein auf die Farbe."
+        ]
+      },
+      {
+        "type": "list",
+        "title": "ARIA: Mit Vorsicht verwenden",
+        "items": [
+          "Bevorzugen Sie native Elemente („button“, „a“, „input“), bevor Sie Rollen hinzufügen.",
+          "„aria-expanded“, „aria-controls“ – Widgets wie Akkordeons und Menüs anzeigen.",
+          "„aria-live“ – dynamische Updates ankündigen; Verwenden Sie „höflich“ vs. „durchsetzungsfähig“ sparsam."
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "html",
+        "code": "<button type=\"button\" aria-expanded=\"false\" aria-controls=\"menu-panel\" id=\"menu-btn\">\n  Menu\n</button>\n<ul id=\"menu-panel\" role=\"menu\" aria-labelledby=\"menu-btn\" hidden>\n  <li role=\"menuitem\"><a href=\"/docs\">Docs</a></li>\n</ul>"
+      },
+      {
+        "type": "text",
+        "content": "Testen Sie nur mit einer Tastatur, mit dem Screenreader, den Ihre Benutzer wahrscheinlich haben, und führen Sie automatisierte Prüfungen (Axe, Lighthouse) in CI durch. Beziehen Sie behinderte Benutzer in die Forschung ein, wenn Sie können; Die Werkzeuge fangen nur einen Bruchteil der tatsächlichen Reibung auf."
+      }
+    ]
+  },
+  {
+    "id": "backend",
+    "title": "Backend",
+    "icon": "⌘",
+    "summary": "APIs, Daten und Zuverlässigkeit.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Entwerfen Sie stabile API-Verträge: Versionierung, semantische Fehler und Idempotenz für kritische Vorgänge."
+      },
+      {
+        "type": "code",
+        "lang": "http",
+        "code": "HTTP/1.1 409 Conflict\nContent-Type: application/problem+json\n\n{\"type\":\"/errors/slug-taken\",\"title\":\"Slug already taken\"}"
+      }
+    ]
+  },
+  {
+    "id": "devops",
+    "title": "DevOps",
+    "icon": "⚙",
+    "summary": "CI/CD, Container und Beobachtbarkeit.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Minimale nützliche Pipeline: Flusen + Tests + reproduzierbarer Build. Versenden Sie, was Sie getestet haben; Vermeiden Sie eine manuelle Abstimmung der Produktion."
+      },
+      {
+        "type": "list",
+        "title": "Checkliste bereitstellen",
+        "items": [
+          "Getrennte Gesundheits- und Bereitschaftsprüfungen",
+          "Strukturierte Protokolle (JSON) + Trace-IDs",
+          "Rollback mit einem Befehl"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "git",
+    "title": "Git",
+    "icon": "⎇",
+    "summary": "Befehle, tägliche Abläufe, Fernbedienungen und sicheres Rückgängigmachen von Änderungen.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Git speichert Snapshots (Commits) und ermöglicht Ihnen Verzweigungen, die Zusammenarbeit über Remotestandorte und das Navigieren durch den Verlauf. Drei Bereiche: Arbeitsbaum (Dateien), Staging (Index) und Commits (lokales Repo)."
+      },
+      {
+        "type": "list",
+        "title": "Typisches Setup (einmal pro Maschine)",
+        "items": [
+          "`git config --global user.name „Ihr Name“`",
+          "`git config --global user.email „you@email“`",
+          "„git config --global init.defaultBranch main“ – Standardzweig für neue Repos",
+          "`git config --global core.editor \"code --wait\"` – VS-Code für Commit-Nachrichten",
+          "„git config --global alias.st status -sb“ – Abkürzung für „git st“."
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# New repo or clone\ngit init\ngit clone https://github.com/user/project.git\ncd project"
+      },
+      {
+        "type": "list",
+        "title": "Täglicher Arbeitsablauf",
+        "items": [
+          "„git status“ (kurz „-sb“) – was sich geändert hat",
+          "`git diff` – nicht bereitgestellte Änderungen; `git diff --staged` – inszenierte Änderungen",
+          "„git add file“ oder „git add -p“ – interaktiv inszenieren (Rezensenten)",
+          "`git commit -m „message“` – Gestaffelte Änderungen festschreiben",
+          "`git log --oneline --graph --decorate -20` – kompaktes Diagramm"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Move/rename and delete (tracked)\ngit mv old/path.md new/path.md\ngit rm obsolete-file.txt"
+      },
+      {
+        "type": "list",
+        "title": "Zweige",
+        "items": [
+          "`git branch` – lokale Liste; „git branch -a“ schließt Fernbedienungen ein",
+          "`git switch branch-name` – switch (modern); älter: `git checkout branch-name`",
+          "„git switch -c feature/login“ – Zweig erstellen und betreten",
+          "`git merge other-branch` – integrieren (erfordert möglicherweise eine Konfliktlösung)",
+          "„git branch -d feature/login“ – zusammengeführten lokalen Zweig löschen"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Typical feature flow from main\ngit switch main\ngit pull origin main\ngit switch -c feat/my-change\n# ... edit, commit ...\ngit push -u origin feat/my-change"
+      },
+      {
+        "type": "list",
+        "title": "Fernbedienung (Ursprung, Drücken, Ziehen)",
+        "items": [
+          "`git remote -v` – URLs abrufen/pushen",
+          "„git fetch origin“ – Laden Sie Commits herunter, ohne Ihren Zweig zusammenzuführen",
+          "`git pull` – `fetch` + Merge/Rebase pro Konfiguration",
+          "„git push origin my-branch“ – zum ersten Mal: ​​„git push -u origin my-branch“.",
+          "„git push --delete origin old-branch“ – entfernten Zweig löschen"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "Wenn „git pull“ laute Merge-Commits erzeugt, bevorzugen Teams oft „git pull --rebase“, um Ihre Arbeit auf der Fernbedienung abzuspielen (linearer Verlauf). Nur wenn Sie verstehen, dass die Rebase- und Teamregeln dies zulassen."
+      },
+      {
+        "type": "list",
+        "title": "Rückgängig machen und bereinigen (die Kontrolle behalten)",
+        "items": [
+          "„Git Restore File“ – nicht bereitgestellte lokale Änderungen an dieser Datei verwerfen",
+          "„Git Restore --staged File“ – Bereitstellung aufheben, Änderungen auf der Festplatte behalten",
+          "`git checkout -- file` – Legacy-Wiederherstellung des Arbeitsbaums (überschreibt)",
+          "`git reset --soft HEAD~1` – Letzte Änderungen löschen und im Staging halten",
+          "`git reset --mixed HEAD~1` (Standard) – Commit rückgängig machen; Änderungen nicht inszeniert",
+          "`git reset --hard HEAD~1` – Gefahr: Commit und funktionierende Baumänderungen werden verworfen"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "`git revert <commit>` fügt einen neuen Commit hinzu, der einen anderen rückgängig macht: sicher für den veröffentlichten Verlauf. „git reset --hard“ schreibt den lokalen Verlauf neu – vermeiden Sie gemeinsame Zweige ohne Zustimmung."
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Shelve WIP without committing\ngit stash push -m \"wip: login form\"\ngit stash list\ngit stash pop        # apply and drop latest\ngit stash apply stash@{0}  # apply without dropping"
+      },
+      {
+        "type": "list",
+        "title": "Geschichtseinsicht",
+        "items": [
+          "`git show <commit>` – Patch und Metadaten",
+          "„Git Blame File“ – wer jede Zeile geändert hat",
+          "`git log -S\"text\"` – Commits, die eine Zeichenfolge hinzugefügt/entfernt haben",
+          "„git bisect start“ – binäre Suche nach dem Breaking-Commit"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Tags (releases)\ngit tag -a v1.2.0 -m \"Release 1.2.0\"\ngit push origin v1.2.0\ngit push origin --tags"
+      },
+      {
+        "type": "list",
+        "title": "Tags, .gitignore, Bereinigung",
+        "items": [
+          "„.gitignore“ – ignoriert „node_modules/“, „.env“, Builds usw.",
+          "`git clean -fd` – nicht verfolgte Dateien löschen (destruktiv; Probelauf mit `git clean -nd`)",
+          "„git rm -r --cached Folder“ – Stoppen Sie die Verfolgung, behalten Sie jedoch die Dateien auf der Festplatte"
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Zusammenführungs-/Rebase-Konflikte",
+        "items": [
+          "Git fügt „<<<<<<<“, „=======“, „>>>>>>>“ ein – manuell bearbeiten, Markierungen entfernen",
+          "„git status“ listet in Konflikt stehende Pfade auf",
+          "Nach dem Fix: „git add file“, dann „git merge --continue“ oder „git rebase --continue“.",
+          "Zusammenführung abbrechen: `git merge --abort`; Rebase abbrechen: `git rebase --abort`"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Bring one commit from another branch\ngit cherry-pick abc1234\n\n# Rewrite local history (NOT on shared branches without agreement)\ngit rebase -i HEAD~4"
+      },
+      {
+        "type": "list",
+        "title": "Achten Sie auf Hygiene",
+        "items": [
+          "Kleine atomare Commits: jeweils eine logische Änderung",
+          "Imperative Meldungen: „Anmeldung hinzufügen“, „Nullzeiger korrigieren“.",
+          "Konventionelle Commits („feat:“, „fix:“, „docs:“…) helfen bei Änderungsprotokollen",
+          "Vor dem Push: `git pull --rebase origin main` (oder merge) mit Teamänderungen"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "Hooks („.git/hooks“ oder Husky) führen Lint/Tests vor dem Commit/Push aus. Submodule („git submodule“) und Arbeitsbäume („git worktree add“) helfen bei Monorepos oder parallelen Zweigen – greifen Sie zu ihnen, wenn die Grundlagen nicht ausreichen."
+      }
+    ]
+  },
+  {
+    "id": "herramientas",
+    "title": "Werkzeuge",
+    "icon": "⧉",
+    "summary": "Editor, Linters, Formatierung (Git hat einen eigenen Abschnitt).",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Automatisieren Sie Formatierung und Stil (Pre-Commit oder CI), damit sich die Bewertungen auf Ideen und nicht auf Leerzeichen konzentrieren. Öffnen Sie für Git-Befehle und -Flows den Git-Abschnitt."
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Team formatting (e.g. Prettier + ESLint)\nnpm run lint:fix\n\n# Short branch + clear commit\ngit switch -c feat/wiki-retro\ngit commit -m \"docs: tooling section\""
+      }
+    ]
+  }
+]
