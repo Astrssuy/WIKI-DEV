@@ -6,6 +6,7 @@
 import { inicioSection } from "./sections/inicio.js";
 import { interfaceSections } from "./sections/interface.js";
 import { backendSection } from "./sections/backend.js";
+import { databasesSection } from "./sections/backend-databases.js";
 import { devopsSection } from "./sections/devops.js";
 import { gitSection } from "./sections/git.js";
 import { herramientasSection } from "./sections/herramientas.js";
@@ -14,6 +15,7 @@ export const sections = [
   inicioSection,
   ...interfaceSections,
   backendSection,
+  databasesSection,
   devopsSection,
   gitSection,
   herramientasSection,
