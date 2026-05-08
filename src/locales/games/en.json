@@ -1,0 +1,200 @@
+﻿{
+    "levels":  [
+                   {
+                       "id":  1,
+                       "badge":  "LVL 1 Â· ROOKIE",
+                       "quizTitle":  "Command decode I",
+                       "quizRounds":  3,
+                       "quiz":  [
+                                    {
+                                        "q":  "You\u0027re on `main` and want a new branch `feat/login` from this point. What\u0027s the modern command?",
+                                        "opts":  [
+                                                     "git checkout -b feat/login",
+                                                     "git switch -c feat/login",
+                                                     "git branch --move feat/login",
+                                                     "git init feat/login"
+                                                 ],
+                                        "correct":  1
+                                    },
+                                    {
+                                        "q":  "You staged `readme.md` by mistake. Unstage it but keep your edits on disk.",
+                                        "opts":  [
+                                                     "git rm readme.md",
+                                                     "git restore --staged readme.md",
+                                                     "git reset --hard",
+                                                     "git clean -fd readme.md"
+                                                 ],
+                                        "correct":  1
+                                    },
+                                    {
+                                        "q":  "Quick check: see what\u0027s modified before you stage anything.",
+                                        "opts":  [
+                                                     "git log -1",
+                                                     "git status -sb",
+                                                     "git blame .",
+                                                     "git remote -v"
+                                                 ],
+                                        "correct":  1
+                                    },
+                                    {
+                                        "q":  "Rename a tracked file under version control.",
+                                        "opts":  [
+                                                     "mv a.txt b.txt",
+                                                     "git mv a.txt b.txt",
+                                                     "git rename a.txt b.txt",
+                                                     "git move a.txt b.txt"
+                                                 ],
+                                        "correct":  1
+                                    }
+                                ],
+                       "sequenceHint":  "Ship a tiny fix: stage everything â†’ commit â†’ push to remote.",
+                       "sequenceSteps":  [
+                                             "git add .",
+                                             "git commit -m \"fix: typos\"",
+                                             "git push"
+                                         ],
+                       "canvasBranchLabel":  "main â†’",
+                       "branchQ":  {
+                                       "q":  "HEAD sits on commit C (see glow). You want branch `bugfix` here **without** switching to it yet.",
+                                       "opts":  [
+                                                    "git switch bugfix",
+                                                    "git branch bugfix",
+                                                    "git merge bugfix",
+                                                    "git tag bugfix"
+                                                ],
+                                       "correct":  1
+                                   }
+                   },
+                   {
+                       "id":  2,
+                       "badge":  "LVL 2 Â· RUNNER",
+                       "quizTitle":  "Command decode II",
+                       "quizRounds":  3,
+                       "quiz":  [
+                                    {
+                                        "q":  "Download remote commits but **don\u0027t** merge into your branch yet.",
+                                        "opts":  [
+                                                     "git pull",
+                                                     "git fetch origin",
+                                                     "git push origin",
+                                                     "git clone ."
+                                                 ],
+                                        "correct":  1
+                                    },
+                                    {
+                                        "q":  "Save uncommitted work safely; you\u0027ll apply it again later today.",
+                                        "opts":  [
+                                                     "git commit --allow-empty",
+                                                     "git stash push -m wip",
+                                                     "git branch backup \u0026\u0026 git reset --hard",
+                                                     "git rebase -i HEAD~1"
+                                                 ],
+                                        "correct":  1
+                                    },
+                                    {
+                                        "q":  "Remove the last commit but **keep changes staged** (soft).",
+                                        "opts":  [
+                                                     "git reset --hard HEAD~1",
+                                                     "git reset --soft HEAD~1",
+                                                     "git revert HEAD",
+                                                     "git checkout HEAD~1"
+                                                 ],
+                                        "correct":  1
+                                    },
+                                    {
+                                        "q":  "List which remote branches you can track.",
+                                        "opts":  [
+                                                     "git branch",
+                                                     "git branch -r",
+                                                     "git tag -l",
+                                                     "git reflog"
+                                                 ],
+                                        "correct":  1
+                                    }
+                                ],
+                       "sequenceHint":  "Integrate remote `main` locally, then publish your branch (linear-ish flow).",
+                       "sequenceSteps":  [
+                                             "git fetch origin",
+                                             "git merge origin/main",
+                                             "git push"
+                                         ],
+                       "canvasBranchLabel":  "main â†’",
+                       "branchQ":  {
+                                       "q":  "Same graph: you are on C with HEAD. Create **and switch** into `hotfix` immediately.",
+                                       "opts":  [
+                                                    "git branch hotfix",
+                                                    "git switch -c hotfix",
+                                                    "git merge hotfix",
+                                                    "git cherry-pick hotfix"
+                                                ],
+                                       "correct":  1
+                                   }
+                   },
+                   {
+                       "id":  3,
+                       "badge":  "LVL 3 Â· VETERAN",
+                       "quizTitle":  "Command decode III",
+                       "quizRounds":  3,
+                       "quiz":  [
+                                    {
+                                        "q":  "On **shared** `main`, undo a bad commit that is already on the server â€” safely.",
+                                        "opts":  [
+                                                     "git reset --hard HEAD~1 \u0026\u0026 git push --force",
+                                                     "git revert \u003ccommit\u003e",
+                                                     "git branch -D main",
+                                                     "git clean -fdx"
+                                                 ],
+                                        "correct":  1
+                                    },
+                                    {
+                                        "q":  "Your push was rejected: remote moved. Re-apply your commits on top (common team rule).",
+                                        "opts":  [
+                                                     "git pull --rebase",
+                                                     "git push --force",
+                                                     "git clone --depth=1",
+                                                     "git submodule update"
+                                                 ],
+                                        "correct":  0
+                                    },
+                                    {
+                                        "q":  "Permanently delete branch `old` on **origin**.",
+                                        "opts":  [
+                                                     "git branch -d old",
+                                                     "git push --delete origin old",
+                                                     "git fetch --prune origin old",
+                                                     "git revert old"
+                                                 ],
+                                        "correct":  1
+                                    },
+                                    {
+                                        "q":  "See **who** last changed line 12 of `app.js`.",
+                                        "opts":  [
+                                                     "git show HEAD:app.js",
+                                                     "git blame app.js",
+                                                     "git grep -n app.js",
+                                                     "git diff app.js"
+                                                 ],
+                                        "correct":  1
+                                    }
+                                ],
+                       "sequenceHint":  "Context switch: park WIP â†’ update main â†’ restore WIP.",
+                       "sequenceSteps":  [
+                                             "git stash push -m wip",
+                                             "git switch main",
+                                             "git pull",
+                                             "git stash pop"
+                                         ],
+                       "canvasBranchLabel":  "main â†’",
+                       "branchQ":  {
+                                       "q":  "You need the tip of `topic` **into** current branch as **one** new commit (pick one command family).",
+                                       "opts":  [
+                                                    "git merge --squash topic",
+                                                    "git branch topic",
+                                                    "git clean -fd",
+                                                    "git tag topic"
+                                                ],
+                                       "correct":  0
+                                   }
+                   }
+               ]
+}
