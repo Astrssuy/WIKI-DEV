@@ -12,6 +12,7 @@ import { authSection } from "./sections/backend-auth.js";
 import { devopsSection } from "./sections/devops.js";
 import { gitSection } from "./sections/git.js";
 import { herramientasSection } from "./sections/herramientas.js";
+import { testingSection } from "./sections/testing.js";
 
 export const sections = [
   inicioSection,
@@ -23,4 +24,5 @@ export const sections = [
   devopsSection,
   gitSection,
   herramientasSection,
+  testingSection,
 ];
