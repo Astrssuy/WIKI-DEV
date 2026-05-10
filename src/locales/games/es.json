@@ -1,13 +1,13 @@
-﻿{
+{
   "levels": [
     {
       "id": 1,
-      "badge": "LVL 1 Â· ROOKIE",
-      "quizTitle": "Command decode I",
+      "badge": "NVL 1 · NOVATO",
+      "quizTitle": "Descifra el comando I",
       "quizRounds": 3,
       "quiz": [
         {
-          "q": "You're on `main` and want a new branch `feat/login` from this point. What's the modern command?",
+          "q": "Estás en `main` y quieres rama nueva `feat/login` desde aquí. ¿Comando moderno?",
           "opts": [
             "git checkout -b feat/login",
             "git switch -c feat/login",
@@ -17,7 +17,7 @@
           "correct": 1
         },
         {
-          "q": "You staged `readme.md` by mistake. Unstage it but keep your edits on disk.",
+          "q": "Metiste `readme.md` al staging por error. Deshaz el stage pero deja los cambios en disco.",
           "opts": [
             "git rm readme.md",
             "git restore --staged readme.md",
@@ -27,38 +27,38 @@
           "correct": 1
         },
         {
-          "q": "Quick check: see what's modified before you stage anything.",
+          "q": "Vista rápida: ¿qué cambió antes de hacer `add`?",
           "opts": ["git log -1", "git status -sb", "git blame .", "git remote -v"],
           "correct": 1
         },
         {
-          "q": "Rename a tracked file under version control.",
+          "q": "Renombra un archivo ya versionado con Git.",
           "opts": ["mv a.txt b.txt", "git mv a.txt b.txt", "git rename a.txt b.txt", "git move a.txt b.txt"],
           "correct": 1
         }
       ],
-      "sequenceHint": "Ship a tiny fix: stage everything â†’ commit â†’ push to remote.",
+      "sequenceHint": "Parche pequeño: preparar todo → commit → push al remoto.",
       "sequenceSteps": ["git add .", "git commit -m \"fix: typos\"", "git push"],
-      "canvasBranchLabel": "main â†’",
+      "canvasBranchLabel": "main →",
       "branchQ": {
-        "q": "HEAD sits on commit C (see glow). You want branch `bugfix` here **without** switching to it yet.",
+        "q": "HEAD está en el commit C (brilla). Quieres la rama `bugfix` aquí **sin** cambiar a ella aún.",
         "opts": ["git switch bugfix", "git branch bugfix", "git merge bugfix", "git tag bugfix"],
         "correct": 1
       }
     },
     {
       "id": 2,
-      "badge": "LVL 2 Â· RUNNER",
-      "quizTitle": "Command decode II",
+      "badge": "NVL 2 · CORREDOR",
+      "quizTitle": "Descifra el comando II",
       "quizRounds": 3,
       "quiz": [
         {
-          "q": "Download remote commits but **don't** merge into your branch yet.",
+          "q": "Bajar commits del remoto **sin** fusionar a tu rama todavía.",
           "opts": ["git pull", "git fetch origin", "git push origin", "git clone ."],
           "correct": 1
         },
         {
-          "q": "Save uncommitted work safely; you'll apply it again later today.",
+          "q": "Guardar trabajo sin commitear; lo reaplicarás más tarde.",
           "opts": [
             "git commit --allow-empty",
             "git stash push -m wip",
@@ -68,7 +68,7 @@
           "correct": 1
         },
         {
-          "q": "Remove the last commit but **keep changes staged** (soft).",
+          "q": "Quitar el último commit pero **dejar cambios en staging** (soft).",
           "opts": [
             "git reset --hard HEAD~1",
             "git reset --soft HEAD~1",
@@ -78,28 +78,28 @@
           "correct": 1
         },
         {
-          "q": "List which remote branches you can track.",
+          "q": "Listar ramas remotas que puedes rastrear.",
           "opts": ["git branch", "git branch -r", "git tag -l", "git reflog"],
           "correct": 1
         }
       ],
-      "sequenceHint": "Integrate remote `main` locally, then publish your branch (linear-ish flow).",
+      "sequenceHint": "Integra `main` remoto y publica tu rama.",
       "sequenceSteps": ["git fetch origin", "git merge origin/main", "git push"],
-      "canvasBranchLabel": "main â†’",
+      "canvasBranchLabel": "main →",
       "branchQ": {
-        "q": "Same graph: you are on C with HEAD. Create **and switch** into `hotfix` immediately.",
+        "q": "Mismo gráfico: en C con HEAD. Crea **y entra** a `hotfix` ya.",
         "opts": ["git branch hotfix", "git switch -c hotfix", "git merge hotfix", "git cherry-pick hotfix"],
         "correct": 1
       }
     },
     {
       "id": 3,
-      "badge": "LVL 3 Â· VETERAN",
-      "quizTitle": "Command decode III",
+      "badge": "NVL 3 · VETERANO",
+      "quizTitle": "Descifra el comando III",
       "quizRounds": 3,
       "quiz": [
         {
-          "q": "On **shared** `main`, undo a bad commit that is already on the server â€” safely.",
+          "q": "En `main` **compartido**, deshacer un commit malo ya en el servidor — con seguridad.",
           "opts": [
             "git reset --hard HEAD~1 && git push --force",
             "git revert <commit>",
@@ -109,12 +109,12 @@
           "correct": 1
         },
         {
-          "q": "Your push was rejected: remote moved. Re-apply your commits on top (common team rule).",
+          "q": "Push rechazado: el remoto avanzó. Reaplica tus commits encima (regla típica de equipo).",
           "opts": ["git pull --rebase", "git push --force", "git clone --depth=1", "git submodule update"],
           "correct": 0
         },
         {
-          "q": "Permanently delete branch `old` on **origin**.",
+          "q": "Borrar rama `old` en **origin** de forma permanente.",
           "opts": [
             "git branch -d old",
             "git push --delete origin old",
@@ -124,28 +124,28 @@
           "correct": 1
         },
         {
-          "q": "See **who** last changed line 12 of `app.js`.",
+          "q": "Ver **quién** tocó la línea 12 de `app.js`.",
           "opts": ["git show HEAD:app.js", "git blame app.js", "git grep -n app.js", "git diff app.js"],
           "correct": 1
         }
       ],
-      "sequenceHint": "Context switch: park WIP â†’ update main â†’ restore WIP.",
+      "sequenceHint": "Cambio de contexto: guardar WIP → actualizar main → recuperar WIP.",
       "sequenceSteps": ["git stash push -m wip", "git switch main", "git pull", "git stash pop"],
-      "canvasBranchLabel": "main â†’",
+      "canvasBranchLabel": "main →",
       "branchQ": {
-        "q": "You need the tip of `topic` **into** current branch as **one** new commit (pick one command family).",
+        "q": "Necesitas meter la punta de `topic` en la rama actual como **un** commit nuevo (elige la familia de comando).",
         "opts": ["git merge --squash topic", "git branch topic", "git clean -fd", "git tag topic"],
         "correct": 0
       }
     },
     {
       "id": 4,
-      "badge": "LVL 4 Â· TIME-LORD",
-      "quizTitle": "Command decode IV â€” rebase & cherry-pick",
+      "badge": "LVL 4 · MAESTRO DEL TIEMPO",
+      "quizTitle": "Decodifica comandos IV — rebase y cherry-pick",
       "quizRounds": 4,
       "quiz": [
         {
-          "q": "Re-apply your **last 4** commits on top of an updated `main` to keep history linear (local branch only).",
+          "q": "Reaplica tus **últimos 4** commits sobre un `main` actualizado para mantener historia lineal (solo rama local).",
           "opts": [
             "git rebase -i HEAD~4 onto main",
             "git rebase main",
@@ -155,7 +155,7 @@
           "correct": 1
         },
         {
-          "q": "Pull commit `abc1234` from another branch into yours **without** merging the whole branch.",
+          "q": "Trae el commit `abc1234` desde otra rama a la tuya **sin** fusionar la rama entera.",
           "opts": [
             "git cherry-pick abc1234",
             "git merge abc1234",
@@ -165,19 +165,19 @@
           "correct": 0
         },
         {
-          "q": "You're mid-rebase and a conflict appears. You've fixed the files. What's next?",
+          "q": "Estás a mitad de un rebase y aparece un conflicto. Ya arreglaste los archivos. ¿Qué sigue?",
           "opts": [
             "git rebase --skip",
-            "git add <fixed files> && git rebase --continue",
+            "git add <archivos arreglados> && git rebase --continue",
             "git rebase --abort",
             "git merge --continue"
           ],
           "correct": 1
         },
         {
-          "q": "Work on two branches **side-by-side** in separate folders, sharing the same `.git`.",
+          "q": "Trabaja en dos ramas **a la vez** en carpetas separadas, compartiendo el mismo `.git`.",
           "opts": [
-            "git clone . ../copy",
+            "git clone . ../copia",
             "git worktree add ../feature feat/login",
             "git branch --copy feat/login",
             "git submodule add feat/login"
@@ -185,20 +185,20 @@
           "correct": 1
         }
       ],
-      "sequenceHint": "Bring a single fix from a feature branch to main: pick the commit, then push.",
+      "sequenceHint": "Lleva una corrección puntual de una rama feature a main: elige el commit y empuja.",
       "sequenceSteps": [
         "git switch main",
         "git cherry-pick abc1234",
         "git push origin main"
       ],
-      "canvasBranchLabel": "main Â· rebased â†’",
+      "canvasBranchLabel": "main · rebased →",
       "branchQ": {
-        "q": "After `git rebase main`, the topic branch's commits look like new ones â€” same content, **different** what?",
+        "q": "Tras `git rebase main`, los commits de la rama topic parecen nuevos — mismo contenido, ¿qué cambia?",
         "opts": [
-          "Author dates",
-          "SHA hashes (new commit ids)",
-          "File contents",
-          "Commit messages"
+          "Las fechas del autor",
+          "Los SHA (nuevos ids de commit)",
+          "El contenido de los archivos",
+          "Los mensajes de commit"
         ],
         "correct": 1
       }
