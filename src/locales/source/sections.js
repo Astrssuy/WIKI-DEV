@@ -14,6 +14,7 @@ import { gitSection } from "./sections/git.js";
 import { herramientasSection } from "./sections/herramientas.js";
 import { testingSection } from "./sections/testing.js";
 import { securitySection } from "./sections/security.js";
+import { linuxSection } from "./sections/linux.js";
 
 export const sections = [
   inicioSection,
@@ -27,4 +28,5 @@ export const sections = [
   herramientasSection,
   testingSection,
   securitySection,
+  linuxSection,
 ];
