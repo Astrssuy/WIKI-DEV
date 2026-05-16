@@ -16,6 +16,7 @@ import { testingSection } from "./sections/testing.js";
 import { testingToolsSection } from "./sections/testing-tools.js";
 import { securitySection } from "./sections/security.js";
 import { linuxSection } from "./sections/linux.js";
+import { mobileSection } from "./sections/mobile.js";
 
 export const sections = [
   inicioSection,
@@ -31,4 +32,5 @@ export const sections = [
   testingToolsSection,
   securitySection,
   linuxSection,
+  mobileSection,
 ];
