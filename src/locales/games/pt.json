@@ -1,0 +1,142 @@
+{
+  "levels": [
+    {
+      "id": 1,
+      "badge": "NÍVEL 1 · INICIANTE",
+      "quizTitle": "Decifre o comando I",
+      "quizRounds": 3,
+      "quiz": [
+        {
+          "q": "Você está em `main` e quer o branch `feat/login` daqui. Comando moderno?",
+          "opts": [
+            "git checkout -b feat/login",
+            "git switch -c feat/login",
+            "git branch --move feat/login",
+            "git init feat/login"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "`readme.md` foi para o staging por engano. Tire do índice e mantenha as alterações no disco.",
+          "opts": [
+            "git rm readme.md",
+            "git restore --staged readme.md",
+            "git reset --hard",
+            "git clean -fd readme.md"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "Checagem rápida: o que mudou antes de fazer `add`?",
+          "opts": ["git log -1", "git status -sb", "git blame .", "git remote -v"],
+          "correct": 1
+        },
+        {
+          "q": "Renomear um arquivo já versionado com Git.",
+          "opts": ["mv a.txt b.txt", "git mv a.txt b.txt", "git rename a.txt b.txt", "git move a.txt b.txt"],
+          "correct": 1
+        }
+      ],
+      "sequenceHint": "Correção pequena: preparar tudo → commit → push ao remoto.",
+      "sequenceSteps": ["git add .", "git commit -m \"fix: typos\"", "git push"],
+      "canvasBranchLabel": "main →",
+      "branchQ": {
+        "q": "HEAD está no commit C (brilho). Você quer `bugfix` aqui **sem** mudar para ela ainda.",
+        "opts": ["git switch bugfix", "git branch bugfix", "git merge bugfix", "git tag bugfix"],
+        "correct": 1
+      }
+    },
+    {
+      "id": 2,
+      "badge": "NÍVEL 2 · CORREDOR",
+      "quizTitle": "Decifre o comando II",
+      "quizRounds": 3,
+      "quiz": [
+        {
+          "q": "Baixar commits remotos **sem** mesclar no seu branch ainda.",
+          "opts": ["git pull", "git fetch origin", "git push origin", "git clone ."],
+          "correct": 1
+        },
+        {
+          "q": "Guardar trabalho não commitado para reaplicar depois.",
+          "opts": [
+            "git commit --allow-empty",
+            "git stash push -m wip",
+            "git branch backup && git reset --hard",
+            "git rebase -i HEAD~1"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "Remover o último commit mas **manter mudanças no staging** (soft).",
+          "opts": [
+            "git reset --hard HEAD~1",
+            "git reset --soft HEAD~1",
+            "git revert HEAD",
+            "git checkout HEAD~1"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "Listar branches remotas que você pode rastrear.",
+          "opts": ["git branch", "git branch -r", "git tag -l", "git reflog"],
+          "correct": 1
+        }
+      ],
+      "sequenceHint": "Integrar `main` remoto e publicar seu branch.",
+      "sequenceSteps": ["git fetch origin", "git merge origin/main", "git push"],
+      "canvasBranchLabel": "main →",
+      "branchQ": {
+        "q": "Mesmo gráfico: em C com HEAD. Crie **e mude** para `hotfix` na hora.",
+        "opts": ["git branch hotfix", "git switch -c hotfix", "git merge hotfix", "git cherry-pick hotfix"],
+        "correct": 1
+      }
+    },
+    {
+      "id": 3,
+      "badge": "NÍVEL 3 · VETERANO",
+      "quizTitle": "Decifre o comando III",
+      "quizRounds": 3,
+      "quiz": [
+        {
+          "q": "Em `main` **compartilhado**, desfazer um commit ruim já no servidor — com segurança.",
+          "opts": [
+            "git reset --hard HEAD~1 && git push --force",
+            "git revert <commit>",
+            "git branch -D main",
+            "git clean -fdx"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "Push rejeitado: o remoto avançou. Reaplique seus commits por cima (regra comum de time).",
+          "opts": ["git pull --rebase", "git push --force", "git clone --depth=1", "git submodule update"],
+          "correct": 0
+        },
+        {
+          "q": "Apagar o branch `old` no **origin** de forma permanente.",
+          "opts": [
+            "git branch -d old",
+            "git push --delete origin old",
+            "git fetch --prune origin old",
+            "git revert old"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "Ver **quem** alterou a linha 12 de `app.js` por último.",
+          "opts": ["git show HEAD:app.js", "git blame app.js", "git grep -n app.js", "git diff app.js"],
+          "correct": 1
+        }
+      ],
+      "sequenceHint": "Mudar de contexto: stash → atualizar main → recuperar stash.",
+      "sequenceSteps": ["git stash push -m wip", "git switch main", "git pull", "git stash pop"],
+      "canvasBranchLabel": "main →",
+      "branchQ": {
+        "q": "Você precisa da ponta de `topic` no branch atual como **um** commit novo.",
+        "opts": ["git merge --squash topic", "git branch topic", "git clean -fd", "git tag topic"],
+        "correct": 0
+      }
+    }
+  ]
+}

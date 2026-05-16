@@ -1,0 +1,142 @@
+{
+  "levels": [
+    {
+      "id": 1,
+      "badge": "NV 1 · DÉBUTANT",
+      "quizTitle": "Décoder la commande I",
+      "quizRounds": 3,
+      "quiz": [
+        {
+          "q": "Vous êtes sur `main` et voulez la branche `feat/login` depuis ici. Commande moderne ?",
+          "opts": [
+            "git checkout -b feat/login",
+            "git switch -c feat/login",
+            "git branch --move feat/login",
+            "git init feat/login"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "Vous avez indexé `readme.md` par erreur. Retirez-le du staging en gardant les changements.",
+          "opts": [
+            "git rm readme.md",
+            "git restore --staged readme.md",
+            "git reset --hard",
+            "git clean -fd readme.md"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "Vérifier rapidement ce qui a changé avant d’indexer.",
+          "opts": ["git log -1", "git status -sb", "git blame .", "git remote -v"],
+          "correct": 1
+        },
+        {
+          "q": "Renommer un fichier déjà suivi par Git.",
+          "opts": ["mv a.txt b.txt", "git mv a.txt b.txt", "git rename a.txt b.txt", "git move a.txt b.txt"],
+          "correct": 1
+        }
+      ],
+      "sequenceHint": "Petit correctif : tout indexer → commit → push vers le remote.",
+      "sequenceSteps": ["git add .", "git commit -m \"fix: typos\"", "git push"],
+      "canvasBranchLabel": "main →",
+      "branchQ": {
+        "q": "HEAD est sur le commit C (lueur). Vous voulez `bugfix` ici **sans** encore y basculer.",
+        "opts": ["git switch bugfix", "git branch bugfix", "git merge bugfix", "git tag bugfix"],
+        "correct": 1
+      }
+    },
+    {
+      "id": 2,
+      "badge": "NV 2 · COUREUR",
+      "quizTitle": "Décoder la commande II",
+      "quizRounds": 3,
+      "quiz": [
+        {
+          "q": "Télécharger les commits distants **sans** fusionner dans votre branche.",
+          "opts": ["git pull", "git fetch origin", "git push origin", "git clone ."],
+          "correct": 1
+        },
+        {
+          "q": "Mettre de côté du travail non commité pour plus tard.",
+          "opts": [
+            "git commit --allow-empty",
+            "git stash push -m wip",
+            "git branch backup && git reset --hard",
+            "git rebase -i HEAD~1"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "Annuler le dernier commit mais **garder les changements indexés** (soft).",
+          "opts": [
+            "git reset --hard HEAD~1",
+            "git reset --soft HEAD~1",
+            "git revert HEAD",
+            "git checkout HEAD~1"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "Lister les branches distantes suivies.",
+          "opts": ["git branch", "git branch -r", "git tag -l", "git reflog"],
+          "correct": 1
+        }
+      ],
+      "sequenceHint": "Intégrer `main` distant puis pousser votre branche.",
+      "sequenceSteps": ["git fetch origin", "git merge origin/main", "git push"],
+      "canvasBranchLabel": "main →",
+      "branchQ": {
+        "q": "Même graphe : sur C avec HEAD. Créez **et basculez** sur `hotfix` tout de suite.",
+        "opts": ["git branch hotfix", "git switch -c hotfix", "git merge hotfix", "git cherry-pick hotfix"],
+        "correct": 1
+      }
+    },
+    {
+      "id": 3,
+      "badge": "NV 3 · VÉTÉRAN",
+      "quizTitle": "Décoder la commande III",
+      "quizRounds": 3,
+      "quiz": [
+        {
+          "q": "Sur `main` **partagé**, annuler un mauvais commit déjà sur le serveur — proprement.",
+          "opts": [
+            "git reset --hard HEAD~1 && git push --force",
+            "git revert <commit>",
+            "git branch -D main",
+            "git clean -fdx"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "Push refusé : le remote a avancé. Rejouez vos commits par-dessus (usage courant).",
+          "opts": ["git pull --rebase", "git push --force", "git clone --depth=1", "git submodule update"],
+          "correct": 0
+        },
+        {
+          "q": "Supprimer définitivement la branche `old` sur **origin**.",
+          "opts": [
+            "git branch -d old",
+            "git push --delete origin old",
+            "git fetch --prune origin old",
+            "git revert old"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "Voir **qui** a modifié la ligne 12 de `app.js`.",
+          "opts": ["git show HEAD:app.js", "git blame app.js", "git grep -n app.js", "git diff app.js"],
+          "correct": 1
+        }
+      ],
+      "sequenceHint": "Changer de contexte : stash → mettre à jour main → récupérer le stash.",
+      "sequenceSteps": ["git stash push -m wip", "git switch main", "git pull", "git stash pop"],
+      "canvasBranchLabel": "main →",
+      "branchQ": {
+        "q": "Vous voulez intégrer le bout de `topic` dans la branche courante en **un** nouveau commit.",
+        "opts": ["git merge --squash topic", "git branch topic", "git clean -fd", "git tag topic"],
+        "correct": 0
+      }
+    }
+  ]
+}

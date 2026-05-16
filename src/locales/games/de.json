@@ -1,0 +1,142 @@
+{
+  "levels": [
+    {
+      "id": 1,
+      "badge": "STUFE 1 · ANFÄNGER",
+      "quizTitle": "Kommando knacken I",
+      "quizRounds": 3,
+      "quiz": [
+        {
+          "q": "Du bist auf `main` und willst von hier den Branch `feat/login`. Moderner Befehl?",
+          "opts": [
+            "git checkout -b feat/login",
+            "git switch -c feat/login",
+            "git branch --move feat/login",
+            "git init feat/login"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "`readme.md` ist staged – raus aus dem Index, Änderungen auf der Platte behalten.",
+          "opts": [
+            "git rm readme.md",
+            "git restore --staged readme.md",
+            "git reset --hard",
+            "git clean -fd readme.md"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "Schnell checken, was sich geändert hat, bevor du stoppst.",
+          "opts": ["git log -1", "git status -sb", "git blame .", "git remote -v"],
+          "correct": 1
+        },
+        {
+          "q": "Eine bereits versionierte Datei umbenennen.",
+          "opts": ["mv a.txt b.txt", "git mv a.txt b.txt", "git rename a.txt b.txt", "git move a.txt b.txt"],
+          "correct": 1
+        }
+      ],
+      "sequenceHint": "Kleiner Fix: alles stagen → commit → push.",
+      "sequenceSteps": ["git add .", "git commit -m \"fix: typos\"", "git push"],
+      "canvasBranchLabel": "main →",
+      "branchQ": {
+        "q": "HEAD steht auf Commit C (leuchtet). Du willst `bugfix` hier **ohne** dorthin zu wechseln.",
+        "opts": ["git switch bugfix", "git branch bugfix", "git merge bugfix", "git tag bugfix"],
+        "correct": 1
+      }
+    },
+    {
+      "id": 2,
+      "badge": "STUFE 2 · LAUFER",
+      "quizTitle": "Kommando knacken II",
+      "quizRounds": 3,
+      "quiz": [
+        {
+          "q": "Remote-Commits holen **ohne** in den aktuellen Branch zu mergen.",
+          "opts": ["git pull", "git fetch origin", "git push origin", "git clone ."],
+          "correct": 1
+        },
+        {
+          "q": "Uncommittete Arbeit parken und später wieder anwenden.",
+          "opts": [
+            "git commit --allow-empty",
+            "git stash push -m wip",
+            "git branch backup && git reset --hard",
+            "git rebase -i HEAD~1"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "Letzten Commit rückgängig, Änderungen aber **weiter staged** (soft).",
+          "opts": [
+            "git reset --hard HEAD~1",
+            "git reset --soft HEAD~1",
+            "git revert HEAD",
+            "git checkout HEAD~1"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "Remote-Branches auflisten, die du tracken kannst.",
+          "opts": ["git branch", "git branch -r", "git tag -l", "git reflog"],
+          "correct": 1
+        }
+      ],
+      "sequenceHint": "Remote-`main` integrieren, dann pushen.",
+      "sequenceSteps": ["git fetch origin", "git merge origin/main", "git push"],
+      "canvasBranchLabel": "main →",
+      "branchQ": {
+        "q": "Gleiches Bild: auf C mit HEAD. Erstelle **und wechsle** sofort zu `hotfix`.",
+        "opts": ["git branch hotfix", "git switch -c hotfix", "git merge hotfix", "git cherry-pick hotfix"],
+        "correct": 1
+      }
+    },
+    {
+      "id": 3,
+      "badge": "STUFE 3 · PROFI",
+      "quizTitle": "Kommando knacken III",
+      "quizRounds": 3,
+      "quiz": [
+        {
+          "q": "Auf **geteiltem** `main` einen fehlerhaften, schon gepushten Commit sicher rückgängig machen.",
+          "opts": [
+            "git reset --hard HEAD~1 && git push --force",
+            "git revert <commit>",
+            "git branch -D main",
+            "git clean -fdx"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "Push abgelehnt: Remote ist weiter. Deine Commits oben drauf legen (typische Teamregel).",
+          "opts": ["git pull --rebase", "git push --force", "git clone --depth=1", "git submodule update"],
+          "correct": 0
+        },
+        {
+          "q": "Branch `old` auf **origin** dauerhaft löschen.",
+          "opts": [
+            "git branch -d old",
+            "git push --delete origin old",
+            "git fetch --prune origin old",
+            "git revert old"
+          ],
+          "correct": 1
+        },
+        {
+          "q": "**Wer** hat Zeile 12 in `app.js` zuletzt geändert?",
+          "opts": ["git show HEAD:app.js", "git blame app.js", "git grep -n app.js", "git diff app.js"],
+          "correct": 1
+        }
+      ],
+      "sequenceHint": "Kontextwechsel: stash → main aktualisieren → stash holen.",
+      "sequenceSteps": ["git stash push -m wip", "git switch main", "git pull", "git stash pop"],
+      "canvasBranchLabel": "main →",
+      "branchQ": {
+        "q": "Du willst die Spitze von `topic` im aktuellen Branch als **einen** neuen Commit.",
+        "opts": ["git merge --squash topic", "git branch topic", "git clean -fd", "git tag topic"],
+        "correct": 0
+      }
+    }
+  ]
+}
