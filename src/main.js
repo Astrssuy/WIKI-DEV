@@ -3,11 +3,15 @@ import { initI18n, t, getSections, setLanguage, getLocales, currentLanguage } fr
 import { getGamePack } from "./games-pack.js";
 import { mountGitGames } from "./git-games.js";
 import { applyTheme, getStoredTheme, normalizeTheme } from "./themes.js";
+import { getLastSection, saveLastSection, getLastSearch, saveLastSearch } from "./persistence.js";
+import "./scroll-top.js";
+import "./footer.js";
+import "./hero-typewriter.js";
 
 const app = document.querySelector("#app");
 
-let activeId = "";
-let searchQuery = "";
+let activeId = getLastSection();
+let searchQuery = getLastSearch();
 /** Filtro dentro del apartado actual (bloques de texto/lista/cÃ³digo). */
 let sectionBlockFilter = "";
 /** Limpieza de minijuegos Git (canvas / listeners). */
@@ -241,6 +245,7 @@ function render() {
       `;
       btn.addEventListener("click", () => {
         activeId = s.id;
+        saveLastSection(activeId);
         sectionBlockFilter = "";
         render();
       });
@@ -261,6 +266,7 @@ function render() {
           `;
           subBtn.addEventListener("click", () => {
             activeId = c.id;
+            saveLastSection(activeId);
             sectionBlockFilter = "";
             render();
           });
@@ -277,6 +283,7 @@ function render() {
     const selStart = e.target.selectionStart;
     const selEnd = e.target.selectionEnd;
     searchQuery = e.target.value;
+    saveLastSearch(searchQuery);
     render();
     restoreInputFocus("#q", selStart, selEnd);
   });
@@ -379,6 +386,7 @@ function onKey(e) {
     if (q && document.activeElement === q) {
       q.blur();
       searchQuery = "";
+      saveLastSearch("");
       render();
       return;
     }
@@ -412,6 +420,7 @@ function onKey(e) {
     const pick = filtered[n - 1]?.section;
     if (pick) {
       activeId = pick.id;
+      saveLastSection(activeId);
       sectionBlockFilter = "";
       render();
     }
@@ -423,7 +432,11 @@ document.addEventListener("keydown", onKey);
 async function boot() {
   await initI18n();
   const sections = getSections();
-  activeId = sections[0]?.id ?? "";
+  const known = new Set(sections.map((s) => s.id));
+  if (!activeId || !known.has(activeId)) {
+    activeId = sections[0]?.id ?? "";
+    saveLastSection(activeId);
+  }
   render();
 }
 
