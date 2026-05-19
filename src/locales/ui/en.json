@@ -40,7 +40,7 @@
   "gitGame.branchTitle": "Branch lookout (CRT view)",
   "gitGame.branchCanvasLabel": "Commit graph · squares = commits · glowing = HEAD",
   "gitGame.levelPick": "Level select",
-  "gitGame.levelLocked": "Locked — finish all three drills on the previous level.",
+  "gitGame.levelLocked": "Locked — finish all drills on the previous level.",
   "gitGame.levelUnlocked": "Access granted · next level online!",
   "gitGame.levelStatus": "Level {{n}} — complete quiz, sequence & branch to unlock the next.",
   "gitGame.branchCanvasHint": "Glowing square = HEAD",

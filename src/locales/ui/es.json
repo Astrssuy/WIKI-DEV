@@ -40,7 +40,7 @@
   "gitGame.branchTitle": "Mirador de sucursales (vista CRT)",
   "gitGame.branchCanvasLabel": "Gráfico de confirmación · cuadrados = confirmaciones · brillante = HEAD",
   "gitGame.levelPick": "Seleccionar nivel",
-  "gitGame.levelLocked": "Bloqueado: termina los tres ejercicios del nivel anterior.",
+  "gitGame.levelLocked": "Bloqueado — termina todos los ejercicios del nivel anterior.",
   "gitGame.levelUnlocked": "Acceso concedido · ¡Siguiente nivel online!",
   "gitGame.levelStatus": "Nivel {{n}}: completa el cuestionario, la secuencia y la rama para desbloquear el siguiente.",
   "gitGame.branchCanvasHint": "Cuadrado brillante = CABEZA",
