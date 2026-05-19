@@ -539,18 +539,138 @@
   },
   {
     "id": "herramientas",
-    "title": "Estampación",
+    "title": "Herramientas",
     "icon": "⧉",
-    "summary": "Editor, linters, formateo (Git tiene su propia sección).",
+    "summary": "Editor, linters, formateadores, gestores de paquetes y utilidades del dia a dia.",
     "blocks": [
       {
         "type": "text",
-        "content": "Automatice el formato y el estilo (preconfirmación o CI) para que las revisiones se centren en las ideas, no en los espacios en blanco. Para flujos y comandos de Git, abra la sección Git."
+        "content": "Las herramientas viven entre tu y el codigo: editor, formateador, linter, type checker, gestor de paquetes y depurador. Configuralas una vez por proyecto para que el equipo trabaje igual en local y en CI."
+      },
+      {
+        "type": "list",
+        "title": "Checklist inicial",
+        "items": [
+          "Elige un gestor de paquetes y commitea su lockfile (`package-lock.json`, `pnpm-lock.yaml` o `yarn.lock`).",
+          "Define scripts claros: `npm run dev`, `npm run build`, `npm run lint`, `npm run format` y `npm test`.",
+          "Automatiza el formato; deja que el linter se centre en bugs reales y reglas del equipo.",
+          "Documenta la version de Node en `.nvmrc`, `.node-version`, Volta o `engines`.",
+          "Haz que CI ejecute los mismos comandos que usas localmente."
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Editor — VS Code",
+        "items": [
+          "`settings.json` por workspace permite compartir reglas sin pisar preferencias personales.",
+          "Extensiones utiles: ESLint, Prettier, EditorConfig, GitLens y Error Lens.",
+          "`Ctrl+P` salta a archivos; `Ctrl+Shift+P` abre la paleta de comandos.",
+          "La terminal integrada evita cambiar de ventana para correr `node`, `npm`, `git` o scripts."
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "json",
+        "code": "// .vscode/settings.json — reglas del proyecto\n{\n  \"editor.formatOnSave\": true,\n  \"editor.defaultFormatter\": \"esbenp.prettier-vscode\",\n  \"editor.codeActionsOnSave\": { \"source.fixAll.eslint\": \"explicit\" },\n  \"files.eol\": \"\\n\",\n  \"files.trimTrailingWhitespace\": true,\n  \"files.insertFinalNewline\": true\n}"
+      },
+      {
+        "type": "code",
+        "lang": "ini",
+        "code": "# .editorconfig — bases consistentes entre editores\nroot = true\n\n[*]\ncharset = utf-8\nend_of_line = lf\ninsert_final_newline = true\ntrim_trailing_whitespace = true\nindent_style = space\nindent_size = 2\n\n[*.md]\ntrim_trailing_whitespace = false"
+      },
+      {
+        "type": "list",
+        "title": "Formateador — Prettier",
+        "items": [
+          "Fija la version en `devDependencies`; asi nadie debate comillas o punto y coma.",
+          "Manten `.prettierrc` pequeno; los defaults suelen funcionar bien.",
+          "Corre `prettier --check .` en CI y `prettier --write .` para arreglar localmente."
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Linter — ESLint",
+        "items": [
+          "Atrapa bugs (`no-undef`, hooks mal usados en React) y convenciones del equipo.",
+          "En ESLint 9+ prefiere `eslint.config.js` (flat config).",
+          "Usa presets del stack (`@typescript-eslint`, React, Vue, etc.) antes de crear reglas propias.",
+          "En CI usa `eslint . --max-warnings 0` para que los warnings no se acumulen."
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "js",
+        "code": "// eslint.config.js — ejemplo con flat config\nimport js from \"@eslint/js\";\nimport tseslint from \"typescript-eslint\";\n\nexport default [\n  js.configs.recommended,\n  ...tseslint.configs.recommended,\n  {\n    rules: {\n      \"no-console\": [\"warn\", { allow: [\"warn\", \"error\"] }],\n      \"@typescript-eslint/consistent-type-imports\": \"error\",\n    },\n  },\n];"
+      },
+      {
+        "type": "list",
+        "title": "Type checking",
+        "items": [
+          "`tsc --noEmit` detecta errores de tipos sin generar archivos.",
+          "Usa `strict` en proyectos nuevos; relaja reglas puntuales solo con comentario justificando por que.",
+          "Genera tipos desde OpenAPI o GraphQL cuando puedas.",
+          "En JavaScript plano, usa JSDoc y `// @ts-check` en helpers publicos."
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Gestores de paquetes",
+        "items": [
+          "npm — viene con Node; default seguro; commitea `package-lock.json`.",
+          "pnpm — rapido y ahorra disco, muy bueno para monorepos.",
+          "yarn — clasico v1 o Berry moderno; elige uno y mantenlo.",
+          "Regla del lockfile: commitealo y usa `npm ci` / `pnpm i --frozen-lockfile` en CI."
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "json",
+        "code": "// package.json — scripts que escalan bien\n{\n  \"scripts\": {\n    \"dev\": \"vite\",\n    \"build\": \"vite build\",\n    \"preview\": \"vite preview\",\n    \"lint\": \"eslint . --max-warnings 0\",\n    \"format\": \"prettier --write .\",\n    \"format:check\": \"prettier --check .\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest run\"\n  }\n}"
+      },
+      {
+        "type": "list",
+        "title": "Pre-commit hooks (Husky + lint-staged)",
+        "items": [
+          "`husky` instala hooks de Git de forma declarativa.",
+          "`lint-staged` corre comandos solo sobre archivos staged, por eso es rapido.",
+          "Cadena comun: `prettier --write` → `eslint --fix` → tests pequenos.",
+          "Deja documentado cuando se puede usar `--no-verify` como escape."
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "json",
+        "code": "// package.json — lint-staged\n{\n  \"scripts\": { \"prepare\": \"husky\" },\n  \"lint-staged\": {\n    \"*.{ts,tsx,js,jsx}\": [\"prettier --write\", \"eslint --fix\"],\n    \"*.{json,md,css}\": [\"prettier --write\"]\n  }\n}"
+      },
+      {
+        "type": "list",
+        "title": "Depuracion y profiling",
+        "items": [
+          "Chrome/Edge DevTools: breakpoints, consola, Network y Performance.",
+          "VS Code `launch.json`: depura Node.js o navegador desde el editor.",
+          "`console.log` sirve; `console.table` y `console.group` ayudan a leer mejor.",
+          "Perfila antes de optimizar; el flame chart manda mas que la intuicion."
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Solucion de problemas",
+        "items": [
+          "`npm` no aparece — instala Node.js o agrega `C:\\Program Files\\nodejs` al PATH en Windows.",
+          "Prettier y ESLint pelean — desactiva reglas de formato en ESLint y deja que Prettier controle espacios.",
+          "CI falla pero local funciona — compara version de Node y comando de instalacion (`npm ci` vs `npm install`).",
+          "Dependencias raras — borra `node_modules`, reinstala desde el lockfile y prueba otra vez.",
+          "Tests lentos — separa unitarios de browser/E2E y corre lo pesado despues en CI."
+        ]
+      },
+      {
+        "type": "text",
+        "content": "La meta no es instalar muchas herramientas, sino reducir decisiones repetidas. Un buen setup permite abrir el repo, instalar dependencias, correr una orden y saber si el proyecto esta sano."
       },
       {
         "type": "code",
         "lang": "bash",
-        "code": "# Team formatting (e.g. Prettier + ESLint)\nnpm run lint:fix\n\n# Short branch + clear commit\ngit switch -c feat/wiki-retro\ngit commit -m \"docs: tooling section\""
+        "code": "# Flujo local recomendado\nnpm ci\nnpm run format:check\nnpm run lint\nnpm test\nnpm run build\n\n# Si algo falla, arregla primero local y luego commitea\ngit switch -c docs/tooling-refresh\ngit commit -m \"docs: ampliar seccion de herramientas\""
       }
     ]
   },
