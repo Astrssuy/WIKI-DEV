@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "id": "inicio",
     "title": "Inicio",
@@ -51,7 +51,7 @@
   {
     "id": "interfaz",
     "title": "Interfaz",
-    "icon": "â–£",
+    "icon": "▣",
     "summary": "Centro de temas de la interfaz de usuario: abra subelementos en la barra lateral para profundizar.",
     "blocks": [
       {
@@ -77,7 +77,7 @@
     "id": "interfaz-react",
     "parentId": "interfaz",
     "title": "Reaccionar",
-    "icon": "âš›",
+    "icon": "⚛",
     "summary": "Componentes, JSX, enlaces y cómo fluyen los datos al DOM.",
     "blocks": [
       {
@@ -104,9 +104,9 @@
         "title": "Ganchos que usas a diario",
         "items": [
           "`useState` - estado local; El formulario de actualización evita cierres obsoletos en código asíncrono.",
-          "`useEffect` â€” sincronizaciÃ³n con el mundo exterior; limpiar en la funciÃ³n de retorno.",
-          "`useMemo` / `useCallback` â€” valores/funciones de cachÃ©; Ãšselo cuando la elaboraciÃ³n de perfiles muestre beneficios.",
-          "`useRef` â€” cuadro mutable o identificador DOM; cambiar `.current` no se vuelve a representar.",
+          "`useEffect` — sincronización con el mundo exterior; limpiar en la función de retorno.",
+          "`useMemo` / `useCallback` — valores/funciones de caché; Úselo cuando la elaboración de perfiles muestre beneficios.",
+          "`useRef` — cuadro mutable o identificador DOM; cambiar `.current` no se vuelve a representar.",
           "`useId`: identificadores estables para etiquetas y `aria-labelledby` (seguro para SSR)."
         ]
       },
@@ -129,7 +129,7 @@
     "id": "interfaz-vite",
     "parentId": "interfaz",
     "title": "vite",
-    "icon": "âš¡",
+    "icon": "⚡",
     "summary": "Servidor de desarrollo rápido, ESM nativo y compilaciones de producción basadas en Rollup.",
     "blocks": [
       {
@@ -170,7 +170,7 @@
     "id": "interfaz-css",
     "parentId": "interfaz",
     "title": "CSS",
-    "icon": "â—«",
+    "icon": "◫",
     "summary": "Cascada, diseño, propiedades personalizadas y patrones responsivos.",
     "blocks": [
       {
@@ -211,7 +211,7 @@
     "id": "interfaz-bootstrap",
     "parentId": "interfaz",
     "title": "Oreja",
-    "icon": "â–¢",
+    "icon": "▢",
     "summary": "Sistema de cuadrícula, componentes prediseñados y variables Sass.",
     "blocks": [
       {
@@ -242,7 +242,7 @@
     "id": "interfaz-tailwind",
     "parentId": "interfaz",
     "title": "CSS de viento de cola",
-    "icon": "â‰ˆ",
+    "icon": "≈",
     "summary": "Estilo que prioriza la utilidad, compilador JIT y tokens de diseño en la configuración.",
     "blocks": [
       {
@@ -273,7 +273,7 @@
     "id": "interfaz-typescript",
     "parentId": "interfaz",
     "title": "Mecanografiado",
-    "icon": "âŠ¤",
+    "icon": "⊤",
     "summary": "Tipos de accesorios, eventos y refactorizaciones más seguras en el código de componentes.",
     "blocks": [
       {
@@ -286,7 +286,7 @@
         "items": [
           "`estricto`: activa las principales señales de seguridad; lo prefiero en proyectos totalmente nuevos.",
           "`noImplicitAny`: muestra valores sin tipo que ocultan errores.",
-          "`strictNullChecks` â€” `null`/`undefinido` debe manejarse explÃ­citamente."
+          "`strictNullChecks` — `null`/`undefinido` debe manejarse explícitamente."
         ]
       },
       {
@@ -313,7 +313,7 @@
     "id": "interfaz-a11y",
     "parentId": "interfaz",
     "title": "Accesibilidad",
-    "icon": "â—Ž",
+    "icon": "◎",
     "summary": "UI inclusiva: teclado, lectores de pantalla, contraste y hábitos orientados a WCAG.",
     "blocks": [
       {
@@ -336,7 +336,7 @@
         "items": [
           "Prefiere elementos nativos (`botón`, `a`, `entrada`) antes de agregar roles.",
           "`aria-expanded`, `aria-controls`: revelan widgets como acordeones y menús.",
-          "`aria-live` â€” anuncia actualizaciones dinÃ¡micas; use cortesÃ­a versus asertividad con moderaciÃ³n."
+          "`aria-live` — anuncia actualizaciones dinámicas; use cortesía versus asertividad con moderación."
         ]
       },
       {
@@ -391,7 +391,7 @@
   {
     "id": "git",
     "title": "git",
-    "icon": "âŽ‡",
+    "icon": "⎇",
     "summary": "Comandos, flujos del día a día, controles remotos y deshacer cambios de forma segura.",
     "blocks": [
       {
@@ -404,9 +404,9 @@
         "items": [
           "`git config --global user.name \"Su nombre\"`",
           "`git config --global usuario.correo electrónico \"usted@correo electrónico\"`",
-          "`git config --global init.defaultBranch main` â€” rama predeterminada para nuevos repositorios",
-          "`git config --global core.editor \"code --wait\"` â€” CÃ³digo VS para mensajes de confirmaciÃ³n",
-          "`git config --global alias.st status -sb` â€” acceso directo para `git st`"
+          "`git config --global init.defaultBranch main` — rama predeterminada para nuevos repositorios",
+          "`git config --global core.editor \"code --wait\"` — Código VS para mensajes de confirmación",
+          "`git config --global alias.st status -sb` — acceso directo para `git st`"
         ]
       },
       {
@@ -421,8 +421,8 @@
           "`git status` (`-sb` short): qué cambió",
           "`git diff` - cambios sin etapas; `git diff --staged` - cambios por etapas",
           "`git add file` o `git add -p` - escenario interactivo (revisar trozos)",
-          "`git commit -m \"message\"` â€” confirma cambios por etapas",
-          "`git log --oneline --graph --decorate -20` â€” grÃ¡fico compacto"
+          "`git commit -m \"message\"` — confirma cambios por etapas",
+          "`git log --oneline --graph --decorate -20` — gráfico compacto"
         ]
       },
       {
@@ -435,10 +435,10 @@
         "title": "Sucursales",
         "items": [
           "`git branch` - lista local; `git branch -a` incluye controles remotos",
-          "`git switch nombre-rama` â€” switch (moderno); anterior: `git checkout nombre-rama`",
-          "`git switch -c feature/login` â€” crear e ingresar a la rama",
-          "`git merge other-branch` â€” integrar (puede requerir resoluciÃ³n de conflictos)",
-          "`git branch -d feature/login` â€” eliminar la rama local fusionada"
+          "`git switch nombre-rama` — switch (moderno); anterior: `git checkout nombre-rama`",
+          "`git switch -c feature/login` — crear e ingresar a la rama",
+          "`git merge other-branch` — integrar (puede requerir resolución de conflictos)",
+          "`git branch -d feature/login` — eliminar la rama local fusionada"
         ]
       },
       {
@@ -450,11 +450,11 @@
         "type": "list",
         "title": "Remoto (origen, empujar, tirar)",
         "items": [
-          "`git remoto -v` â€” buscar/enviar URL",
+          "`git remoto -v` — buscar/enviar URL",
           "`git fetch origin`: descarga confirmaciones sin fusionar tu rama",
           "`git pull` - `fetch` + fusionar/rebase por configuración",
-          "`git push origin my-branch` â€” primera vez: `git push -u origin my-branch`",
-          "`git push --delete origin old-branch` â€” eliminar rama remota"
+          "`git push origin my-branch` — primera vez: `git push -u origin my-branch`",
+          "`git push --delete origin old-branch` — eliminar rama remota"
         ]
       },
       {
@@ -467,10 +467,10 @@
         "items": [
           "`git recovery file`: descarta los cambios locales no preparados en ese archivo",
           "`git restaurar --archivo preparado`: desinstalar, mantener los cambios en el disco",
-          "`git checkout -- file` â€” restauraciÃ³n heredada del Ã¡rbol de trabajo (sobrescritura)",
-          "`git reset --soft HEAD~1` â€” eliminar el Ãºltimo manteniendo los cambios preparados",
-          "`git reset --mixed HEAD~1` (predeterminado) â€” deshacer la confirmaciÃ³n; cambios sin etapas",
-          "`git reset --hard HEAD~1` â€” peligro: elimina el compromiso y los cambios en el Ã¡rbol de trabajo"
+          "`git checkout -- file` — restauración heredada del árbol de trabajo (sobrescritura)",
+          "`git reset --soft HEAD~1` — eliminar el último manteniendo los cambios preparados",
+          "`git reset --mixed HEAD~1` (predeterminado) — deshacer la confirmación; cambios sin etapas",
+          "`git reset --hard HEAD~1` — peligro: elimina el compromiso y los cambios en el árbol de trabajo"
         ]
       },
       {
@@ -486,10 +486,10 @@
         "type": "list",
         "title": "Inspección de historial",
         "items": [
-          "`git show <commit>` â€” parche y metadatos",
+          "`git show <commit>` — parche y metadatos",
           "`git listening file`: quién cambió cada línea",
-          "`git log -S\"text\"` â€” confirma que agregÃ³/eliminÃ³ una cadena",
-          "`git bisect start` â€” bÃºsqueda binaria del compromiso de ruptura"
+          "`git log -S\"text\"` — confirma que agregó/eliminó una cadena",
+          "`git bisect start` — búsqueda binaria del compromiso de ruptura"
         ]
       },
       {
@@ -501,9 +501,9 @@
         "type": "list",
         "title": "Etiquetas, .gitignore, limpieza",
         "items": [
-          "`.gitignore` â€” ignora `node_modules/`, `.env`, compilaciones, etc.",
-          "`git clean -fd` â€” eliminar archivos sin seguimiento (destructivo; ejecuciÃ³n en seco con `git clean -nd`)",
-          "`git rm -r --cached carpeta` â€” detener el seguimiento pero mantener los archivos en el disco"
+          "`.gitignore` — ignora `node_modules/`, `.env`, compilaciones, etc.",
+          "`git clean -fd` — eliminar archivos sin seguimiento (destructivo; ejecución en seco con `git clean -nd`)",
+          "`git rm -r --cached carpeta` — detener el seguimiento pero mantener los archivos en el disco"
         ]
       },
       {
@@ -540,7 +540,7 @@
   {
     "id": "herramientas",
     "title": "Estampación",
-    "icon": "â§‰",
+    "icon": "⧉",
     "summary": "Editor, linters, formateo (Git tiene su propia sección).",
     "blocks": [
       {
@@ -558,7 +558,7 @@
     "id": "backend-databases",
     "parentId": "backend",
     "title": "Bases de datos",
-    "icon": "â–¦",
+    "icon": "▦",
     "summary": "Relacionales vs documentos, índices, transacciones y la trampa del N+1.",
     "blocks": [
       {
@@ -583,11 +583,11 @@
       },
       {
         "type": "list",
-        "title": "Ãndices â€” el detalle que lo cambia todo",
+        "title": "Índices — el detalle que lo cambia todo",
         "items": [
-          "B-tree (por defecto) â€” consultas de igualdad y rango sobre una columna.",
-          "Ãndices compuestos â€” el orden de las columnas importa de izquierda a derecha.",
-          "Ãndices parciales â€” `WHERE deleted_at IS NULL` mantiene el Ã­ndice pequeÃ±o.",
+          "B-tree (por defecto) — consultas de igualdad y rango sobre una columna.",
+          "Índices compuestos — el orden de las columnas importa de izquierda a derecha.",
+          "Índices parciales — `WHERE deleted_at IS NULL` mantiene el índice pequeño.",
           "Cada índice acelera lecturas pero ralentiza escrituras; mide antes de añadir.",
           "Usa `EXPLAIN ANALYZE` para confirmar que el planificador usa tu índice."
         ]
@@ -600,9 +600,9 @@
         "type": "list",
         "title": "Documentos y clave-valor",
         "items": [
-          "MongoDB â€” documentos flexibles tipo JSON; los Ã­ndices funcionan parecido a SQL.",
-          "Redis â€” en memoria; perfecto para cachÃ©s, rate limits, colas y leaderboards.",
-          "DynamoDB / Cosmos DB â€” clave-valor gestionado; diseÃ±a los patrones de acceso primero.",
+          "MongoDB — documentos flexibles tipo JSON; los índices funcionan parecido a SQL.",
+          "Redis — en memoria; perfecto para cachés, rate limits, colas y leaderboards.",
+          "DynamoDB / Cosmos DB — clave-valor gestionado; diseña los patrones de acceso primero.",
           "Sin esquema no significa sin esquema; lo tienes, solo vive en el código de la app."
         ]
       },
@@ -611,7 +611,7 @@
         "title": "Higiene y supervivencia",
         "items": [
           "Backups + simulacros de restauración (un backup que nunca restauraste es esperanza, no backup).",
-          "Pools de conexiones â€” recurso finito; dimensiona con cuidado bajo carga.",
+          "Pools de conexiones — recurso finito; dimensiona con cuidado bajo carga.",
           "Evita SELECT *; trae solo las columnas que realmente usas.",
           "Nunca guardes contraseñas en texto plano; no expongas IDs internos como URLs sin pensar."
         ]
@@ -622,7 +622,7 @@
     "id": "backend-apis",
     "parentId": "backend",
     "title": "APIs (REST y GraphQL)",
-    "icon": "â‡„",
+    "icon": "⇄",
     "summary": "Diseñar endpoints, elegir REST vs GraphQL y no romper a los clientes.",
     "blocks": [
       {
@@ -637,7 +637,7 @@
           "Los verbos HTTP llevan la intención: GET (leer), POST (crear), PUT/PATCH (actualizar), DELETE.",
           "Los códigos de estado son media documentación; úsalos con honestidad.",
           "La paginación por cursor escala mejor que `?page=N` en listas grandes.",
-          "Versiona en la ruta (`/v1/...`) o por cabecera â€” elige una y mantenla."
+          "Versiona en la ruta (`/v1/...`) o por cabecera — elige una y mantenla."
         ]
       },
       {
@@ -647,13 +647,13 @@
       },
       {
         "type": "list",
-        "title": "GraphQL â€” cuÃ¡ndo brilla",
+        "title": "GraphQL — cuándo brilla",
         "items": [
           "Los clientes piden exactamente los campos que necesitan; ideal para móvil y agregación.",
           "Un solo endpoint (`/graphql`); el esquema es el contrato.",
           "Evita el N+1 con DataLoader (batching + caché por request).",
           "Las consultas persistidas protegen producción; bloquea queries arbitrarias.",
-          "No expongas tu base de datos como esquema â€” diseÃ±a tipos intencionales."
+          "No expongas tu base de datos como esquema — diseña tipos intencionales."
         ]
       },
       {
@@ -683,7 +683,7 @@
       },
       {
         "type": "text",
-        "content": "La autenticaciÃ³n va normalmente en `Authorization: Bearer <token>`. CORS solo importa para navegadores â€” el trÃ¡fico entre servidores lo ignora. Los rate limits viven en la pasarela; documÃ©ntalos para que los clientes hagan retries sensatos."
+        "content": "La autenticación va normalmente en `Authorization: Bearer <token>`. CORS solo importa para navegadores — el tráfico entre servidores lo ignora. Los rate limits viven en la pasarela; documéntalos para que los clientes hagan retries sensatos."
       }
     ]
   },
@@ -691,18 +691,18 @@
     "id": "backend-auth",
     "parentId": "backend",
     "title": "Auth (sesiones, JWT, OAuth)",
-    "icon": "âš·",
+    "icon": "⚷",
     "summary": "Flujos de login, hashing de contraseñas, sesiones vs tokens y sign-in con terceros.",
     "blocks": [
       {
         "type": "text",
-        "content": "La autenticaciÃ³n responde \"Â¿quiÃ©n eres?\"; la autorizaciÃ³n responde \"Â¿quÃ© puedes hacer?\". La mayorÃ­a de bugs de seguridad viven en las costuras entre ambas â€” sÃ© explÃ­cito y apÃ³yate en librerÃ­as probadas en lugar de inventar criptografÃ­a."
+        "content": "La autenticación responde \"¿quién eres?\"; la autorización responde \"¿qué puedes hacer?\". La mayoría de bugs de seguridad viven en las costuras entre ambas — sé explícito y apóyate en librerías probadas en lugar de inventar criptografía."
       },
       {
         "type": "list",
-        "title": "ContraseÃ±as â€” un solo algoritmo",
+        "title": "Contraseñas — un solo algoritmo",
         "items": [
-          "Hashea con `argon2id` (preferido) o `bcrypt` â€” nunca SHA/MD5 directo.",
+          "Hashea con `argon2id` (preferido) o `bcrypt` — nunca SHA/MD5 directo.",
           "Guarda el hash, nunca la contraseña. Tírala después de hashear.",
           "Usa una librería que gestione sal, factor de trabajo y comparación timing-safe.",
           "Longitud sobre complejidad: una passphrase de 16+ caracteres gana a `P@ssw0rd!`.",
@@ -718,8 +718,8 @@
         "type": "list",
         "title": "Sesiones vs tokens",
         "items": [
-          "Sesiones de servidor â€” ID opaco en cookie; revocas en el servidor cuando quieras; gran default.",
-          "JWT â€” token autocontenido; lo verificas con la clave de firma; no se revoca hasta expirar.",
+          "Sesiones de servidor — ID opaco en cookie; revocas en el servidor cuando quieras; gran default.",
+          "JWT — token autocontenido; lo verificas con la clave de firma; no se revoca hasta expirar.",
           "Cookies: `HttpOnly`, `Secure`, `SameSite=Lax` (o `Strict` para mismo origen).",
           "Los refresh tokens van en cookie aparte o almacenamiento de mayor vida.",
           "Nunca guardes tokens en `localStorage` si la app tiene superficie XSS (siempre la tiene)."
@@ -735,7 +735,7 @@
         "title": "OAuth 2.0 / OpenID Connect",
         "items": [
           "Usa Authorization Code con PKCE para SPAs y móviles.",
-          "No implementes el flujo a mano para una app â€” usa Auth0, Clerk, NextAuth o Keycloak.",
+          "No implementes el flujo a mano para una app — usa Auth0, Clerk, NextAuth o Keycloak.",
           "Verifica siempre la firma del `id_token` y los claims `aud`/`iss`.",
           "Mapea la identidad del tercero a tu propio usuario; no confíes ciegamente en emails de upstream."
         ]
@@ -744,8 +744,8 @@
         "type": "list",
         "title": "Modelo de autorización",
         "items": [
-          "RBAC â€” roles que mapean a permisos; simple, vale para casi todo.",
-          "ABAC â€” reglas sobre atributos; flexible, mÃ¡s difÃ­cil de auditar.",
+          "RBAC — roles que mapean a permisos; simple, vale para casi todo.",
+          "ABAC — reglas sobre atributos; flexible, más difícil de auditar.",
           "Comprueba permisos en el backend siempre, aunque la UI esconda el botón.",
           "Centraliza: una sola función `can(user, action, resource)` usada por cada endpoint.",
           "Audita acciones sensibles: quién hizo qué, cuándo, desde dónde."
@@ -753,14 +753,14 @@
       },
       {
         "type": "text",
-        "content": "MFA (TOTP, WebAuthn) ya no es opcional en cuentas con valor real. Bloquea cuentas tras fallos repetidos con backoff exponencial. Notifica al usuario en logins desde dispositivos nuevos. El mejor cÃ³digo de auth es el que no escribiste â€” usa un proveedor cuando puedas."
+        "content": "MFA (TOTP, WebAuthn) ya no es opcional en cuentas con valor real. Bloquea cuentas tras fallos repetidos con backoff exponencial. Notifica al usuario en logins desde dispositivos nuevos. El mejor código de auth es el que no escribiste — usa un proveedor cuando puedas."
       }
     ]
   },
   {
     "id": "testing",
     "title": "Testing",
-    "icon": "âœ“",
+    "icon": "✓",
     "summary": "Unitarios, integración, end-to-end y la mentalidad detrás de un buen suite de tests.",
     "blocks": [
       {
@@ -771,17 +771,17 @@
         "type": "list",
         "title": "La pirámide de tests (sigue siendo útil)",
         "items": [
-          "Unitarios â€” rÃ¡pidos, aislados, muchos. Funciones puras y clases pequeÃ±as.",
-          "IntegraciÃ³n â€” varias unidades juntas con BD real o API mockeada.",
-          "End-to-end (E2E) â€” la app completa en un navegador; pocos, lentos, valiosos.",
-          "Contrato â€” verifica APIs contra esquemas (Pact, tests de OpenAPI).",
-          "Propiedades â€” genera entradas para encontrar casos lÃ­mite (fast-check)."
+          "Unitarios — rápidos, aislados, muchos. Funciones puras y clases pequeñas.",
+          "Integración — varias unidades juntas con BD real o API mockeada.",
+          "End-to-end (E2E) — la app completa en un navegador; pocos, lentos, valiosos.",
+          "Contrato — verifica APIs contra esquemas (Pact, tests de OpenAPI).",
+          "Propiedades — genera entradas para encontrar casos límite (fast-check)."
         ]
       },
       {
         "type": "code",
         "lang": "ts",
-        "code": "// Vitest â€” test unitario\nimport { describe, it, expect } from \"vitest\";\nimport { slugify } from \"./slugify\";\n\ndescribe(\"slugify\", () => {\n  it(\"pasa a minÃºsculas y reemplaza espacios\", () => {\n    expect(slugify(\"Hello World\")).toBe(\"hello-world\");\n  });\n\n  it(\"maneja unicode y recorta guiones\", () => {\n    expect(slugify(\"  CafÃ© â€” dÃ©jÃ  vu  \")).toBe(\"cafe-deja-vu\");\n  });\n});"
+        "code": "// Vitest — test unitario\nimport { describe, it, expect } from \"vitest\";\nimport { slugify } from \"./slugify\";\n\ndescribe(\"slugify\", () => {\n  it(\"pasa a minúsculas y reemplaza espacios\", () => {\n    expect(slugify(\"Hello World\")).toBe(\"hello-world\");\n  });\n\n  it(\"maneja unicode y recorta guiones\", () => {\n    expect(slugify(\"  Café — déjà vu  \")).toBe(\"cafe-deja-vu\");\n  });\n});"
       },
       {
         "type": "list",
@@ -795,32 +795,32 @@
       },
       {
         "type": "list",
-        "title": "Mocks, stubs, fakes â€” usa el mÃ¡s ligero",
+        "title": "Mocks, stubs, fakes — usa el más ligero",
         "items": [
           "Prefiere dependencias reales si son rápidas (SQLite en memoria, reloj falso).",
-          "Mockea en el borde (HTTP, sistema de archivos) â€” no helpers internos.",
-          "MSW (Mock Service Worker) â€” intercepta HTTP en Node y navegadores.",
+          "Mockea en el borde (HTTP, sistema de archivos) — no helpers internos.",
+          "MSW (Mock Service Worker) — intercepta HTTP en Node y navegadores.",
           "Si necesitas mockear cinco cosas para probar una, el código pide un refactor."
         ]
       },
       {
         "type": "code",
         "lang": "ts",
-        "code": "// Playwright â€” end-to-end\nimport { test, expect } from \"@playwright/test\";\n\ntest(\"el usuario puede iniciar sesiÃ³n\", async ({ page }) => {\n  await page.goto(\"/login\");\n  await page.getByLabel(\"Email\").fill(\"user@example.com\");\n  await page.getByLabel(\"Password\").fill(\"correct-horse-battery\");\n  await page.getByRole(\"button\", { name: \"Sign in\" }).click();\n  await expect(page.getByRole(\"heading\", { name: \"Dashboard\" })).toBeVisible();\n});"
+        "code": "// Playwright — end-to-end\nimport { test, expect } from \"@playwright/test\";\n\ntest(\"el usuario puede iniciar sesión\", async ({ page }) => {\n  await page.goto(\"/login\");\n  await page.getByLabel(\"Email\").fill(\"user@example.com\");\n  await page.getByLabel(\"Password\").fill(\"correct-horse-battery\");\n  await page.getByRole(\"button\", { name: \"Sign in\" }).click();\n  await expect(page.getByRole(\"heading\", { name: \"Dashboard\" })).toBeVisible();\n});"
       },
       {
         "type": "list",
         "title": "TDD sin religión",
         "items": [
-          "Rojo â†’ Verde â†’ Refactor: escribe un test que falla, hazlo pasar, limpia.",
-          "Ãšsalo cuando el diseÃ±o no estÃ¡ claro; te obliga a definir quÃ© quieres.",
-          "SÃ¡ltatelo en spikes y cÃ³digo exploratorio â€” vas a tirarlo igual.",
+          "Rojo → Verde → Refactor: escribe un test que falla, hazlo pasar, limpia.",
+          "Úsalo cuando el diseño no está claro; te obliga a definir qué quieres.",
+          "Sáltatelo en spikes y código exploratorio — vas a tirarlo igual.",
           "La cobertura es un olor, no una meta. 80% de tests bien nombrados gana a 100% de tests inútiles."
         ]
       },
       {
         "type": "text",
-        "content": "Corre tests unitarios al guardar (`--watch`), de integraciÃ³n en cada PR, E2E en `main` y antes de releases. Los tests flaky envenenan el suite â€” arrÃ©glalos o bÃ³rralos; silenciar alertas entrena al equipo a ignorar fallos reales."
+        "content": "Corre tests unitarios al guardar (`--watch`), de integración en cada PR, E2E en `main` y antes de releases. Los tests flaky envenenan el suite — arréglalos o bórralos; silenciar alertas entrena al equipo a ignorar fallos reales."
       }
     ]
   },
@@ -828,8 +828,8 @@
     "id": "testing-tools",
     "parentId": "testing",
     "title": "Herramientas de testing",
-    "icon": "âš’",
-    "summary": "Vitest, Jest, Playwright, Cypress, Testing Library â€” cuÃ¡ndo usar cada una.",
+    "icon": "⚒",
+    "summary": "Vitest, Jest, Playwright, Cypress, Testing Library — cuándo usar cada una.",
     "blocks": [
       {
         "type": "text",
@@ -839,10 +839,10 @@
         "type": "list",
         "title": "Runners de unitarios e integración",
         "items": [
-          "Vitest â€” nativo de Vite, API casi compatible con Jest, feedback instantÃ¡neo en watch.",
-          "Jest â€” maduro, ecosistema enorme, arranca lento; los defaults aÃºn funcionan en todos lados.",
-          "`node --test` nativo â€” cero dependencias, va bien en librerÃ­as pequeÃ±as.",
-          "`bun test` â€” rÃ¡pido, compatible con expectativas de Jest."
+          "Vitest — nativo de Vite, API casi compatible con Jest, feedback instantáneo en watch.",
+          "Jest — maduro, ecosistema enorme, arranca lento; los defaults aún funcionan en todos lados.",
+          "`node --test` nativo — cero dependencias, va bien en librerías pequeñas.",
+          "`bun test` — rápido, compatible con expectativas de Jest."
         ]
       },
       {
@@ -854,8 +854,8 @@
         "type": "list",
         "title": "Tests de componentes / UI",
         "items": [
-          "Testing Library (React/Vue/Svelte) â€” consulta por rol y etiqueta, no por clase.",
-          "`screen.getByRole(\"button\", { name: /save/i })` â€” queries accesibles primero.",
+          "Testing Library (React/Vue/Svelte) — consulta por rol y etiqueta, no por clase.",
+          "`screen.getByRole(\"button\", { name: /save/i })` — queries accesibles primero.",
           "Evita `data-testid` salvo que no haya alternativa semántica.",
           "`user-event` simula interacciones reales (teclear, focus, pegar).",
           "Los snapshots son último recurso; fáciles de escribir, dolorosos de leer."
@@ -865,8 +865,8 @@
         "type": "list",
         "title": "End-to-end (navegador)",
         "items": [
-          "Playwright â€” multinavegador (Chromium/Firefox/WebKit), paralelo por defecto, buenos traces.",
-          "Cypress â€” un solo navegador, DX amigable, mejor para equipos de QA.",
+          "Playwright — multinavegador (Chromium/Firefox/WebKit), paralelo por defecto, buenos traces.",
+          "Cypress — un solo navegador, DX amigable, mejor para equipos de QA.",
           "Mantén un set pequeño; E2E es donde vive el flakiness.",
           "Graba video y `trace.zip` solo en fallos para no ralentizar CI."
         ]
@@ -875,21 +875,21 @@
         "type": "list",
         "title": "Mocking de red",
         "items": [
-          "MSW â€” intercepta `fetch`/XHR en tests y navegador; reutiliza handlers en todas partes.",
-          "`nock` â€” solo Node.",
+          "MSW — intercepta `fetch`/XHR en tests y navegador; reutiliza handlers en todas partes.",
+          "`nock` — solo Node.",
           "En E2E prefiere red real contra un staging o BD sembrada para tests."
         ]
       },
       {
         "type": "text",
-        "content": "Fija un runner por repo. Mezclar Jest y Vitest cuesta mÃ¡s tiempo del que ahorra. Haz que `npm test` funcione en local sin preparaciÃ³n previa â€” esa es la cultura de testing que quieres."
+        "content": "Fija un runner por repo. Mezclar Jest y Vitest cuesta más tiempo del que ahorra. Haz que `npm test` funcione en local sin preparación previa — esa es la cultura de testing que quieres."
       }
     ]
   },
   {
     "id": "security",
     "title": "Seguridad",
-    "icon": "â›¨",
+    "icon": "⛨",
     "summary": "OWASP top 10 resumido, CORS/CSP, manejo de secretos y principio de la menor sorpresa.",
     "blocks": [
       {
@@ -898,39 +898,39 @@
       },
       {
         "type": "list",
-        "title": "OWASP Top 10 â€” versiÃ³n corta",
+        "title": "OWASP Top 10 — versión corta",
         "items": [
-          "Control de acceso roto â€” comprueba permisos en cada endpoint, en el servidor.",
-          "Fallos criptogrÃ¡ficos â€” nunca inventes; usa TLS en todas partes, hashea con argon2/bcrypt.",
-          "InyecciÃ³n â€” consultas parametrizadas; nunca `\"SELECT ... \" + entradaUsuario`.",
-          "DiseÃ±o inseguro â€” modela amenazas en features nuevas antes de codear.",
-          "Mala configuraciÃ³n â€” desactiva rutas de debug en prod; restringe CORS.",
-          "Componentes vulnerables â€” `npm audit`, Dependabot/Snyk, actualiza periÃ³dicamente.",
-          "Fallos de autenticaciÃ³n â€” ver secciÃ³n Auth; rate-limit en login; bloquea tras N intentos.",
-          "Integridad de datos â€” verifica uploads, cookies firmadas, firmas de paquetes.",
-          "Fallos de logging â€” registra eventos de auth; nunca loguees secretos, tokens o PII completa.",
-          "SSRF â€” nunca dejes que el usuario diga al servidor quÃ© URL fetchear sin una allow-list."
+          "Control de acceso roto — comprueba permisos en cada endpoint, en el servidor.",
+          "Fallos criptográficos — nunca inventes; usa TLS en todas partes, hashea con argon2/bcrypt.",
+          "Inyección — consultas parametrizadas; nunca `\"SELECT ... \" + entradaUsuario`.",
+          "Diseño inseguro — modela amenazas en features nuevas antes de codear.",
+          "Mala configuración — desactiva rutas de debug en prod; restringe CORS.",
+          "Componentes vulnerables — `npm audit`, Dependabot/Snyk, actualiza periódicamente.",
+          "Fallos de autenticación — ver sección Auth; rate-limit en login; bloquea tras N intentos.",
+          "Integridad de datos — verifica uploads, cookies firmadas, firmas de paquetes.",
+          "Fallos de logging — registra eventos de auth; nunca loguees secretos, tokens o PII completa.",
+          "SSRF — nunca dejes que el usuario diga al servidor qué URL fetchear sin una allow-list."
         ]
       },
       {
         "type": "code",
         "lang": "ts",
-        "code": "// Consulta parametrizada â€” segura\nconst user = await db.query(\n  \"SELECT id, email FROM users WHERE email = $1\",\n  [email],\n);\n\n// NUNCA hagas esto (interpolaciÃ³n = SQL injection):\n// db.query(\"SELECT * FROM users WHERE email = '\" + email + \"'\");"
+        "code": "// Consulta parametrizada — segura\nconst user = await db.query(\n  \"SELECT id, email FROM users WHERE email = $1\",\n  [email],\n);\n\n// NUNCA hagas esto (interpolación = SQL injection):\n// db.query(\"SELECT * FROM users WHERE email = '\" + email + \"'\");"
       },
       {
         "type": "list",
         "title": "Cabeceras que pagan la renta",
         "items": [
-          "`Content-Security-Policy` â€” whitelist de scripts/estilos; bloquea casi todo XSS.",
-          "`Strict-Transport-Security` â€” fuerza HTTPS por meses.",
-          "`X-Content-Type-Options: nosniff` â€” frena trucos de MIME sniffing.",
-          "`Referrer-Policy: strict-origin-when-cross-origin` â€” fuga menos en `Referer`.",
-          "`Permissions-Policy` â€” desactiva cÃ¡mara/mic/etc. cuando no se usan."
+          "`Content-Security-Policy` — whitelist de scripts/estilos; bloquea casi todo XSS.",
+          "`Strict-Transport-Security` — fuerza HTTPS por meses.",
+          "`X-Content-Type-Options: nosniff` — frena trucos de MIME sniffing.",
+          "`Referrer-Policy: strict-origin-when-cross-origin` — fuga menos en `Referer`.",
+          "`Permissions-Policy` — desactiva cámara/mic/etc. cuando no se usan."
         ]
       },
       {
         "type": "list",
-        "title": "CORS â€” quÃ© significa realmente",
+        "title": "CORS — qué significa realmente",
         "items": [
           "CORS protege al *navegador*, no a tu servidor.",
           "Las llamadas servidor a servidor ignoran CORS por completo.",
@@ -943,11 +943,11 @@
         "type": "list",
         "title": "Gestión de secretos",
         "items": [
-          "Nunca commitees secretos â€” `.env` en `.gitignore`, vault en producciÃ³n.",
+          "Nunca commitees secretos — `.env` en `.gitignore`, vault en producción.",
           "Rota claves cada trimestre; rota inmediatamente tras la salida de empleados.",
           "Limita alcance: una clave que lee no puede escribir; una clave de servicio A no llega a B.",
           "Usa `git-secrets` o `gitleaks` para escanear antes de hacer push.",
-          "Si un secreto se filtra, asume que estÃ¡ comprometido y rÃ³talo â€” `git rm` no basta."
+          "Si un secreto se filtra, asume que está comprometido y rótalo — `git rm` no basta."
         ]
       },
       {
@@ -959,22 +959,22 @@
   {
     "id": "linux",
     "title": "Linux y CLI",
-    "icon": "â–¤",
+    "icon": "▤",
     "summary": "Comandos de shell, permisos, procesos y los pipes que los conectan.",
     "blocks": [
       {
         "type": "text",
-        "content": "La mayorÃ­a de servidores y runners de CI son Linux. Incluso en macOS o WSL, los mismos comandos funcionan. El shell es un lenguaje de programaciÃ³n con archivos y procesos como primitivas; no necesitas memorizar todo â€” solo aprende a componer herramientas pequeÃ±as."
+        "content": "La mayoría de servidores y runners de CI son Linux. Incluso en macOS o WSL, los mismos comandos funcionan. El shell es un lenguaje de programación con archivos y procesos como primitivas; no necesitas memorizar todo — solo aprende a componer herramientas pequeñas."
       },
       {
         "type": "list",
         "title": "Sistema de archivos",
         "items": [
-          "`pwd` â€” directorio actual; `cd ruta` â€” cambia; `cd -` â€” anterior.",
-          "`ls -lah` â€” largo, todo (ocultos), tamaÃ±os legibles.",
+          "`pwd` — directorio actual; `cd ruta` — cambia; `cd -` — anterior.",
+          "`ls -lah` — largo, todo (ocultos), tamaños legibles.",
           "`cp src dst` / `mv src dst` / `rm ruta` (usa `-i` para confirmar).",
-          "`mkdir -p a/b/c` â€” crea anidados; `rmdir` solo borra directorios vacÃ­os.",
-          "`find . -name '*.log' -mtime +7 -delete` â€” archivos de mÃ¡s de 7 dÃ­as."
+          "`mkdir -p a/b/c` — crea anidados; `rmdir` solo borra directorios vacíos.",
+          "`find . -name '*.log' -mtime +7 -delete` — archivos de más de 7 días."
         ]
       },
       {
@@ -987,9 +987,9 @@
         "title": "Permisos",
         "items": [
           "`ls -l` muestra el modo: `-rwxr-xr--` = dueño / grupo / otros.",
-          "`chmod +x script.sh` â€” ejecutable; `chmod 644 file` â€” rw-r--r--.",
-          "`chown user:group ruta` â€” cambia propietario (suele requerir `sudo`).",
-          "`umask 022` â€” mÃ¡scara por defecto para archivos nuevos.",
+          "`chmod +x script.sh` — ejecutable; `chmod 644 file` — rw-r--r--.",
+          "`chown user:group ruta` — cambia propietario (suele requerir `sudo`).",
+          "`umask 022` — máscara por defecto para archivos nuevos.",
           "Trabaja con tu usuario cuando puedas; usa `sudo` solo si es necesario."
         ]
       },
@@ -997,21 +997,21 @@
         "type": "list",
         "title": "Procesos y jobs",
         "items": [
-          "`ps aux | grep node` â€” lista procesos que matchean node.",
-          "`top` / `htop` â€” visor interactivo.",
-          "`kill -9 PID` â€” fuerza el cierre (Ãºltimo recurso).",
+          "`ps aux | grep node` — lista procesos que matchean node.",
+          "`top` / `htop` — visor interactivo.",
+          "`kill -9 PID` — fuerza el cierre (último recurso).",
           "`Ctrl+Z` suspende un foreground; `bg` / `fg` para retomar.",
-          "`nohup cmd &` â€” sigue corriendo tras logout; redirige stdout/stderr."
+          "`nohup cmd &` — sigue corriendo tras logout; redirige stdout/stderr."
         ]
       },
       {
         "type": "list",
         "title": "Pipes, redirección y exit codes",
         "items": [
-          "`cmd > file` â€” escribe stdout (sobrescribe); `>>` aÃ±ade.",
-          "`cmd 2> err.log` â€” stderr; `cmd > all.log 2>&1` â€” todo en un archivo.",
-          "`a | b` â€” pasa stdout de `a` a stdin de `b`.",
-          "`$?` â€” exit code del Ãºltimo comando (0 = ok, â‰ 0 = error).",
+          "`cmd > file` — escribe stdout (sobrescribe); `>>` añade.",
+          "`cmd 2> err.log` — stderr; `cmd > all.log 2>&1` — todo en un archivo.",
+          "`a | b` — pasa stdout de `a` a stdin de `b`.",
+          "`$?` — exit code del último comando (0 = ok, ≠0 = error).",
           "`&&` corre si éxito; `||` corre si falla."
         ]
       },
@@ -1022,37 +1022,37 @@
       },
       {
         "type": "list",
-        "title": "Red â€” referencia rÃ¡pida",
+        "title": "Red — referencia rápida",
         "items": [
-          "`ping host` â€” alcanzabilidad ICMP (a veces bloqueado).",
-          "`curl -i URL` â€” muestra headers; `-X POST -d 'body'` para POST.",
-          "`ss -tlnp` â€” sockets TCP escuchando y sus PIDs (`netstat` moderno).",
-          "`dig +short example.com` â€” consulta DNS.",
-          "`traceroute host` (o `mtr host`) â€” ruta y latencia por salto."
+          "`ping host` — alcanzabilidad ICMP (a veces bloqueado).",
+          "`curl -i URL` — muestra headers; `-X POST -d 'body'` para POST.",
+          "`ss -tlnp` — sockets TCP escuchando y sus PIDs (`netstat` moderno).",
+          "`dig +short example.com` — consulta DNS.",
+          "`traceroute host` (o `mtr host`) — ruta y latencia por salto."
         ]
       },
       {
         "type": "text",
-        "content": "Escribe scripts cortos con `set -euo pipefail` arriba para detectar errores. Para mÃ¡s de ~50 lÃ­neas, pÃ¡sate a Python o Node â€” el quoting de bash acabarÃ¡ traicionÃ¡ndote."
+        "content": "Escribe scripts cortos con `set -euo pipefail` arriba para detectar errores. Para más de ~50 líneas, pásate a Python o Node — el quoting de bash acabará traicionándote."
       }
     ]
   },
   {
     "id": "mobile",
     "title": "Móvil y responsive",
-    "icon": "â–­",
+    "icon": "▭",
     "summary": "Viewport, áreas táctiles, layouts responsive y PWAs que sí se sienten móviles.",
     "blocks": [
       {
         "type": "text",
-        "content": "La mayorÃ­a de tus usuarios abre el sitio en un mÃ³vil. DiseÃ±ar mobile-first no es moda â€” es la restricciÃ³n que mantiene honestas las interfaces. Si funciona en 360px con un pulgar, suele funcionar en todos lados."
+        "content": "La mayoría de tus usuarios abre el sitio en un móvil. Diseñar mobile-first no es moda — es la restricción que mantiene honestas las interfaces. Si funciona en 360px con un pulgar, suele funcionar en todos lados."
       },
       {
         "type": "list",
         "title": "Viewport y unidades",
         "items": [
-          "`<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">` â€” innegociable.",
-          "Prefiere `rem` para tipografÃ­a y espacios â€” escala con la fuente del usuario.",
+          "`<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">` — innegociable.",
+          "Prefiere `rem` para tipografía y espacios — escala con la fuente del usuario.",
           "`vh` es buggy en móvil (barra de URL); usa `dvh` / `svh` / `lvh`.",
           "`clamp(min, ideal, max)` da tipografía fluida sin breakpoints."
         ]
@@ -1066,7 +1066,7 @@
         "type": "list",
         "title": "Áreas táctiles y gestos",
         "items": [
-          "Ãrea mÃ­nima â‰ˆ 44Ã—44px (Apple HIG) / 48Ã—48dp (Android).",
+          "Área mínima ≈ 44×44px (Apple HIG) / 48×48dp (Android).",
           "Más espacio entre elementos tappables; los pulgares no son lápices.",
           "`touch-action: pan-y` en widgets con swipe horizontal evita que el navegador se lo coma.",
           "Evita affordances solo en `:hover`; los usuarios móviles no los ven.",
@@ -1077,7 +1077,7 @@
         "type": "list",
         "title": "Imágenes responsive",
         "items": [
-          "`srcset` + `sizes` â€” el navegador elige la resoluciÃ³n correcta.",
+          "`srcset` + `sizes` — el navegador elige la resolución correcta.",
           "Formatos modernos: `<picture>` con `image/avif`, luego `image/webp`, luego JPEG.",
           "Lazy load bajo el fold con `loading=\"lazy\"`.",
           "Pon siempre `width`/`height` (o `aspect-ratio`) para evitar layout shifts (CLS)."
@@ -1090,11 +1090,11 @@
       },
       {
         "type": "list",
-        "title": "PWAs â€” lo bÃ¡sico",
+        "title": "PWAs — lo básico",
         "items": [
-          "`manifest.webmanifest` â€” nombre, iconos, color del tema, display: standalone.",
-          "Service Worker â€” cachÃ© offline, background sync; Workbox automatiza lo aburrido.",
-          "Prompt de instalaciÃ³n â€” escucha `beforeinstallprompt` y muestra tu propio botÃ³n.",
+          "`manifest.webmanifest` — nombre, iconos, color del tema, display: standalone.",
+          "Service Worker — caché offline, background sync; Workbox automatiza lo aburrido.",
+          "Prompt de instalación — escucha `beforeinstallprompt` y muestra tu propio botón.",
           "Prueba en un móvil real, no solo en el modo de dispositivo de DevTools.",
           "La auditoría PWA de Lighthouse atrapa la mayoría de piezas faltantes."
         ]

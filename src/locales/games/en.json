@@ -47,13 +47,13 @@
           "correct": 1
         }
       ],
-      "sequenceHint": "Ship a tiny fix: stage everything â†’ commit â†’ push to remote.",
+      "sequenceHint": "Ship a tiny fix: stage everything → commit → push to remote.",
       "sequenceSteps": [
         "git add .",
         "git commit -m \"fix: typos\"",
         "git push"
       ],
-      "canvasBranchLabel": "main â†’",
+      "canvasBranchLabel": "main →",
       "branchQ": {
         "q": "HEAD sits on commit C (see glow). You want branch `bugfix` here **without** switching to it yet.",
         "opts": [
@@ -118,7 +118,7 @@
         "git merge origin/main",
         "git push"
       ],
-      "canvasBranchLabel": "main â†’",
+      "canvasBranchLabel": "main →",
       "branchQ": {
         "q": "Same graph: you are on C with HEAD. Create **and switch** into `hotfix` immediately.",
         "opts": [
@@ -137,7 +137,7 @@
       "quizRounds": 3,
       "quiz": [
         {
-          "q": "On **shared** `main`, undo a bad commit that is already on the server â€” safely.",
+          "q": "On **shared** `main`, undo a bad commit that is already on the server — safely.",
           "opts": [
             "git reset --hard HEAD~1 && git push --force",
             "git revert <commit>",
@@ -177,14 +177,14 @@
           "correct": 1
         }
       ],
-      "sequenceHint": "Context switch: park WIP â†’ update main â†’ restore WIP.",
+      "sequenceHint": "Context switch: park WIP → update main → restore WIP.",
       "sequenceSteps": [
         "git stash push -m wip",
         "git switch main",
         "git pull",
         "git stash pop"
       ],
-      "canvasBranchLabel": "main â†’",
+      "canvasBranchLabel": "main →",
       "branchQ": {
         "q": "You need the tip of `topic` **into** current branch as **one** new commit (pick one command family).",
         "opts": [
@@ -199,7 +199,7 @@
     {
       "id": 4,
       "badge": "LVL 4 · TIME-LORD",
-      "quizTitle": "Command decode IV â€” rebase & cherry-pick",
+      "quizTitle": "Command decode IV — rebase & cherry-pick",
       "quizRounds": 4,
       "quiz": [
         {
@@ -249,9 +249,9 @@
         "git cherry-pick abc1234",
         "git push origin main"
       ],
-      "canvasBranchLabel": "main Â· rebased â†’",
+      "canvasBranchLabel": "main · rebased →",
       "branchQ": {
-        "q": "After `git rebase main`, the topic branch's commits look like new ones â€” same content, **different** what?",
+        "q": "After `git rebase main`, the topic branch's commits look like new ones — same content, **different** what?",
         "opts": [
           "Author dates",
           "SHA hashes (new commit ids)",
