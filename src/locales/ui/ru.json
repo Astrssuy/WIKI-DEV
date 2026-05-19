@@ -1,0 +1,21 @@
+{
+  "badge": "v1 · ретро-битная документация",
+  "navAria": "Навигация",
+  "searchLabel": "Меню поиска",
+  "searchPlaceholder": "// фильтруем разделы…",
+  "navSectionsTitle": "РАЗДЕЛЫ",
+  "heroTag": ":: ИНТЕРАКТИВНЫЙ пользовательский интерфейс ТЕРМИНАЛА",
+  "emptyContent": "Нет контента для этого поиска.",
+  "emptyNav": "Ни один раздел не соответствует.",
+  "emptySectionFilter": "Ни один блок не соответствует этому фильтру раздела.",
+  "statusConnected": "Статус:",
+  "statusConnectedVal": "подключен · только для чтения",
+  "statusSection": "Раздел:",
+  "statusTip": "Кончик:",
+  "statusTipVal": "меню: `/` · раздел: `f` · язык в верхней панели",
+  "langLabel": "Язык",
+  "sectionSearchLabel": "Искать в этом разделе",
+  "sectionSearchPlaceholder": "// фильтруем текст и блоки кода…",
+  "typewriterLoading": "> Загрузка модулей документации…",
+  "typewriterReady": "> Готов. Выберите раздел или выполните поиск."
+}

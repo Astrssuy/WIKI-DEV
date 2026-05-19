@@ -1,0 +1,249 @@
+[
+  {
+    "id": "inicio",
+    "title": "Дом",
+    "icon": "◆",
+    "summary": "Приветствие и сочетания клавиш.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Вики для разработчиков с модульной документацией, быстрым поиском и интерфейсом CRT-терминала. Используйте клавиатуру, как в старые добрые времена. Переключение языка в верхней панели."
+      },
+      {
+        "type": "list",
+        "title": "Ярлыки",
+        "items": [
+          "`/` — фокус поиска в меню боковой панели",
+          "`f` — фильтр блоков фокуса в разрезе",
+          "`Esc` — очистить активный поиск (меню или раздел)",
+          "`1-9` — переход к разделу (фильтрованный порядок меню)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "frontend",
+    "title": "Внешний интерфейс",
+    "icon": "▣",
+    "summary": "Пользовательский интерфейс, производительность и инструменты браузера.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Сохраняйте надежную мысленную модель DOM, стоимости макета/покраски и слоев композиции. Прежде чем оптимизировать, измерьте."
+      },
+      {
+        "type": "code",
+        "lang": "css",
+        "code": "/* Responsive container with clamp */\n:root { --pad: clamp(0.75rem, 3vw, 2rem); }\n.wrap { padding: var(--pad); max-width: 72ch; }"
+      },
+      {
+        "type": "text",
+        "content": "Для анимации предпочитайте «трансформацию» и «непрозрачность». Избегайте анимации «ширины», «высоты», «сверху», «слева» в длинных списках."
+      }
+    ]
+  },
+  {
+    "id": "backend",
+    "title": "Бэкэнд",
+    "icon": "⌘",
+    "summary": "API, данные и надежность.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Проектируйте стабильные контракты API: управление версиями, семантические ошибки и идемпотентность для критических операций."
+      },
+      {
+        "type": "code",
+        "lang": "http",
+        "code": "HTTP/1.1 409 Conflict\nContent-Type: application/problem+json\n\n{\"type\":\"/errors/slug-taken\",\"title\":\"Slug already taken\"}"
+      }
+    ]
+  },
+  {
+    "id": "devops",
+    "title": "DevOps",
+    "icon": "⚙",
+    "summary": "CI/CD, контейнеры и наблюдаемость.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Минимальный полезный конвейер: lint + тесты + воспроизводимая сборка. Отправьте то, что вы протестировали; избегать ручной настройки производства."
+      },
+      {
+        "type": "list",
+        "title": "Развернуть контрольный список",
+        "items": [
+          "Отдельные проверки работоспособности и готовности",
+          "Структурированные журналы (JSON) + идентификаторы трассировки",
+          "Откат одной командой"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "git",
+    "title": "Гит",
+    "icon": "⎇",
+    "summary": "Команды, ежедневные потоки, удаленное управление и безопасная отмена изменений.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Git хранит снимки (коммиты) и позволяет вам ветвляться, сотрудничать через удаленные устройства и перемещаться по истории. Три области: рабочее дерево (файлы), промежуточный этап (индекс) и коммиты (локальный репозиторий)."
+      },
+      {
+        "type": "list",
+        "title": "Типичная настройка (один раз на машину)",
+        "items": [
+          "`git config --global user.name \"Ваше имя\"`",
+          "`git config --global user.email \"you@email\"`",
+          "`git config --global init.defaultBranch main` — ветка по умолчанию для новых репозиториев",
+          "`git config --global core.editor \"code --wait\"` — код VS для сообщений о фиксации",
+          "`git config --global alias.st status -sb` — ярлык для `git st`"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# New repo or clone\ngit init\ngit clone https://github.com/user/project.git\ncd project"
+      },
+      {
+        "type": "list",
+        "title": "Ежедневный рабочий процесс",
+        "items": [
+          "`git status` (сокращенно `-sb`) — что изменилось",
+          "`git diff` — непроиндексированные изменения; `git diff --staged` — поэтапные изменения",
+          "`git add file` или `git add -p` — интерактивная обработка (проверка фрагментов)",
+          "`git commit -m \"message\"` — зафиксировать поэтапные изменения",
+          "`git log --oneline --graph --decorate -20` — компактный график"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Move/rename and delete (tracked)\ngit mv old/path.md new/path.md\ngit rm obsolete-file.txt"
+      },
+      {
+        "type": "list",
+        "title": "Филиалы",
+        "items": [
+          "`git Branch` — локальный список; `git Branch -a` включает пульты",
+          "`git switch ветка-имя` — переключатель (современный); старая версия: `git checkout имя ветки`",
+          "`git switch -c Feature/login` — создать и войти в ветку",
+          "`git mergeother-branch` — интегрировать (может потребоваться разрешение конфликтов)",
+          "`git Branch -d Feature/login` — удалить объединенную локальную ветку"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Typical feature flow from main\ngit switch main\ngit pull origin main\ngit switch -c feat/my-change\n# ... edit, commit ...\ngit push -u origin feat/my-change"
+      },
+      {
+        "type": "list",
+        "title": "Удаленный (исходный, push, pull)",
+        "items": [
+          "`git Remote -v` — получить/отправить URL-адреса",
+          "`git fetch origin` — загрузка коммитов без объединения ветки",
+          "`git pull` — `fetch` + слияние/перебазирование для каждой конфигурации",
+          "`git push origin my-branch` — первый раз: `git push -u origin my-branch`",
+          "`git push --delete origin old-branch` — удалить удаленную ветку"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "Если `git pull` создает шумные коммиты слияния, команды часто предпочитают `git pull --rebase` для воспроизведения вашей работы поверх удаленного устройства (линейная история). Только если вы понимаете, что перебазирование и правила команды позволяют это."
+      },
+      {
+        "type": "list",
+        "title": "Отменить и очистить (оставаться под контролем)",
+        "items": [
+          "`git Restoration File` — отменить неустановленные локальные изменения в этом файле.",
+          "`git restre --staged file` — отключить, сохранить изменения на диске",
+          "`git checkout -- file` — устаревшее восстановление рабочего дерева (перезапись)",
+          "`git reset --soft HEAD~1` — удалить последние изменения, сохраняя промежуточные изменения",
+          "`git reset --mixed HEAD~1` (по умолчанию) — отменить фиксацию; изменения не запланированы",
+          "`git reset --hard HEAD~1` — опасность: сброс коммита и изменение рабочего дерева"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "`git revert <commit>` добавляет новый коммит, который отменяет другой: безопасно для опубликованной истории. `git reset --hard` перезаписывает локальную историю — избегайте использования общих веток без согласия."
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Shelve WIP without committing\ngit stash push -m \"wip: login form\"\ngit stash list\ngit stash pop        # apply and drop latest\ngit stash apply stash@{0}  # apply without dropping"
+      },
+      {
+        "type": "list",
+        "title": "Проверка истории",
+        "items": [
+          "`git show <commit>` — патч и метаданные",
+          "`git обвиняемый файл` — кто изменил каждую строку",
+          "`git log -S\"text\"` — фиксирует добавление/удаление строки",
+          "`git bisect start` — бинарный поиск критического коммита"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Tags (releases)\ngit tag -a v1.2.0 -m \"Release 1.2.0\"\ngit push origin v1.2.0\ngit push origin --tags"
+      },
+      {
+        "type": "list",
+        "title": "Теги, .gitignore, очистка",
+        "items": [
+          "`.gitignore` — игнорировать `node_modules/`, `.env`, сборки и т. д.",
+          "`git clean -fd` — удалить неотслеживаемые файлы (деструктивно; пробный запуск с помощью `git clean -nd`)",
+          "`git rm -r --cachedfolder` — прекратить отслеживание, но сохранить файлы на диске"
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Объединение/перебазирование конфликтов",
+        "items": [
+          "Git вставляет `<<<<<<<`, `=======`, `>>>>>>>>` — редактировать вручную, удалять маркеры",
+          "`git status` перечисляет конфликтующие пути",
+          "После исправления: `git add file`, затем `git merge --continue` или `git rebase --continue`",
+          "Прервать слияние: `git merge --abort`; прервать перебазировку: `git rebase --abort`"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Bring one commit from another branch\ngit cherry-pick abc1234\n\n# Rewrite local history (NOT on shared branches without agreement)\ngit rebase -i HEAD~4"
+      },
+      {
+        "type": "list",
+        "title": "Соблюдайте гигиену",
+        "items": [
+          "Маленькие атомарные коммиты: по одному логическому изменению каждый",
+          "Императивные сообщения: `Добавить логин`, `Исправить нулевой указатель`",
+          "Обычные коммиты (`feat:`, `fix:`, `docs:`…) помогают в журналах изменений.",
+          "Перед отправкой: `git pull --rebase origin main` (или объединить) с изменениями команды"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "Хуки (`.git/hooks` или Husky) запускают lint/tests перед фиксацией/отправкой. Субмодули («git submodule») и рабочие деревья («git worktree add») помогают с монорепозиториями или параллельными ветвями — используйте их, когда базовых знаний недостаточно."
+      }
+    ]
+  },
+  {
+    "id": "herramientas",
+    "title": "Оснастка",
+    "icon": "⧉",
+    "summary": "Редактор, линтеры, форматирование (в Git есть свой раздел).",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Автоматизируйте форматирование и стиль (предварительная фиксация или CI), чтобы обзоры фокусировались на идеях, а не на пробелах. Для команд и потоков Git откройте раздел Git."
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Team formatting (e.g. Prettier + ESLint)\nnpm run lint:fix\n\n# Short branch + clear commit\ngit switch -c feat/wiki-retro\ngit commit -m \"docs: tooling section\""
+      }
+    ]
+  }
+]

@@ -1,0 +1,249 @@
+[
+  {
+    "id": "inicio",
+    "title": "بيت",
+    "icon": "◆",
+    "summary": "الترحيب واختصارات لوحة المفاتيح.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "موقع wiki للتطوير يحتوي على مستندات معيارية وبحث سريع وأجواء محطة CRT. استخدم لوحة المفاتيح مثل الأيام الخوالي. تبديل اللغة في الشريط العلوي."
+      },
+      {
+        "type": "list",
+        "title": "الاختصارات",
+        "items": [
+          "`/` - التركيز على البحث في قائمة الشريط الجانبي",
+          "`f` - مرشح كتلة التركيز في القسم",
+          "`Esc` - مسح البحث النشط (القائمة أو القسم)",
+          "`1-9` - انتقل إلى القسم (ترتيب القائمة الذي تمت تصفيته)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "frontend",
+    "title": "الواجهة الأمامية",
+    "icon": "▣",
+    "summary": "واجهة المستخدم والأداء وأدوات المتصفح.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "احتفظ بنموذج عقلي قوي لـ DOM، وتكلفة التخطيط/الطلاء، وطبقات التركيب. قم بالقياس قبل التحسين."
+      },
+      {
+        "type": "code",
+        "lang": "css",
+        "code": "/* Responsive container with clamp */\n:root { --pad: clamp(0.75rem, 3vw, 2rem); }\n.wrap { padding: var(--pad); max-width: 72ch; }"
+      },
+      {
+        "type": "text",
+        "content": "بالنسبة للرسوم المتحركة، تفضل \"التحويل\" و\"التعتيم\". تجنب تحريك \"العرض\" و\"الارتفاع\" و\"الأعلى\" و\"اليسار\" في القوائم الطويلة."
+      }
+    ]
+  },
+  {
+    "id": "backend",
+    "title": "الخلفية",
+    "icon": "⌘",
+    "summary": "واجهات برمجة التطبيقات والبيانات والموثوقية.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "تصميم عقود API مستقرة: الإصدار، والأخطاء الدلالية، وعدم القدرة على العمليات الحرجة."
+      },
+      {
+        "type": "code",
+        "lang": "http",
+        "code": "HTTP/1.1 409 Conflict\nContent-Type: application/problem+json\n\n{\"type\":\"/errors/slug-taken\",\"title\":\"Slug already taken\"}"
+      }
+    ]
+  },
+  {
+    "id": "devops",
+    "title": "ديف أوبس",
+    "icon": "⚙",
+    "summary": "CI/CD والحاويات وإمكانية المراقبة.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "الحد الأدنى من خطوط الأنابيب المفيدة: الوبر + الاختبارات + البناء القابل للتكرار. اشحن ما اختبرته؛ تجنب إنتاج ضبط اليد."
+      },
+      {
+        "type": "list",
+        "title": "نشر قائمة التحقق",
+        "items": [
+          "فحوصات منفصلة للصحة مقابل الاستعداد",
+          "السجلات المنظمة (JSON) + معرفات التتبع",
+          "التراجع بأمر واحد"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "git",
+    "title": "بوابة",
+    "icon": "⎇",
+    "summary": "الأوامر والتدفقات اليومية وأجهزة التحكم عن بعد والتراجع عن التغييرات بأمان.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "يقوم Git بتخزين اللقطات (الإلتزامات) ويتيح لك التفرع والتعاون عبر أجهزة التحكم عن بعد والتنقل عبر التاريخ. ثلاث مناطق: شجرة العمل (الملفات)، والتدريج (الفهرس)، والالتزامات (الريبو المحلي)."
+      },
+      {
+        "type": "list",
+        "title": "الإعداد النموذجي (مرة واحدة لكل جهاز)",
+        "items": [
+          "`git config --global user.name \"Your Name\"`",
+          "`git config --global user.email \"you@email\"`",
+          "`git config --global init.defaultBranch main` - الفرع الافتراضي لعمليات إعادة الشراء الجديدة",
+          "`git config --global core.editor \"code --wait\"` - رمز VS لرسائل الالتزام",
+          "``git config --global alias.st Status -sb`` - اختصار لـ `git st`"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# New repo or clone\ngit init\ngit clone https://github.com/user/project.git\ncd project"
+      },
+      {
+        "type": "list",
+        "title": "سير العمل اليومي",
+        "items": [
+          "``حالة git`` (`-sb` قصيرة) - ما الذي تغير",
+          "``git diff`` - تغييرات غير مرحلية؛ `git diff --staged` - التغييرات المرحلية",
+          "``git add file`` أو ``git add -p`` - قم بالعرض بشكل تفاعلي (مراجعة الكتل)",
+          "`git Commit -m \"message\"` - الالتزام بالتغييرات المرحلية",
+          "`git log --oneline --graph --decorate -20` - رسم بياني مضغوط"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Move/rename and delete (tracked)\ngit mv old/path.md new/path.md\ngit rm obsolete-file.txt"
+      },
+      {
+        "type": "list",
+        "title": "الفروع",
+        "items": [
+          "``فرع بوابة`` - القائمة المحلية؛ يتضمن git Branch -a أجهزة التحكم عن بعد",
+          "`اسم فرع التبديل git` - التبديل (حديث)؛ الأقدم: اسم فرع git checkout",
+          "``git Switch -c feature/login`` — إنشاء الفرع وإدخاله",
+          "``git mergeother-branch`` - التكامل (قد يتطلب حل التعارض)",
+          "``ميزة/تسجيل الدخول لفرع git -d`` - حذف الفرع المحلي المدمج"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Typical feature flow from main\ngit switch main\ngit pull origin main\ngit switch -c feat/my-change\n# ... edit, commit ...\ngit push -u origin feat/my-change"
+      },
+      {
+        "type": "list",
+        "title": "البعيد (الأصل، الدفع، السحب)",
+        "items": [
+          "``git Remote -v`` - جلب/دفع عناوين URL",
+          "``git fetch Origin`` - يتم تنفيذ التنزيل دون دمج فرعك",
+          "`git pull` - `fetch` + merge/rebase لكل تكوين",
+          "``git Push Origin my-branch`` - المرة الأولى: ``git Push -u Origin my-branch``",
+          "``git Push --delete Origin Old-branch`` - احذف الفرع البعيد"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "إذا أدى `git pull` إلى إنشاء عمليات دمج مزعجة، فغالبًا ما تفضل الفرق `git pull --rebase` لإعادة تشغيل عملك أعلى جهاز التحكم عن بعد (السجل الخطي). فقط إذا كنت تفهم قواعد rebase وقواعد الفريق التي تسمح بذلك."
+      },
+      {
+        "type": "list",
+        "title": "التراجع والتنظيف (البقاء في السيطرة)",
+        "items": [
+          "\"ملف استعادة git\" - تجاهل التغييرات المحلية غير المرحلية على هذا الملف",
+          "``استعادة git --staged file`` - إلغاء المرحلة، الاحتفاظ بالتغييرات على القرص",
+          "``git checkout -- file`` - الاستعادة القديمة لشجرة العمل (الكتابة فوق)",
+          "`إعادة تعيين git --soft HEAD~1` - قم بإسقاط آخر التغييرات مع الاحتفاظ بالتغييرات المرحلية",
+          "`إعادة تعيين git --mixed HEAD~1` (افتراضي) - التراجع عن الالتزام؛ التغييرات غير مرحلية",
+          "`إعادة تعيين git --hard HEAD~1` - الخطر: الالتزام بالسقطات وتغييرات شجرة العمل"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "يضيف `git revert <commit>` التزامًا جديدًا يلغي التزامًا آخر: آمن للتاريخ المنشور. `gitset --hard` يعيد كتابة التاريخ المحلي - تجنب الفروع المشتركة دون اتفاق."
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Shelve WIP without committing\ngit stash push -m \"wip: login form\"\ngit stash list\ngit stash pop        # apply and drop latest\ngit stash apply stash@{0}  # apply without dropping"
+      },
+      {
+        "type": "list",
+        "title": "فحص التاريخ",
+        "items": [
+          "``git show <commit>` - التصحيح والبيانات الوصفية",
+          "\"ملف اللوم git\" - من قام بتغيير كل سطر",
+          "`git log -S\"text\"` - الالتزامات التي تضيف/تزيل سلسلة",
+          "``git bisect start`` - بحث ثنائي عن التزام الكسر"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Tags (releases)\ngit tag -a v1.2.0 -m \"Release 1.2.0\"\ngit push origin v1.2.0\ngit push origin --tags"
+      },
+      {
+        "type": "list",
+        "title": "العلامات، .gitignore، التنظيف",
+        "items": [
+          "`.gitignore` — تجاهل `node_modules/`، و`.env`، والبنيات، وما إلى ذلك.",
+          "``git clean -fd`` - حذف الملفات التي لم يتم تعقبها (مدمر؛ التشغيل الجاف باستخدام `git clean -nd`)",
+          "`git rm -r --cached Folder` - توقف عن التتبع ولكن احتفظ بالملفات على القرص"
+        ]
+      },
+      {
+        "type": "list",
+        "title": "دمج / إعادة صياغة الصراعات",
+        "items": [
+          "يُدرج Git `<<<<<<<`, `=======`, `>>>>>>>` - التعديل يدويًا، وإزالة العلامات",
+          "تسرد \"حالة git\" المسارات المتعارضة",
+          "بعد الإصلاح: \"git add file\" ثم \"git merge --continue\" أو \"git rebase --continue\"",
+          "إحباط الدمج: `git merge --abort`؛ إحباط rebase: `git rebase --abort`"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Bring one commit from another branch\ngit cherry-pick abc1234\n\n# Rewrite local history (NOT on shared branches without agreement)\ngit rebase -i HEAD~4"
+      },
+      {
+        "type": "list",
+        "title": "الالتزام بالنظافة",
+        "items": [
+          "الالتزامات الذرية الصغيرة: تغيير منطقي واحد لكل منهما",
+          "الرسائل الضرورية: `إضافة تسجيل دخول`، `إصلاح المؤشر الفارغ`",
+          "تساعد الالتزامات التقليدية (`fet:`، `fix:`، `docs:`...) في سجلات التغيير",
+          "قبل الدفع: `git pull --rebase Origin main` (أو الدمج) مع تغييرات الفريق"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "تعمل الخطافات (`.git/hooks` أو Husky) على تشغيل الوبر/الاختبارات قبل الالتزام/الدفع. تساعد الوحدات الفرعية (`git submodule`) وأشجار العمل (`git Worktree add`) في الوحدات الأحادية أو الفروع المتوازية - يمكنك الوصول إليها عندما لا تكون الأساسيات كافية."
+      }
+    ]
+  },
+  {
+    "id": "herramientas",
+    "title": "الأدوات",
+    "icon": "⧉",
+    "summary": "المحرر، والنترات، والتنسيق (يحتوي Git على قسم خاص به).",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "أتمتة التنسيق والأسلوب (الالتزام المسبق أو CI) بحيث تركز المراجعات على الأفكار، وليس على المسافات البيضاء. بالنسبة لأوامر Git وعمليات سير المهام، افتح قسم Git."
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Team formatting (e.g. Prettier + ESLint)\nnpm run lint:fix\n\n# Short branch + clear commit\ngit switch -c feat/wiki-retro\ngit commit -m \"docs: tooling section\""
+      }
+    ]
+  }
+]

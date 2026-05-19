@@ -1,0 +1,21 @@
+{
+  "badge": "v1 · レトロビット ドキュメント",
+  "navAria": "ナビゲーション",
+  "searchLabel": "検索メニュー",
+  "searchPlaceholder": "// セクションをフィルターします…",
+  "navSectionsTitle": "セクション",
+  "heroTag": ":: インタラクティブなターミナル UI",
+  "emptyContent": "この検索にはコンテンツがありません。",
+  "emptyNav": "一致するセクションはありません。",
+  "emptySectionFilter": "このセクション フィルターに一致するブロックはありません。",
+  "statusConnected": "状態：",
+  "statusConnectedVal": "接続済み · 読み取り専用",
+  "statusSection": "セクション：",
+  "statusTip": "ヒント：",
+  "statusTipVal": "メニュー: `/` · セクション: `f` · トップバーの言語",
+  "langLabel": "言語",
+  "sectionSearchLabel": "このセクション内を検索",
+  "sectionSearchPlaceholder": "// テキストとコードブロックをフィルターします…",
+  "typewriterLoading": "> ドキュメントモジュールをロード中…",
+  "typewriterReady": "> 準備完了。セクションを選択するか、検索します。"
+}

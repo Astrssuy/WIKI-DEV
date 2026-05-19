@@ -1,0 +1,21 @@
+{
+  "badge": "v1 · 复古位文档",
+  "navAria": "导航",
+  "searchLabel": "搜索菜单",
+  "searchPlaceholder": "// 过滤部分...",
+  "navSectionsTitle": "部分",
+  "heroTag": ":: 交互式终端用户界面",
+  "emptyContent": "此搜索没有内容。",
+  "emptyNav": "没有部分匹配。",
+  "emptySectionFilter": "没有块与此部分过滤器匹配。",
+  "statusConnected": "地位：",
+  "statusConnectedVal": "已连接 · 只读",
+  "statusSection": "部分：",
+  "statusTip": "提示：",
+  "statusTipVal": "菜单：`/` · 部分：`f` · 顶部栏中的语言",
+  "langLabel": "语言",
+  "sectionSearchLabel": "在此部分搜索",
+  "sectionSearchPlaceholder": "// 过滤文本和代码块...",
+  "typewriterLoading": "> 正在加载文档模块...",
+  "typewriterReady": "> 准备好了。选择一个部分或搜索。"
+}

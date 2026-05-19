@@ -1,0 +1,21 @@
+{
+  "badge": "v1 · 레트로 비트 문서",
+  "navAria": "항해",
+  "searchLabel": "검색메뉴",
+  "searchPlaceholder": "// 섹션 필터링…",
+  "navSectionsTitle": "섹션",
+  "heroTag": ":: 인터랙티브 터미널 UI",
+  "emptyContent": "이 검색에 대한 콘텐츠가 없습니다.",
+  "emptyNav": "일치하는 섹션이 없습니다.",
+  "emptySectionFilter": "이 섹션 필터와 일치하는 블록이 없습니다.",
+  "statusConnected": "상태:",
+  "statusConnectedVal": "연결됨 · 읽기 전용",
+  "statusSection": "부분:",
+  "statusTip": "팁:",
+  "statusTipVal": "메뉴: `/` · 섹션: `f` · 상단 표시줄의 언어",
+  "langLabel": "언어",
+  "sectionSearchLabel": "이 섹션에서 검색",
+  "sectionSearchPlaceholder": "// 텍스트 및 코드 블록 필터링…",
+  "typewriterLoading": "> 문서 모듈 로드 중...",
+  "typewriterReady": "> 준비되었습니다. 섹션을 선택하거나 검색하세요."
+}

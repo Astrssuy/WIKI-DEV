@@ -1,0 +1,249 @@
+[
+  {
+    "id": "inicio",
+    "title": "家",
+    "icon": "◆",
+    "summary": "欢迎和键盘快捷键。",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "具有模块化文档、快速搜索和 CRT 终端氛围的开发维基。像以前一样使用键盘。在顶部栏中切换语言。"
+      },
+      {
+        "type": "list",
+        "title": "快捷方式",
+        "items": [
+          "`/` — 焦点侧边栏菜单搜索",
+          "`f` — 焦点部分块过滤器",
+          "`Esc` — 清除活动搜索（菜单或部分）",
+          "`1-9` — 跳转到部分（过滤后的菜单顺序）"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "frontend",
+    "title": "前端",
+    "icon": "▣",
+    "summary": "UI、性能和浏览器工具。",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "保持 DOM、布局/绘制成本和合成层的可靠心理模型。在优化之前先进行测量。"
+      },
+      {
+        "type": "code",
+        "lang": "css",
+        "code": "/* Responsive container with clamp */\n:root { --pad: clamp(0.75rem, 3vw, 2rem); }\n.wrap { padding: var(--pad); max-width: 72ch; }"
+      },
+      {
+        "type": "text",
+        "content": "对于动画，更喜欢“变换”和“不透明度”。避免在长列表上设置“width”、“height”、“top”、“left”动画。"
+      }
+    ]
+  },
+  {
+    "id": "backend",
+    "title": "后端",
+    "icon": "⌘",
+    "summary": "API、数据和可靠性。",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "设计稳定的 API 合约：版本控制、语义错误和关键操作的幂等性。"
+      },
+      {
+        "type": "code",
+        "lang": "http",
+        "code": "HTTP/1.1 409 Conflict\nContent-Type: application/problem+json\n\n{\"type\":\"/errors/slug-taken\",\"title\":\"Slug already taken\"}"
+      }
+    ]
+  },
+  {
+    "id": "devops",
+    "title": "开发运营",
+    "icon": "⚙",
+    "summary": "CI/CD、容器和可观察性。",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "最小有用的管道：lint + 测试 + 可重现的构建。发送您测试的内容；避免手工调整生产。"
+      },
+      {
+        "type": "list",
+        "title": "部署清单",
+        "items": [
+          "单独的健康与准备情况检查",
+          "结构化日志 (JSON) + 跟踪 ID",
+          "一命令回滚"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "git",
+    "title": "git",
+    "icon": "⎇",
+    "summary": "安全地执行命令、日常流程、远程操作和撤消更改。",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Git 存储快照（提交）并允许您进行分支、远程协作以及浏览历史记录。三个区域：工作树（文件）、暂存（索引）和提交（本地存储库）。"
+      },
+      {
+        "type": "list",
+        "title": "典型设置（每台机器一次）",
+        "items": [
+          "`git config --global user.name \"你的名字\"`",
+          "`git config --global user.email \"you@email\"`",
+          "`git config --global init.defaultBranch main` — 新存储库的默认分支",
+          "`git config --global core.editor \"code --wait\"` — 用于提交消息的 VS Code",
+          "`git config --global alias.st status -sb` — `git st` 的快捷方式"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# New repo or clone\ngit init\ngit clone https://github.com/user/project.git\ncd project"
+      },
+      {
+        "type": "list",
+        "title": "日常工作流程",
+        "items": [
+          "`git status`（`-sb`简称）——发生了什么变化",
+          "`git diff` — 未暂存的更改； `git diff --staged` — 分阶段更改",
+          "`git add file` 或 `git add -p` — 交互式阶段（回顾帅哥）",
+          "`git commit -m \"message\"` — 提交分阶段的更改",
+          "`git log --oneline --graph --decorate -20` — 紧凑图"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Move/rename and delete (tracked)\ngit mv old/path.md new/path.md\ngit rm obsolete-file.txt"
+      },
+      {
+        "type": "list",
+        "title": "分支机构",
+        "items": [
+          "`gitbranch` — 本地列表； `gitbranch-a` 包含遥控器",
+          "`git switch 分支名称` — switch (现代);旧版本：`git checkout 分支名称`",
+          "`git switch -c feature/login` — 创建并进入分支",
+          "`git merge other-branch` — 集成（可能需要冲突解决）",
+          "`git Branch -d feature/login` — 删除合并的本地分支"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Typical feature flow from main\ngit switch main\ngit pull origin main\ngit switch -c feat/my-change\n# ... edit, commit ...\ngit push -u origin feat/my-change"
+      },
+      {
+        "type": "list",
+        "title": "远程（原点、推、拉）",
+        "items": [
+          "`git remote -v` — 获取/推送 URL",
+          "`git fetch origin` — 下载提交而不合并您的分支",
+          "`git pull` — `fetch` + 每个配置的合并/变基",
+          "`git push origin my-branch` — 第一次：`git push -u origin my-branch`",
+          "`git push --delete origin old-branch` — 删除远程分支"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "如果“git pull”创建了嘈杂的合并提交，团队通常更喜欢“git pull --rebase”在远程（线性历史）之上重播您的工作。仅当您了解变基并且团队规则允许时。"
+      },
+      {
+        "type": "list",
+        "title": "撤消和清理（保持控制）",
+        "items": [
+          "`git Restore file` — 放弃对该文件的未暂存的本地更改",
+          "`git Restore --staged file` — 取消暂存，将更改保留在磁盘上",
+          "`git checkout -- file` — 工作树的遗留恢复（覆盖）",
+          "`git reset --soft HEAD~1` — 删除最后保留的更改",
+          "`git reset --mixed HEAD~1` (默认) — 撤消提交；未上演的更改",
+          "`git reset --hard HEAD~1` — 危险：删除提交和工作树更改"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "`git revert <commit>` 添加一个新的提交，撤消另一个提交：对于已发布的历史记录是安全的。 `git reset --hard` 重写本地历史记录——避免在未经同意的情况下共享分支。"
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Shelve WIP without committing\ngit stash push -m \"wip: login form\"\ngit stash list\ngit stash pop        # apply and drop latest\ngit stash apply stash@{0}  # apply without dropping"
+      },
+      {
+        "type": "list",
+        "title": "病史检查",
+        "items": [
+          "`git show <commit>` — 补丁和元数据",
+          "`git Blame file` — 谁改变了每一行",
+          "`git log -S\"text\"` — 添加/删除字符串的提交",
+          "`git bisect start` — 二进制搜索破坏提交"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Tags (releases)\ngit tag -a v1.2.0 -m \"Release 1.2.0\"\ngit push origin v1.2.0\ngit push origin --tags"
+      },
+      {
+        "type": "list",
+        "title": "标签、.gitignore、清理",
+        "items": [
+          "`.gitignore` — 忽略 `node_modules/`、`.env`、构建等。",
+          "`git clean -fd` — 删除未跟踪的文件（破坏性的；使用 `git clean -nd` 进行试运行）",
+          "`git rm -r --cachedfolder` — 停止跟踪但将文件保留在磁盘上"
+        ]
+      },
+      {
+        "type": "list",
+        "title": "合并/变基冲突",
+        "items": [
+          "Git 插入 `<<<<<<<`、`======`、`>>>>>>>>` — 手动编辑，删除标记",
+          "`git status` 列出冲突的路径",
+          "修复后： `git add file` 然后 `git merge --continue` 或 `git rebase --continue`",
+          "中止合并： `git merge --abort`;中止变基： `git rebase --abort`"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Bring one commit from another branch\ngit cherry-pick abc1234\n\n# Rewrite local history (NOT on shared branches without agreement)\ngit rebase -i HEAD~4"
+      },
+      {
+        "type": "list",
+        "title": "注重卫生",
+        "items": [
+          "小原子提交：每个逻辑更改",
+          "命令式消息：“添加登录”、“修复空指针”",
+          "常规提交（`feat:`、`fix:`、`docs:`...）帮助变更日志",
+          "在推送之前：“git pull --rebase origin main”（或合并）与团队更改"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "Hooks（`.git/hooks` 或 Husky）在提交/推送之前运行 lint/tests。子模块（`git submodule`）和工作树（`git worktree add`）有助于单一仓库或并行分支——当基础知识不够时就可以使用它们。"
+      }
+    ]
+  },
+  {
+    "id": "herramientas",
+    "title": "工装",
+    "icon": "⧉",
+    "summary": "编辑器、linter、格式化（Git 有自己的部分）。",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "自动格式化和样式（预提交或 CI），以便评论重点关注想法，而不是空白。对于 Git 命令和流程，请打开 Git 部分。"
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Team formatting (e.g. Prettier + ESLint)\nnpm run lint:fix\n\n# Short branch + clear commit\ngit switch -c feat/wiki-retro\ngit commit -m \"docs: tooling section\""
+      }
+    ]
+  }
+]

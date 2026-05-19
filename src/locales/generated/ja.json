@@ -1,0 +1,249 @@
+[
+  {
+    "id": "inicio",
+    "title": "家",
+    "icon": "◆",
+    "summary": "ようこそとキーボード ショートカット。",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "モジュール式ドキュメント、高速検索、CRT ターミナルの雰囲気を備えた開発 Wiki。昔と同じようにキーボードを使用します。上部のバーで言語を切り替えます。"
+      },
+      {
+        "type": "list",
+        "title": "ショートカット",
+        "items": [
+          "`/` — サイドバー メニューの検索にフォーカスします",
+          "`f` — セクション内ブロック フィルターに焦点を当てる",
+          "`Esc` — アクティブな検索 (メニューまたはセクション) をクリアします",
+          "`1-9` — セクションにジャンプします (フィルターされたメニュー順序)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "frontend",
+    "title": "フロントエンド",
+    "icon": "▣",
+    "summary": "UI、パフォーマンス、ブラウザツール。",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "DOM、レイアウト/ペイントのコスト、合成レイヤーのしっかりしたメンタル モデルを保持します。最適化する前に測定してください。"
+      },
+      {
+        "type": "code",
+        "lang": "css",
+        "code": "/* Responsive container with clamp */\n:root { --pad: clamp(0.75rem, 3vw, 2rem); }\n.wrap { padding: var(--pad); max-width: 72ch; }"
+      },
+      {
+        "type": "text",
+        "content": "アニメーションの場合は、「transform」と「opacity」を選択します。長いリストでは `width`、`height`、`top`、`left` をアニメーション化しないでください。"
+      }
+    ]
+  },
+  {
+    "id": "backend",
+    "title": "バックエンド",
+    "icon": "⌘",
+    "summary": "API、データ、信頼性。",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "安定した API コントラクトを設計します: バージョン管理、セマンティック エラー、重要な操作の冪等性。"
+      },
+      {
+        "type": "code",
+        "lang": "http",
+        "code": "HTTP/1.1 409 Conflict\nContent-Type: application/problem+json\n\n{\"type\":\"/errors/slug-taken\",\"title\":\"Slug already taken\"}"
+      }
+    ]
+  },
+  {
+    "id": "devops",
+    "title": "DevOps",
+    "icon": "⚙",
+    "summary": "CI/CD、コンテナ、可観測性。",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "最小限の有用なパイプライン: lint + テスト + 再現可能なビルド。テストしたものを出荷します。手動による生産調整は避けてください。"
+      },
+      {
+        "type": "list",
+        "title": "導入チェックリスト",
+        "items": [
+          "個別のヘルスチェックと準備チェック",
+          "構造化ログ (JSON) + トレース ID",
+          "ワンコマンドロールバック"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "git",
+    "title": "Git",
+    "icon": "⎇",
+    "summary": "コマンド、日常の流れ、リモート、変更を安全に元に戻す。",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Git はスナップショット (コミット) を保存し、ブランチ、リモート経由での共同作業、履歴の移動を可能にします。 3 つの領域: 作業ツリー (ファイル)、ステージング (インデックス)、およびコミット (ローカル リポジトリ)。"
+      },
+      {
+        "type": "list",
+        "title": "一般的なセットアップ (マシンごとに 1 回)",
+        "items": [
+          "`git config --global user.name \"あなたの名前\"`",
+          "`git config --global user.email \"you@email\"`",
+          "`git config --global init.defaultBranch main` — 新しいリポジトリのデフォルトのブランチ",
+          "`git config --global core.editor \"code --wait\"` — コミット メッセージ用の VS コード",
+          "`git config --global alias.st status -sb` — `git st` のショートカット"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# New repo or clone\ngit init\ngit clone https://github.com/user/project.git\ncd project"
+      },
+      {
+        "type": "list",
+        "title": "日々のワークフロー",
+        "items": [
+          "`git status` (短縮形 `-sb`) — 何が変わったのか",
+          "`git diff` — ステージングされていない変更。 `git diff --staged` — 段階的な変更",
+          "`git add file` または `git add -p` — 対話的にステージングします (ハンクのレビュー)",
+          "`git commit -m \"message\"` — 段階的な変更をコミットする",
+          "`git log --oneline --graph --decorate -20` — コンパクトなグラフ"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Move/rename and delete (tracked)\ngit mv old/path.md new/path.md\ngit rm obsolete-file.txt"
+      },
+      {
+        "type": "list",
+        "title": "支店",
+        "items": [
+          "`git ブランチ` — ローカル リスト。 「git Branch -a」にはリモートが含まれます",
+          "`git switch ブランチ名` — switch (モダン);古い: `git checkout ブランチ名`",
+          "`git switch -c feature/login` — ブランチを作成して入力します",
+          "`git merge other-branch` — 統合 (競合の解決が必要な場合があります)",
+          "`git Branch -d feature/login` — マージされたローカル ブランチを削除します"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Typical feature flow from main\ngit switch main\ngit pull origin main\ngit switch -c feat/my-change\n# ... edit, commit ...\ngit push -u origin feat/my-change"
+      },
+      {
+        "type": "list",
+        "title": "リモート（オリジン、プッシュ、プル）",
+        "items": [
+          "`git Remote -v` — URL をフェッチ/プッシュする",
+          "`git fetchorigin` — ブランチをマージせずにコミットをダウンロードします",
+          "`git pull` — `fetch` + 構成ごとのマージ/リベース",
+          "`git Push Origin my-branch` — 初回: `git Push -u Origin my-branch`",
+          "`git Push --deleteorigin old-branch` — リモートブランチを削除します"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "「git pull」によってノイズの多いマージコミットが作成される場合、チームは多くの場合「git pull --rebase」を使用してリモート上で作業を再生することを好みます (線形履歴)。リベースを理解しており、チームのルールでそれが許可されている場合に限ります。"
+      },
+      {
+        "type": "list",
+        "title": "元に戻してクリーンアップ (制御を維持)",
+        "items": [
+          "`git stop file` — そのファイルに対するステージングされていないローカル変更を破棄します。",
+          "`git list --staged file` — ステージングを解除し、変更をディスク上に保持します",
+          "`git checkout -- file` — 作業ツリーのレガシー復元 (上書き)",
+          "`git replace --soft HEAD~1` — ステージングされた変更を保持したままの最後のものを削除します",
+          "`git replace --mixed HEAD~1` (デフォルト) — コミットを取り消します。ステージングされていない変更",
+          "`git replace --hard HEAD~1` — 危険: コミットと作業ツリーの変更を削除します"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "`git revert <commit>` は、別のコミットを元に戻す新しいコミットを追加します。公開された履歴には安全です。 「git replace --hard」はローカル履歴を書き換えます。合意のない共有ブランチでは避けてください。"
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Shelve WIP without committing\ngit stash push -m \"wip: login form\"\ngit stash list\ngit stash pop        # apply and drop latest\ngit stash apply stash@{0}  # apply without dropping"
+      },
+      {
+        "type": "list",
+        "title": "履歴検査",
+        "items": [
+          "`git show <commit>` — パッチとメタデータ",
+          "「gitblame file」 — 各行を変更した人",
+          "`git log -S\"text\"` — 文字列を追加/削除したコミット",
+          "`git bisect start` — 壊れたコミットのバイナリ検索"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Tags (releases)\ngit tag -a v1.2.0 -m \"Release 1.2.0\"\ngit push origin v1.2.0\ngit push origin --tags"
+      },
+      {
+        "type": "list",
+        "title": "タグ、.gitignore、クリーンアップ",
+        "items": [
+          "`.gitignore` — `node_modules/`、`.env`、ビルドなどを無視します。",
+          "`git clean -fd` — 追跡されていないファイルを削除します (破壊的; `git clean -nd` による予行演習)",
+          "`git rm -r --cachedfolder` — 追跡を停止しますが、ファイルはディスク上に保持されます"
+        ]
+      },
+      {
+        "type": "list",
+        "title": "マージ/リベースの競合",
+        "items": [
+          "Git は `<<<<<<<`、`=======`、`>>>>>>>>` を挿入します — 手動で編集し、マーカーを削除します",
+          "「git status」は競合したパスをリストします",
+          "修正後: `git add file` の次に `git merge -- continue` または `git rebase -- continue`",
+          "マージを中止します: `git merge --abort`;リベースの中止: `git rebase --abort`"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Bring one commit from another branch\ngit cherry-pick abc1234\n\n# Rewrite local history (NOT on shared branches without agreement)\ngit rebase -i HEAD~4"
+      },
+      {
+        "type": "list",
+        "title": "衛生管理を徹底する",
+        "items": [
+          "小規模なアトミックコミット: それぞれ 1 つの論理変更",
+          "命令メッセージ: 「ログインを追加」、「null ポインタを修正」",
+          "従来のコミット (`feat:`、`fix:`、`docs:`…) は変更ログに役立ちます",
+          "プッシュ前: チームの変更を伴う `git pull --rebaseorigin main` (またはマージ)"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "フック (`.git/hooks` または Husky) は、コミット/プッシュの前に lint/テストを実行します。サブモジュール (`git submodule`) とワークツリー (`git worktree add`) は、モノリポジトリや並列ブランチに役立ちます。基本だけでは不十分な場合に使用します。"
+      }
+    ]
+  },
+  {
+    "id": "herramientas",
+    "title": "ツーリング",
+    "icon": "⧉",
+    "summary": "エディター、リンター、フォーマット (Git には独自のセクションがあります)。",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "書式設定とスタイル (コミット前または CI) を自動化することで、空白ではなくアイデアに重点を置いてレビューできるようになります。 Git コマンドとフローについては、「Git」セクションを開きます。"
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Team formatting (e.g. Prettier + ESLint)\nnpm run lint:fix\n\n# Short branch + clear commit\ngit switch -c feat/wiki-retro\ngit commit -m \"docs: tooling section\""
+      }
+    ]
+  }
+]

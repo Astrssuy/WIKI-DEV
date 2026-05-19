@@ -1,0 +1,21 @@
+{
+  "badge": "v1 · مستندات بت الرجعية",
+  "navAria": "ملاحة",
+  "searchLabel": "قائمة البحث",
+  "searchPlaceholder": "// تصفية الأقسام...",
+  "navSectionsTitle": "الأقسام",
+  "heroTag": ":: واجهة المستخدم الطرفية التفاعلية",
+  "emptyContent": "لا يوجد محتوى لهذا البحث.",
+  "emptyNav": "لا يوجد قسم مطابق.",
+  "emptySectionFilter": "لا توجد كتلة تطابق مرشح القسم هذا.",
+  "statusConnected": "حالة:",
+  "statusConnectedVal": "متصلة · للقراءة فقط",
+  "statusSection": "قسم:",
+  "statusTip": "نصيحة:",
+  "statusTipVal": "القائمة: `/` · القسم: `f` · اللغة في الشريط العلوي",
+  "langLabel": "لغة",
+  "sectionSearchLabel": "ابحث في هذا القسم",
+  "sectionSearchPlaceholder": "// تصفية النص وكتل التعليمات البرمجية ...",
+  "typewriterLoading": "> جارٍ تحميل وحدات التوثيق...",
+  "typewriterReady": "> جاهز. اختر قسما أو ابحث."
+}

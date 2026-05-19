@@ -1,0 +1,249 @@
+[
+  {
+    "id": "inicio",
+    "title": "Casa",
+    "icon": "◆",
+    "summary": "Benvenuto e scorciatoie da tastiera.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Una wiki di sviluppo con documenti modulari, ricerca rapida e un'atmosfera da terminale CRT. Usa la tastiera come ai vecchi tempi. Cambia la lingua nella barra in alto."
+      },
+      {
+        "type": "list",
+        "title": "Scorciatoie",
+        "items": [
+          "`/`: focalizza la ricerca nel menu della barra laterale",
+          "\"f\" — focalizza il filtro del blocco in sezione",
+          "`Esc`: cancella la ricerca attiva (menu o sezione)",
+          "`1-9`: passa alla sezione (ordine del menu filtrato)"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "frontend",
+    "title": "Fine frontale",
+    "icon": "▣",
+    "summary": "Interfaccia utente, prestazioni e strumenti del browser.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Mantieni un solido modello mentale del DOM, dei costi di layout/verniciatura e dei livelli di composizione. Misura prima di ottimizzare."
+      },
+      {
+        "type": "code",
+        "lang": "css",
+        "code": "/* Responsive container with clamp */\n:root { --pad: clamp(0.75rem, 3vw, 2rem); }\n.wrap { padding: var(--pad); max-width: 72ch; }"
+      },
+      {
+        "type": "text",
+        "content": "Per le animazioni preferisci \"trasformazione\" e \"opacità\". Evita di animare `width`, `height`, `top`, `left` su elenchi lunghi."
+      }
+    ]
+  },
+  {
+    "id": "backend",
+    "title": "Backend",
+    "icon": "⌘",
+    "summary": "API, dati e affidabilità.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Progetta contratti API stabili: controllo delle versioni, errori semantici e idempotenza per operazioni critiche."
+      },
+      {
+        "type": "code",
+        "lang": "http",
+        "code": "HTTP/1.1 409 Conflict\nContent-Type: application/problem+json\n\n{\"type\":\"/errors/slug-taken\",\"title\":\"Slug already taken\"}"
+      }
+    ]
+  },
+  {
+    "id": "devops",
+    "title": "DevOps",
+    "icon": "⚙",
+    "summary": "CI/CD, contenitori e osservabilità.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Pipeline utile minima: lint + test + build riproducibile. Spedisci ciò che hai testato; evitare la produzione di tuning manuale."
+      },
+      {
+        "type": "list",
+        "title": "Distribuire la lista di controllo",
+        "items": [
+          "Controlli separati di integrità e disponibilità",
+          "Log strutturati (JSON) + ID di traccia",
+          "Rollback con un comando"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "git",
+    "title": "Va bene",
+    "icon": "⎇",
+    "summary": "Comandi, flussi quotidiani, telecomandi e annullamento delle modifiche in tutta sicurezza.",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Git archivia istantanee (commit) e ti consente di ramificarti, collaborare in remoto e spostarti nella cronologia. Tre aree: albero di lavoro (file), staging (indice) e commit (repo locale)."
+      },
+      {
+        "type": "list",
+        "title": "Configurazione tipica (una volta per macchina)",
+        "items": [
+          "`git config --global user.name \"Il tuo nome\"`",
+          "`git config --global user.email \"tu@email\"`",
+          "`git config --global init.defaultBranch main` — ramo predefinito per i nuovi repository",
+          "`git config --global core.editor \"code --wait\"` — Codice VS per i messaggi di commit",
+          "`git config --global alias.st status -sb` — scorciatoia per `git st`"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# New repo or clone\ngit init\ngit clone https://github.com/user/project.git\ncd project"
+      },
+      {
+        "type": "list",
+        "title": "Flusso di lavoro quotidiano",
+        "items": [
+          "`git status` (`-sb` breve) — cosa è cambiato",
+          "`git diff`: modifiche non graduali; `git diff --staged` — modifiche graduali",
+          "`git add file` o `git add -p` — stage in modo interattivo (recensioni)",
+          "`git commit -m \"message\"`: conferma le modifiche graduali",
+          "`git log --oneline --graph --decorate -20` — grafico compatto"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Move/rename and delete (tracked)\ngit mv old/path.md new/path.md\ngit rm obsolete-file.txt"
+      },
+      {
+        "type": "list",
+        "title": "Rami",
+        "items": [
+          "`git branch` — elenco locale; \"git branch -a\" include i telecomandi",
+          "`git switch branch-name` — switch (moderno); più vecchio: `git checkout nome-ramo`",
+          "`git switch -c feature/login`: crea e inserisci branch",
+          "`git merge other-branch` — integrazione (potrebbe richiedere la risoluzione dei conflitti)",
+          "`git branch -d feature/login` — elimina il ramo locale unito"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Typical feature flow from main\ngit switch main\ngit pull origin main\ngit switch -c feat/my-change\n# ... edit, commit ...\ngit push -u origin feat/my-change"
+      },
+      {
+        "type": "list",
+        "title": "Remoto (origine, push, pull)",
+        "items": [
+          "`git remote -v` — recupera/invia URL",
+          "`git fetch origin`: scarica i commit senza unire il tuo ramo",
+          "`git pull` — `fetch` + merge/rebase per configurazione",
+          "`git push origin my-branch` — prima volta: `git push -u origin my-branch`",
+          "`git push --delete origin old-branch` — elimina il ramo remoto"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "Se `git pull` crea commit di unione rumorosi, i team spesso preferiscono `git pull --rebase` per riprodurre il tuo lavoro sul remoto (cronologia lineare). Solo se capisci il rebase e le regole della squadra lo consentono."
+      },
+      {
+        "type": "list",
+        "title": "Annulla e ripulisci (mantieni il controllo)",
+        "items": [
+          "\"file di ripristino git\": elimina le modifiche locali non eseguite su quel file",
+          "`git Restore --staged file` — deseleziona lo stage, mantiene le modifiche sul disco",
+          "`git checkout -- file` — ripristino legacy dell'albero di lavoro (sovrascrive)",
+          "`git reset --soft HEAD~1` — rilascia l'ultimo mantenendo le modifiche in fase",
+          "`git reset --mixed HEAD~1` (predefinito) — annulla il commit; cambiamenti senza fasi",
+          "`git reset --hard HEAD~1` — pericolo: eliminazione del commit e modifiche dell'albero di lavoro"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "`git revert <commit>` aggiunge un nuovo commit che ne annulla un altro: sicuro per la cronologia pubblicata. \"git reset --hard\" riscrive la cronologia locale: evita i rami condivisi senza accordo."
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Shelve WIP without committing\ngit stash push -m \"wip: login form\"\ngit stash list\ngit stash pop        # apply and drop latest\ngit stash apply stash@{0}  # apply without dropping"
+      },
+      {
+        "type": "list",
+        "title": "Ispezione storica",
+        "items": [
+          "`git show <commit>`: patch e metadati",
+          "`git colpa file` — chi ha cambiato ogni riga",
+          "`git log -S\"text\"` — commit che ha aggiunto/rimosso una stringa",
+          "`git bisect start` — ricerca binaria per il commit non valido"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Tags (releases)\ngit tag -a v1.2.0 -m \"Release 1.2.0\"\ngit push origin v1.2.0\ngit push origin --tags"
+      },
+      {
+        "type": "list",
+        "title": "Tag, .gitignore, pulizia",
+        "items": [
+          "`.gitignore` — ignora `node_modules/`, `.env`, build, ecc.",
+          "`git clean -fd` — elimina i file non tracciati (distruttivo; esecuzione a secco con `git clean -nd`)",
+          "`git rm -r --cached cartella`: interrompe il tracciamento ma conserva i file sul disco"
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Unisci/riorganizza i conflitti",
+        "items": [
+          "Git inserisce `<<<<<<<`, `=======`, `>>>>>>>` — modifica manualmente, rimuove i marcatori",
+          "\"git status\" elenca i percorsi in conflitto",
+          "Dopo la correzione: `git add file` quindi `git merge --continue` o `git rebase --continue`",
+          "Interrompi l'unione: `git merge --abort`; interrompere il rebase: `git rebase --abort`"
+        ]
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Bring one commit from another branch\ngit cherry-pick abc1234\n\n# Rewrite local history (NOT on shared branches without agreement)\ngit rebase -i HEAD~4"
+      },
+      {
+        "type": "list",
+        "title": "Impegnati nell'igiene",
+        "items": [
+          "Commit atomici piccoli: una modifica logica ciascuno",
+          "Messaggi imperativi: \"Aggiungi login\", \"Correggi puntatore null\".",
+          "I commit convenzionali (`feat:`, `fix:`, `docs:`…) aiutano i log delle modifiche",
+          "Prima del push: `git pull --rebase origin main` (o merge) con le modifiche del team"
+        ]
+      },
+      {
+        "type": "text",
+        "content": "Gli hook (`.git/hooks` o Husky) eseguono lint/test prima del commit/push. I sottomoduli (`git submodule`) e gli alberi di lavoro (`git worktree add`) aiutano con monorepos o rami paralleli: utilizzali quando le nozioni di base non sono sufficienti."
+      }
+    ]
+  },
+  {
+    "id": "herramientas",
+    "title": "Utensileria",
+    "icon": "⧉",
+    "summary": "Editor, linter, formattazione (Git ha una propria sezione).",
+    "blocks": [
+      {
+        "type": "text",
+        "content": "Automatizza la formattazione e lo stile (pre-commit o CI) in modo che le revisioni si concentrino sulle idee e non sugli spazi bianchi. Per i comandi e i flussi Git, apri la sezione Git."
+      },
+      {
+        "type": "code",
+        "lang": "bash",
+        "code": "# Team formatting (e.g. Prettier + ESLint)\nnpm run lint:fix\n\n# Short branch + clear commit\ngit switch -c feat/wiki-retro\ngit commit -m \"docs: tooling section\""
+      }
+    ]
+  }
+]

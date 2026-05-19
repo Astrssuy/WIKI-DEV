@@ -1,0 +1,21 @@
+{
+  "badge": "v1 · documenti retro-bit",
+  "navAria": "Navigazione",
+  "searchLabel": "Menù di ricerca",
+  "searchPlaceholder": "// filtra le sezioni...",
+  "navSectionsTitle": "SEZIONI",
+  "heroTag": ":: IU DEL TERMINALE INTERATTIVO",
+  "emptyContent": "Nessun contenuto per questa ricerca.",
+  "emptyNav": "Nessuna sezione corrisponde.",
+  "emptySectionFilter": "Nessun blocco corrisponde a questo filtro di sezione.",
+  "statusConnected": "Stato:",
+  "statusConnectedVal": "connesso · di sola lettura",
+  "statusSection": "Sezione:",
+  "statusTip": "Mancia:",
+  "statusTipVal": "menu: `/` · sezione: `f` · lingua nella barra in alto",
+  "langLabel": "Lingua",
+  "sectionSearchLabel": "Cerca in questa sezione",
+  "sectionSearchPlaceholder": "// filtra testo e blocchi di codice…",
+  "typewriterLoading": "> Caricamento dei moduli di documentazione...",
+  "typewriterReady": "> Pronto. Scegli una sezione o cerca."
+}
