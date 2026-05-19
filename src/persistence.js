@@ -5,6 +5,7 @@
  */
 const SECTION_KEY = "wiki-active-section";
 const SEARCH_KEY = "wiki-search-query";
+const EXPANDED_KEY = "wiki-nav-expanded";
 
 function safeGet(key) {
   try {
@@ -40,4 +41,19 @@ export function getLastSearch() {
 
 export function saveLastSearch(q) {
   safeSet(SEARCH_KEY, q);
+}
+
+export function getExpandedGroups() {
+  try {
+    const raw = safeGet(EXPANDED_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+export function saveExpandedGroups(ids) {
+  safeSet(EXPANDED_KEY, JSON.stringify(ids));
 }

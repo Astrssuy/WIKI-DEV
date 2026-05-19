@@ -4,6 +4,8 @@
   "searchLabel": "Search menu",
   "searchPlaceholder": "// filter sections…",
   "navSectionsTitle": "SECTIONS",
+  "nav.expandGroup": "Expand submenu",
+  "nav.collapseGroup": "Collapse submenu",
   "heroTag": ":: INTERACTIVE TERMINAL UI",
   "emptyContent": "No content for this search.",
   "emptyNav": "No section matches.",

@@ -36,7 +36,7 @@ export const inicioSection = {
       type: "list",
       title: "How to read a section",
       items: [
-        "Nested topics appear under their parent in the sidebar (e.g. Interface → React).",
+        "Nested topics appear under their parent — click the arrow (▸) to expand or collapse submenus.",
         "Press `f` inside an article to filter blocks without leaving the page.",
         "Code blocks are copy-friendly; hover for a subtle CRT glitch.",
         "Open the Git section for quizzes, sequences, and a simulated terminal.",

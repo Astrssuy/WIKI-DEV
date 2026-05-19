@@ -28,21 +28,40 @@
         },
         {
           "q": "Checagem rápida: o que mudou antes de fazer `add`?",
-          "opts": ["git log -1", "git status -sb", "git blame .", "git remote -v"],
+          "opts": [
+            "git log -1",
+            "git status -sb",
+            "git blame .",
+            "git remote -v"
+          ],
           "correct": 1
         },
         {
           "q": "Renomear um arquivo já versionado com Git.",
-          "opts": ["mv a.txt b.txt", "git mv a.txt b.txt", "git rename a.txt b.txt", "git move a.txt b.txt"],
+          "opts": [
+            "mv a.txt b.txt",
+            "git mv a.txt b.txt",
+            "git rename a.txt b.txt",
+            "git move a.txt b.txt"
+          ],
           "correct": 1
         }
       ],
       "sequenceHint": "Correção pequena: preparar tudo → commit → push ao remoto.",
-      "sequenceSteps": ["git add .", "git commit -m \"fix: typos\"", "git push"],
+      "sequenceSteps": [
+        "git add .",
+        "git commit -m \"fix: typos\"",
+        "git push"
+      ],
       "canvasBranchLabel": "main →",
       "branchQ": {
         "q": "HEAD está no commit C (brilho). Você quer `bugfix` aqui **sem** mudar para ela ainda.",
-        "opts": ["git switch bugfix", "git branch bugfix", "git merge bugfix", "git tag bugfix"],
+        "opts": [
+          "git switch bugfix",
+          "git branch bugfix",
+          "git merge bugfix",
+          "git tag bugfix"
+        ],
         "correct": 1
       }
     },
@@ -54,7 +73,12 @@
       "quiz": [
         {
           "q": "Baixar commits remotos **sem** mesclar no seu branch ainda.",
-          "opts": ["git pull", "git fetch origin", "git push origin", "git clone ."],
+          "opts": [
+            "git pull",
+            "git fetch origin",
+            "git push origin",
+            "git clone ."
+          ],
           "correct": 1
         },
         {
@@ -79,16 +103,30 @@
         },
         {
           "q": "Listar branches remotas que você pode rastrear.",
-          "opts": ["git branch", "git branch -r", "git tag -l", "git reflog"],
+          "opts": [
+            "git branch",
+            "git branch -r",
+            "git tag -l",
+            "git reflog"
+          ],
           "correct": 1
         }
       ],
       "sequenceHint": "Integrar `main` remoto e publicar seu branch.",
-      "sequenceSteps": ["git fetch origin", "git merge origin/main", "git push"],
+      "sequenceSteps": [
+        "git fetch origin",
+        "git merge origin/main",
+        "git push"
+      ],
       "canvasBranchLabel": "main →",
       "branchQ": {
         "q": "Mesmo gráfico: em C com HEAD. Crie **e mude** para `hotfix` na hora.",
-        "opts": ["git branch hotfix", "git switch -c hotfix", "git merge hotfix", "git cherry-pick hotfix"],
+        "opts": [
+          "git branch hotfix",
+          "git switch -c hotfix",
+          "git merge hotfix",
+          "git cherry-pick hotfix"
+        ],
         "correct": 1
       }
     },
@@ -110,7 +148,12 @@
         },
         {
           "q": "Push rejeitado: o remoto avançou. Reaplique seus commits por cima (regra comum de time).",
-          "opts": ["git pull --rebase", "git push --force", "git clone --depth=1", "git submodule update"],
+          "opts": [
+            "git pull --rebase",
+            "git push --force",
+            "git clone --depth=1",
+            "git submodule update"
+          ],
           "correct": 0
         },
         {
@@ -125,16 +168,31 @@
         },
         {
           "q": "Ver **quem** alterou a linha 12 de `app.js` por último.",
-          "opts": ["git show HEAD:app.js", "git blame app.js", "git grep -n app.js", "git diff app.js"],
+          "opts": [
+            "git show HEAD:app.js",
+            "git blame app.js",
+            "git grep -n app.js",
+            "git diff app.js"
+          ],
           "correct": 1
         }
       ],
       "sequenceHint": "Mudar de contexto: stash → atualizar main → recuperar stash.",
-      "sequenceSteps": ["git stash push -m wip", "git switch main", "git pull", "git stash pop"],
+      "sequenceSteps": [
+        "git stash push -m wip",
+        "git switch main",
+        "git pull",
+        "git stash pop"
+      ],
       "canvasBranchLabel": "main →",
       "branchQ": {
         "q": "Você precisa da ponta de `topic` no branch atual como **um** commit novo.",
-        "opts": ["git merge --squash topic", "git branch topic", "git clean -fd", "git tag topic"],
+        "opts": [
+          "git merge --squash topic",
+          "git branch topic",
+          "git clean -fd",
+          "git tag topic"
+        ],
         "correct": 0
       }
     }

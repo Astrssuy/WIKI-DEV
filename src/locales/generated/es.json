@@ -1,4 +1,4 @@
-[
+﻿[
   {
     "id": "inicio",
     "title": "Inicio",
@@ -13,10 +13,10 @@
         "type": "list",
         "title": "Atajos",
         "items": [
-          "/ — enfocar búsqueda del menú lateral",
-          "\f — filtrar bloques dentro de la sección",
-          "Esc — limpiar la búsqueda activa (menú o sección)",
-          "\u0001-9 — saltar a sección (orden del menú filtrado)"
+          "`/` — enfocar búsqueda del menú lateral",
+          "`f` — filtrar bloques dentro de la sección",
+          "`Esc` — limpiar la búsqueda activa (menú o sección)",
+          "`1-9` — saltar a sección (orden del menú filtrado)"
         ]
       },
       {
@@ -27,7 +27,7 @@
           "Backend — diseño de APIs, bases de datos, auth (sesiones, JWT, OAuth).",
           "DevOps — CI/CD, Docker, observabilidad, checklists de deploy.",
           "Git — comandos del día a día más un arcade retro de entrenamiento.",
-          "Testing — piramide, herramientas (Vitest, Playwright), mocks y fixtures.",
+          "Testing — pirámide, herramientas (Vitest, Playwright), mocks y fixtures.",
           "Seguridad y Linux — hábitos OWASP, cabeceras, CLI esencial.",
           "Mobile — layout responsive, áreas táctiles, bases de PWA."
         ]
@@ -36,8 +36,8 @@
         "type": "list",
         "title": "Cómo leer una sección",
         "items": [
-          "Los temas anidados aparecen bajo su padre en la barra lateral (ej. Interfaz → React).",
-          "Pulsa \f dentro de un artículo para filtrar bloques sin salir de la página.",
+          "Pulsa la flecha (▸) junto a Interfaz, Backend o Testing para desplegar submenús.",
+          "Pulsa `f` dentro de un artículo para filtrar bloques sin salir de la página.",
           "Los bloques de código son fáciles de copiar; pasa el cursor para un glitch CRT sutil.",
           "Abre la sección Git para quizzes, secuencias y una terminal simulada."
         ]
@@ -56,18 +56,18 @@
     "blocks": [
       {
         "type": "text",
-        "content": "Este capÃ­tulo agrupa notas prÃ¡cticas sobre la creaciÃ³n de interfaces de navegador. La barra lateral anida temas en Interfaz: elija React, Vite, CSS, Bootstrap, Tailwind CSS, TypeScript para UI o accesibilidad. Cada subpÃ¡gina es documentaciÃ³n independiente que puede filtrar con \"f\" dentro del artÃ­culo."
+        "content": "Este capítulo agrupa notas prácticas sobre la creación de interfaces de navegador. La barra lateral anida temas en Interfaz: elija React, Vite, CSS, Bootstrap, Tailwind CSS, TypeScript para UI o accesibilidad. Cada subpágina es documentación independiente que puede filtrar con \"f\" dentro del artículo."
       },
       {
         "type": "list",
-        "title": "Temas (submenÃº)",
+        "title": "Temas (submenú)",
         "items": [
-          "React: componentes, ganchos, estado y conceptos bÃ¡sicos del ecosistema.",
-          "Vite: servidor de desarrollo, HMR, configuraciÃ³n y compilaciones de producciÃ³n.",
-          "CSS: diseÃ±o, cascada, propiedades personalizadas y patrones de respuesta.",
-          "Bootstrap: cuadrÃ­cula, componentes, personalizaciÃ³n, compensaciones.",
-          "Tailwind CSS: flujo de trabajo, configuraciÃ³n y composiciÃ³n de la utilidad.",
-          "TypeScript para UI: accesorios de escritura, limitaciÃ³n y rigor con los componentes.",
+          "React: componentes, ganchos, estado y conceptos básicos del ecosistema.",
+          "Vite: servidor de desarrollo, HMR, configuración y compilaciones de producción.",
+          "CSS: diseño, cascada, propiedades personalizadas y patrones de respuesta.",
+          "Bootstrap: cuadrícula, componentes, personalización, compensaciones.",
+          "Tailwind CSS: flujo de trabajo, configuración y composición de la utilidad.",
+          "TypeScript para UI: accesorios de escritura, limitación y rigor con los componentes.",
           "Accesibilidad: patrones orientados a WCAG, ARIA y compatibilidad con teclado."
         ]
       }
@@ -78,19 +78,19 @@
     "parentId": "interfaz",
     "title": "Reaccionar",
     "icon": "âš›",
-    "summary": "Componentes, JSX, enlaces y cÃ³mo fluyen los datos al DOM.",
+    "summary": "Componentes, JSX, enlaces y cómo fluyen los datos al DOM.",
     "blocks": [
       {
         "type": "text",
-        "content": "React modela la interfaz de usuario como un Ã¡rbol de componentes. Cada componente es una funciÃ³n (o clase) que devuelve una descripciÃ³n de la interfaz de usuario (JSX). React reconcilia el Ã¡rbol anterior con el siguiente y actualiza el DOM en lotes. Piensas en estado y accesorios, no en mutaciÃ³n DOM manual."
+        "content": "React modela la interfaz de usuario como un árbol de componentes. Cada componente es una función (o clase) que devuelve una descripción de la interfaz de usuario (JSX). React reconcilia el árbol anterior con el siguiente y actualiza el DOM en lotes. Piensas en estado y accesorios, no en mutación DOM manual."
       },
       {
         "type": "list",
         "title": "Ideas centrales",
         "items": [
-          "`props`: entradas del padre; trÃ¡telos inmutables en el niÃ±o.",
-          "`estado`: valores que cambian con el tiempo; La actualizaciÃ³n del estado programa una nueva representaciÃ³n.",
-          "Flujo de datos unidireccional: los datos fluyen hacia abajo; los eventos fluyen a travÃ©s de devoluciones de llamada.",
+          "`props`: entradas del padre; trátelos inmutables en el niño.",
+          "`estado`: valores que cambian con el tiempo; La actualización del estado programa una nueva representación.",
+          "Flujo de datos unidireccional: los datos fluyen hacia abajo; los eventos fluyen a través de devoluciones de llamada.",
           "Claves en listas: las claves estables ayudan a React a hacer coincidir los elementos de la lista en todos los renderizados."
         ]
       },
@@ -103,7 +103,7 @@
         "type": "list",
         "title": "Ganchos que usas a diario",
         "items": [
-          "`useState` - estado local; El formulario de actualizaciÃ³n evita cierres obsoletos en cÃ³digo asÃ­ncrono.",
+          "`useState` - estado local; El formulario de actualización evita cierres obsoletos en código asíncrono.",
           "`useEffect` â€” sincronizaciÃ³n con el mundo exterior; limpiar en la funciÃ³n de retorno.",
           "`useMemo` / `useCallback` â€” valores/funciones de cachÃ©; Ãšselo cuando la elaboraciÃ³n de perfiles muestre beneficios.",
           "`useRef` â€” cuadro mutable o identificador DOM; cambiar `.current` no se vuelve a representar.",
@@ -112,14 +112,14 @@
       },
       {
         "type": "text",
-        "content": "Los componentes del servidor (React 18+/frameworks) se ejecutan en el servidor y transmiten cargas Ãºtiles HTML o RSC; Los componentes del cliente manejan la interactividad. Para las formas, prefiera el comportamiento nativo y la mejora progresiva; bibliotecas como React Hook Form se combinan bien con esquemas de validaciÃ³n (Zod)."
+        "content": "Los componentes del servidor (React 18+/frameworks) se ejecutan en el servidor y transmiten cargas útiles HTML o RSC; Los componentes del cliente manejan la interactividad. Para las formas, prefiera el comportamiento nativo y la mejora progresiva; bibliotecas como React Hook Form se combinan bien con esquemas de validación (Zod)."
       },
       {
         "type": "list",
         "title": "Ecosistema y calidad",
         "items": [
           "Enrutamiento: React Router o enrutadores de marco (Next.js, Remix) para URL y cargadores de datos.",
-          "Pruebas: biblioteca de pruebas de React: afirma lo que ven los usuarios, no los detalles de implementaciÃ³n.",
+          "Pruebas: biblioteca de pruebas de React: afirma lo que ven los usuarios, no los detalles de implementación.",
           "Modo estricto: invoca dos veces algunos ciclos de vida en desarrollo para mostrar efectos secundarios inseguros."
         ]
       }
@@ -130,19 +130,19 @@
     "parentId": "interfaz",
     "title": "vite",
     "icon": "âš¡",
-    "summary": "Servidor de desarrollo rÃ¡pido, ESM nativo y compilaciones de producciÃ³n basadas en Rollup.",
+    "summary": "Servidor de desarrollo rápido, ESM nativo y compilaciones de producción basadas en Rollup.",
     "blocks": [
       {
         "type": "text",
-        "content": "Vite divide el desarrollo y la producciÃ³n: en desarrollo sirve como fuente como mÃ³dulos ES nativos y usa esbuild para preagrupar dependencias; El reemplazo de mÃ³dulo en caliente (HMR) actualiza los mÃ³dulos sin recargas completas. Las compilaciones de producciÃ³n utilizan Rollup para dividir cÃ³digo y agitar Ã¡rboles."
+        "content": "Vite divide el desarrollo y la producción: en desarrollo sirve como fuente como módulos ES nativos y usa esbuild para preagrupar dependencias; El reemplazo de módulo en caliente (HMR) actualiza los módulos sin recargas completas. Las compilaciones de producción utilizan Rollup para dividir código y agitar árboles."
       },
       {
         "type": "list",
-        "title": "Â¿Por quÃ© se siente rÃ¡pido?",
+        "title": "¿Por qué se siente rápido?",
         "items": [
-          "El arranque en frÃ­o evita agrupar toda la aplicaciÃ³n antes de publicarla.",
+          "El arranque en frío evita agrupar toda la aplicación antes de publicarla.",
           "Las dependencias se preagrupan una vez; sus ediciones de origen permanecen desagregadas en desarrollo.",
-          "El lÃ­mite de HMR es el mÃ³dulo editado cuando sea posible."
+          "El límite de HMR es el módulo editado cuando sea posible."
         ]
       },
       {
@@ -152,17 +152,17 @@
       },
       {
         "type": "list",
-        "title": "Notas de configuraciÃ³n",
+        "title": "Notas de configuración",
         "items": [
           "`vite.config.*`: complementos, alias, proxy para su API, HTTPS para desarrollo local.",
-          "`import.meta.env`: las variables de entorno con el prefijo `VITE_` estÃ¡n expuestas al cÃ³digo del cliente.",
-          "Activos: importa archivos para URL hash; Los activos grandes pueden vivir en \"pÃºblico/\" como estÃ¡ticos.",
-          "`base`: se establece al implementar en una subruta (por ejemplo, pÃ¡ginas de GitHub)."
+          "`import.meta.env`: las variables de entorno con el prefijo `VITE_` están expuestas al código del cliente.",
+          "Activos: importa archivos para URL hash; Los activos grandes pueden vivir en \"público/\" como estáticos.",
+          "`base`: se establece al implementar en una subruta (por ejemplo, páginas de GitHub)."
         ]
       },
       {
         "type": "text",
-        "content": "Utilice los complementos oficiales para React, Vue o Svelte. Para marcos SSR mixtos, siga la integraciÃ³n Vite de ese marco. Al depurar problemas solo de producciÃ³n, ejecute `vite build && vitevista previa` para entregar la salida del paquete acumulativo localmente."
+        "content": "Utilice los complementos oficiales para React, Vue o Svelte. Para marcos SSR mixtos, siga la integración Vite de ese marco. Al depurar problemas solo de producción, ejecute `vite build && vitevista previa` para entregar la salida del paquete acumulativo localmente."
       }
     ]
   },
@@ -171,19 +171,19 @@
     "parentId": "interfaz",
     "title": "CSS",
     "icon": "â—«",
-    "summary": "Cascada, diseÃ±o, propiedades personalizadas y patrones responsivos.",
+    "summary": "Cascada, diseño, propiedades personalizadas y patrones responsivos.",
     "blocks": [
       {
         "type": "text",
-        "content": "CSS describe la presentaciÃ³n: los selectores apuntan a elementos, la cascada resuelve conflictos y el modelo de caja mÃ¡s los contextos de formato (bloque, flexible, cuadrÃ­cula) determinan el diseÃ±o. El CSS moderno favorece las propiedades lÃ³gicas, \"gap\", \"clamp()\" y consultas de contenedor para una interfaz de usuario responsiva y mantenible."
+        "content": "CSS describe la presentación: los selectores apuntan a elementos, la cascada resuelve conflictos y el modelo de caja más los contextos de formato (bloque, flexible, cuadrícula) determinan el diseño. El CSS moderno favorece las propiedades lógicas, \"gap\", \"clamp()\" y consultas de contenedor para una interfaz de usuario responsiva y mantenible."
       },
       {
         "type": "list",
-        "title": "Caja de herramientas de diseÃ±o",
+        "title": "Caja de herramientas de diseño",
         "items": [
           "Flexbox: un eje; ideal para barras de herramientas, centrar y envolver virutas.",
-          "CuadrÃ­cula: filas y columnas juntas; `minmax` + `auto-fit`/`auto-fill` para cuadrÃ­culas de tarjetas.",
-          "`posiciÃ³n` - `relativa`/`absoluta` para superposiciones; `sticky` para encabezados de secciÃ³n."
+          "Cuadrícula: filas y columnas juntas; `minmax` + `auto-fit`/`auto-fill` para cuadrículas de tarjetas.",
+          "`posición` - `relativa`/`absoluta` para superposiciones; `sticky` para encabezados de sección."
         ]
       },
       {
@@ -195,15 +195,15 @@
         "type": "list",
         "title": "Mantenibilidad",
         "items": [
-          "Prefiera los ganchos de clase a los selectores profundos de \"artÃ­culo div div\".",
-          "Cascada de propiedades personalizadas: el tema alterna la actualizaciÃ³n una vez en `:root` o `[data-theme]`.",
+          "Prefiera los ganchos de clase a los selectores profundos de \"artículo div div\".",
+          "Cascada de propiedades personalizadas: el tema alterna la actualización una vez en `:root` o `[data-theme]`.",
           "`@layer`: ordena reinicios, componentes y utilidades de forma predecible.",
-          "Utilice `@media (prefiere-movimiento-reducido: reducir)` para atenuar la animaciÃ³n."
+          "Utilice `@media (prefiere-movimiento-reducido: reducir)` para atenuar la animación."
         ]
       },
       {
         "type": "text",
-        "content": "Mida la pintura y el diseÃ±o en DevTools al pulir listas y animaciones. Prefiera \"transformar\" y \"opacidad\" para el movimiento; Evite la alteraciÃ³n del diseÃ±o leyendo las propiedades del diseÃ±o despuÃ©s de escribir en el mismo marco."
+        "content": "Mida la pintura y el diseño en DevTools al pulir listas y animaciones. Prefiera \"transformar\" y \"opacidad\" para el movimiento; Evite la alteración del diseño leyendo las propiedades del diseño después de escribir en el mismo marco."
       }
     ]
   },
@@ -212,19 +212,19 @@
     "parentId": "interfaz",
     "title": "Oreja",
     "icon": "â–¢",
-    "summary": "Sistema de cuadrÃ­cula, componentes prediseÃ±ados y variables Sass.",
+    "summary": "Sistema de cuadrícula, componentes prediseñados y variables Sass.",
     "blocks": [
       {
         "type": "text",
-        "content": "Bootstrap es un conjunto de herramientas CSS (y JS opcional): una cuadrÃ­cula responsiva, tipografÃ­a, botones, formularios, barras de navegaciÃ³n, modales y mÃ¡s. Entrega decisiones de diseÃ±o compartidas rÃ¡pidamente; la compensaciÃ³n es una apariencia reconocible a menos que la personalice."
+        "content": "Bootstrap es un conjunto de herramientas CSS (y JS opcional): una cuadrícula responsiva, tipografía, botones, formularios, barras de navegación, modales y más. Entrega decisiones de diseño compartidas rápidamente; la compensación es una apariencia reconocible a menos que la personalice."
       },
       {
         "type": "list",
-        "title": "usÃ¡ndolo bien",
+        "title": "usándolo bien",
         "items": [
-          "CuadrÃ­cula: filas y puntos de interrupciÃ³n `col-*`; prefiera utilidades (`d-flex`, `gap-*`) para pequeÃ±os ajustes.",
+          "Cuadrícula: filas y puntos de interrupción `col-*`; prefiera utilidades (`d-flex`, `gap-*`) para pequeños ajustes.",
           "Componentes: lea los documentos para conocer el marcado requerido y los enlaces `data-bs-*`.",
-          "PersonalizaciÃ³n: anule las variables Sass y reconstruya, o use Bootstrap 5+ con variables CSS cuando estÃ©n disponibles."
+          "Personalización: anule las variables Sass y reconstruya, o use Bootstrap 5+ con variables CSS cuando estén disponibles."
         ]
       },
       {
@@ -234,7 +234,7 @@
       },
       {
         "type": "text",
-        "content": "EmparÃ©jelo con su paquete (Vite, paquete web) para importar solo las piezas SCSS que necesita, o comience desde la CDN para prototipos. Para mayor accesibilidad, mantenga las funciones y etiquetas correctas; Los complementos JS de Bootstrap administran el enfoque para modales/fuera del lienzo; evite romper ese comportamiento con pilas de Ã­ndice z ad-hoc."
+        "content": "Emparéjelo con su paquete (Vite, paquete web) para importar solo las piezas SCSS que necesita, o comience desde la CDN para prototipos. Para mayor accesibilidad, mantenga las funciones y etiquetas correctas; Los complementos JS de Bootstrap administran el enfoque para modales/fuera del lienzo; evite romper ese comportamiento con pilas de índice z ad-hoc."
       }
     ]
   },
@@ -243,18 +243,18 @@
     "parentId": "interfaz",
     "title": "CSS de viento de cola",
     "icon": "â‰ˆ",
-    "summary": "Estilo que prioriza la utilidad, compilador JIT y tokens de diseÃ±o en la configuraciÃ³n.",
+    "summary": "Estilo que prioriza la utilidad, compilador JIT y tokens de diseño en la configuración.",
     "blocks": [
       {
         "type": "text",
-        "content": "Tailwind genera CSS a partir de los nombres de clases que ingresas en el marcado: espaciado, color, flexiÃ³n, cuadrÃ­cula, tipografÃ­a, estados (`hover:`, `focus:`) y prefijos responsivos (`md:`). El compilador escanea sus archivos y genera solo lo que usa."
+        "content": "Tailwind genera CSS a partir de los nombres de clases que ingresas en el marcado: espaciado, color, flexión, cuadrícula, tipografía, estados (`hover:`, `focus:`) y prefijos responsivos (`md:`). El compilador escanea sus archivos y genera solo lo que usa."
       },
       {
         "type": "list",
         "title": "Flujo de trabajo",
         "items": [
-          "`tailwind.config`: amplÃ­a el tema (colores, fuentes, espaciado), agrega complementos, establece rutas de `contenido`.",
-          "Prefiere la composiciÃ³n con `@apply` con moderaciÃ³n en el componente CSS; Los servicios pÃºblicos mantienen la colocaciÃ³n obvia.",
+          "`tailwind.config`: amplía el tema (colores, fuentes, espaciado), agrega complementos, establece rutas de `contenido`.",
+          "Prefiere la composición con `@apply` con moderación en el componente CSS; Los servicios públicos mantienen la colocación obvia.",
           "Utilice `clsx` o `twMerge` para fusionar clases condicionales de forma segura."
         ]
       },
@@ -265,7 +265,7 @@
       },
       {
         "type": "text",
-        "content": "Tailwind brilla en aplicaciones similares a sistemas de diseÃ±o donde el espaciado y las rampas de color se mantienen consistentes. Si el marcado parece ruidoso, extraiga patrones repetidos en los componentes del marco (React/Vue) y mantenga las utilidades dentro de las plantillas JSX de esos componentes."
+        "content": "Tailwind brilla en aplicaciones similares a sistemas de diseño donde el espaciado y las rampas de color se mantienen consistentes. Si el marcado parece ruidoso, extraiga patrones repetidos en los componentes del marco (React/Vue) y mantenga las utilidades dentro de las plantillas JSX de esos componentes."
       }
     ]
   },
@@ -274,17 +274,17 @@
     "parentId": "interfaz",
     "title": "Mecanografiado",
     "icon": "âŠ¤",
-    "summary": "Tipos de accesorios, eventos y refactorizaciones mÃ¡s seguras en el cÃ³digo de componentes.",
+    "summary": "Tipos de accesorios, eventos y refactorizaciones más seguras en el código de componentes.",
     "blocks": [
       {
         "type": "text",
-        "content": "TypeScript agrega tipos estÃ¡ticos a JavaScript. En el cÃ³digo de la interfaz de usuario, los tipos documentan los contratos de los componentes (accesorios, devoluciones de llamadas), detectan estados imposibles antes del tiempo de ejecuciÃ³n y desbloquean refactorizadores mÃ¡s seguros en grandes bases de cÃ³digo cuando se combinan con opciones estrictas del compilador."
+        "content": "TypeScript agrega tipos estáticos a JavaScript. En el código de la interfaz de usuario, los tipos documentan los contratos de los componentes (accesorios, devoluciones de llamadas), detectan estados imposibles antes del tiempo de ejecución y desbloquean refactorizadores más seguros en grandes bases de código cuando se combinan con opciones estrictas del compilador."
       },
       {
         "type": "list",
         "title": "Opciones del compilador importantes para las aplicaciones",
         "items": [
-          "`estricto`: activa las principales seÃ±ales de seguridad; lo prefiero en proyectos totalmente nuevos.",
+          "`estricto`: activa las principales señales de seguridad; lo prefiero en proyectos totalmente nuevos.",
           "`noImplicitAny`: muestra valores sin tipo que ocultan errores.",
           "`strictNullChecks` â€” `null`/`undefinido` debe manejarse explÃ­citamente."
         ]
@@ -299,13 +299,13 @@
         "title": "Patrones",
         "items": [
           "Uniones discriminadas para el estado de la interfaz de usuario: `type View = { status: \"ok\"; datos: T } | { estado: \"errar\"; mensaje: cadena }`.",
-          "`satisfaces`: mantenga los tipos literales mientras los compara con una interfaz mÃ¡s amplia.",
+          "`satisfaces`: mantenga los tipos literales mientras los compara con una interfaz más amplia.",
           "Controladores de eventos: use `React.MouseEvent<HTMLButtonElement>` (o equivalentes de framework) en lugar de `any`."
         ]
       },
       {
         "type": "text",
-        "content": "Genere tipos desde OpenAPI o GraphQL cuando sea posible para que el cliente y el servidor estÃ©n de acuerdo. Para env vars, use mÃ³dulos que validen al inicio en lugar de convertir \"como cadena\" en todas partes."
+        "content": "Genere tipos desde OpenAPI o GraphQL cuando sea posible para que el cliente y el servidor estén de acuerdo. Para env vars, use módulos que validen al inicio en lugar de convertir \"como cadena\" en todas partes."
       }
     ]
   },
@@ -314,11 +314,11 @@
     "parentId": "interfaz",
     "title": "Accesibilidad",
     "icon": "â—Ž",
-    "summary": "UI inclusiva: teclado, lectores de pantalla, contraste y hÃ¡bitos orientados a WCAG.",
+    "summary": "UI inclusiva: teclado, lectores de pantalla, contraste y hábitos orientados a WCAG.",
     "blocks": [
       {
         "type": "text",
-        "content": "Las interfaces accesibles funcionan para usuarios de teclados y tecnologÃ­a de asistencia, no solo para punteros. Las pautas WCAG (perceptibles, operables, comprensibles, sÃ³lidas) brindan criterios comprobables; Los requisitos legales en muchas regiones se alinean con WCAG 2.1 Nivel AA."
+        "content": "Las interfaces accesibles funcionan para usuarios de teclados y tecnología de asistencia, no solo para punteros. Las pautas WCAG (perceptibles, operables, comprensibles, sólidas) brindan criterios comprobables; Los requisitos legales en muchas regiones se alinean con WCAG 2.1 Nivel AA."
       },
       {
         "type": "list",
@@ -326,16 +326,16 @@
         "items": [
           "Teclado: todas las acciones accesibles con Tab/Shift+Tab; los modales atrapan el foco hasta que se cierran.",
           "Enfoque visible: reemplace el contorno predeterminado con un anillo personalizado claro si necesita cambiar el estilo.",
-          "Etiquetas: cada control tiene un nombre programÃ¡tico (\"label\", \"aria-label\" o \"aria-labelledby\").",
-          "Contraste de color: el texto y los grÃ¡ficos de la interfaz de usuario cumplen con las relaciones de contraste; No confÃ­es Ãºnicamente en el color para darle significado."
+          "Etiquetas: cada control tiene un nombre programático (\"label\", \"aria-label\" o \"aria-labelledby\").",
+          "Contraste de color: el texto y los gráficos de la interfaz de usuario cumplen con las relaciones de contraste; No confíes únicamente en el color para darle significado."
         ]
       },
       {
         "type": "list",
         "title": "ARIA: utilizar con cuidado",
         "items": [
-          "Prefiere elementos nativos (`botÃ³n`, `a`, `entrada`) antes de agregar roles.",
-          "`aria-expanded`, `aria-controls`: revelan widgets como acordeones y menÃºs.",
+          "Prefiere elementos nativos (`botón`, `a`, `entrada`) antes de agregar roles.",
+          "`aria-expanded`, `aria-controls`: revelan widgets como acordeones y menús.",
           "`aria-live` â€” anuncia actualizaciones dinÃ¡micas; use cortesÃ­a versus asertividad con moderaciÃ³n."
         ]
       },
@@ -346,7 +346,7 @@
       },
       {
         "type": "text",
-        "content": "Pruebe solo con un teclado, con el lector de pantalla que probablemente tengan sus usuarios, y ejecute comprobaciones automÃ¡ticas (axe, Lighthouse) en CI. Involucre a los usuarios discapacitados en la investigaciÃ³n cuando pueda; Las herramientas captan sÃ³lo una fracciÃ³n de la fricciÃ³n real."
+        "content": "Pruebe solo con un teclado, con el lector de pantalla que probablemente tengan sus usuarios, y ejecute comprobaciones automáticas (axe, Lighthouse) en CI. Involucre a los usuarios discapacitados en la investigación cuando pueda; Las herramientas captan sólo una fracción de la fricción real."
       }
     ]
   },
@@ -358,7 +358,7 @@
     "blocks": [
       {
         "type": "text",
-        "content": "DiseÃ±ar contratos API estables: versionado, errores semÃ¡nticos e idempotencia para operaciones crÃ­ticas."
+        "content": "Diseñar contratos API estables: versionado, errores semánticos e idempotencia para operaciones críticas."
       },
       {
         "type": "code",
@@ -375,15 +375,15 @@
     "blocks": [
       {
         "type": "text",
-        "content": "TuberÃ­a Ãºtil mÃ­nima: pelusa + pruebas + compilaciÃ³n reproducible. EnvÃ­e lo que probÃ³; Evite la producciÃ³n de ajuste manual."
+        "content": "Tubería útil mínima: pelusa + pruebas + compilación reproducible. Envíe lo que probó; Evite la producción de ajuste manual."
       },
       {
         "type": "list",
-        "title": "Implementar lista de verificaciÃ³n",
+        "title": "Implementar lista de verificación",
         "items": [
-          "Comprobaciones de estado y preparaciÃ³n separadas",
+          "Comprobaciones de estado y preparación separadas",
           "Registros estructurados (JSON) + identificadores de seguimiento",
-          "ReversiÃ³n con un solo comando"
+          "Reversión con un solo comando"
         ]
       }
     ]
@@ -392,18 +392,18 @@
     "id": "git",
     "title": "git",
     "icon": "âŽ‡",
-    "summary": "Comandos, flujos del dÃ­a a dÃ­a, controles remotos y deshacer cambios de forma segura.",
+    "summary": "Comandos, flujos del día a día, controles remotos y deshacer cambios de forma segura.",
     "blocks": [
       {
         "type": "text",
-        "content": "Git almacena instantÃ¡neas (confirmaciones) y le permite realizar ramificaciones, colaborar de forma remota y desplazarse por el historial. Tres Ã¡reas: Ã¡rbol de trabajo (archivos), preparaciÃ³n (Ã­ndice) y confirmaciones (repositorio local)."
+        "content": "Git almacena instantáneas (confirmaciones) y le permite realizar ramificaciones, colaborar de forma remota y desplazarse por el historial. Tres áreas: árbol de trabajo (archivos), preparación (índice) y confirmaciones (repositorio local)."
       },
       {
         "type": "list",
-        "title": "ConfiguraciÃ³n tÃ­pica (una vez por mÃ¡quina)",
+        "title": "Configuración típica (una vez por máquina)",
         "items": [
           "`git config --global user.name \"Su nombre\"`",
-          "`git config --global usuario.correo electrÃ³nico \"usted@correo electrÃ³nico\"`",
+          "`git config --global usuario.correo electrónico \"usted@correo electrónico\"`",
           "`git config --global init.defaultBranch main` â€” rama predeterminada para nuevos repositorios",
           "`git config --global core.editor \"code --wait\"` â€” CÃ³digo VS para mensajes de confirmaciÃ³n",
           "`git config --global alias.st status -sb` â€” acceso directo para `git st`"
@@ -418,7 +418,7 @@
         "type": "list",
         "title": "Flujo de trabajo diario",
         "items": [
-          "`git status` (`-sb` short): quÃ© cambiÃ³",
+          "`git status` (`-sb` short): qué cambió",
           "`git diff` - cambios sin etapas; `git diff --staged` - cambios por etapas",
           "`git add file` o `git add -p` - escenario interactivo (revisar trozos)",
           "`git commit -m \"message\"` â€” confirma cambios por etapas",
@@ -452,14 +452,14 @@
         "items": [
           "`git remoto -v` â€” buscar/enviar URL",
           "`git fetch origin`: descarga confirmaciones sin fusionar tu rama",
-          "`git pull` - `fetch` + fusionar/rebase por configuraciÃ³n",
+          "`git pull` - `fetch` + fusionar/rebase por configuración",
           "`git push origin my-branch` â€” primera vez: `git push -u origin my-branch`",
           "`git push --delete origin old-branch` â€” eliminar rama remota"
         ]
       },
       {
         "type": "text",
-        "content": "Si `git pull` crea confirmaciones de fusiÃ³n ruidosas, los equipos a menudo prefieren `git pull --rebase` para reproducir su trabajo en la parte superior del control remoto (historial lineal). SÃ³lo si entiendes la rebase y las reglas del equipo lo permiten."
+        "content": "Si `git pull` crea confirmaciones de fusión ruidosas, los equipos a menudo prefieren `git pull --rebase` para reproducir su trabajo en la parte superior del control remoto (historial lineal). Sólo si entiendes la rebase y las reglas del equipo lo permiten."
       },
       {
         "type": "list",
@@ -475,7 +475,7 @@
       },
       {
         "type": "text",
-        "content": "`git revert <commit>` agrega una nueva confirmaciÃ³n que deshace otra: segura para el historial publicado. `git reset --hard` reescribe la historia local; evÃ­telo en sucursales compartidas sin acuerdo."
+        "content": "`git revert <commit>` agrega una nueva confirmación que deshace otra: segura para el historial publicado. `git reset --hard` reescribe la historia local; evítelo en sucursales compartidas sin acuerdo."
       },
       {
         "type": "code",
@@ -484,10 +484,10 @@
       },
       {
         "type": "list",
-        "title": "InspecciÃ³n de historial",
+        "title": "Inspección de historial",
         "items": [
           "`git show <commit>` â€” parche y metadatos",
-          "`git listening file`: quiÃ©n cambiÃ³ cada lÃ­nea",
+          "`git listening file`: quién cambió cada línea",
           "`git log -S\"text\"` â€” confirma que agregÃ³/eliminÃ³ una cadena",
           "`git bisect start` â€” bÃºsqueda binaria del compromiso de ruptura"
         ]
@@ -512,8 +512,8 @@
         "items": [
           "Git inserta `<<<<<<<`, `=======`, `>>>>>>>`: editar manualmente, eliminar marcadores",
           "`git status` enumera rutas en conflicto",
-          "DespuÃ©s de la correcciÃ³n: `git add file` y luego `git merge --continue` o `git rebase --continue`",
-          "Abortar fusiÃ³n: `git merge --abort`; abortar rebase: `git rebase --abort`"
+          "Después de la corrección: `git add file` y luego `git merge --continue` o `git rebase --continue`",
+          "Abortar fusión: `git merge --abort`; abortar rebase: `git rebase --abort`"
         ]
       },
       {
@@ -525,27 +525,27 @@
         "type": "list",
         "title": "Comprometerse a la higiene",
         "items": [
-          "PequeÃ±as confirmaciones atÃ³micas: un cambio lÃ³gico cada una",
-          "Mensajes imperativos: \"Agregar inicio de sesiÃ³n\", \"Reparar puntero nulo\"",
-          "Las confirmaciones convencionales (`feat:`, `fix:`, `docs:`â€¦) ayudan a los registros de cambios",
+          "Pequeñas confirmaciones atómicas: un cambio lógico cada una",
+          "Mensajes imperativos: \"Agregar inicio de sesión\", \"Reparar puntero nulo\"",
+          "Las confirmaciones convencionales (`feat:`, `fix:`, `docs:`⬦) ayudan a los registros de cambios",
           "Antes de enviar: `git pull --rebase origin main` (o fusionar) con cambios de equipo"
         ]
       },
       {
         "type": "text",
-        "content": "Los ganchos (`.git/hooks` o Husky) ejecutan pelusa/pruebas antes de confirmar/empujar. Los submÃ³dulos (`git submodule`) y los Ã¡rboles de trabajo (`git worktree add`) ayudan con monorepos o ramas paralelas; utilÃ­celos cuando lo bÃ¡sico no sea suficiente."
+        "content": "Los ganchos (`.git/hooks` o Husky) ejecutan pelusa/pruebas antes de confirmar/empujar. Los submódulos (`git submodule`) y los árboles de trabajo (`git worktree add`) ayudan con monorepos o ramas paralelas; utilícelos cuando lo básico no sea suficiente."
       }
     ]
   },
   {
     "id": "herramientas",
-    "title": "EstampaciÃ³n",
+    "title": "Estampación",
     "icon": "â§‰",
-    "summary": "Editor, linters, formateo (Git tiene su propia secciÃ³n).",
+    "summary": "Editor, linters, formateo (Git tiene su propia sección).",
     "blocks": [
       {
         "type": "text",
-        "content": "Automatice el formato y el estilo (preconfirmaciÃ³n o CI) para que las revisiones se centren en las ideas, no en los espacios en blanco. Para flujos y comandos de Git, abra la secciÃ³n Git."
+        "content": "Automatice el formato y el estilo (preconfirmación o CI) para que las revisiones se centren en las ideas, no en los espacios en blanco. Para flujos y comandos de Git, abra la sección Git."
       },
       {
         "type": "code",
@@ -559,27 +559,27 @@
     "parentId": "backend",
     "title": "Bases de datos",
     "icon": "â–¦",
-    "summary": "Relacionales vs documentos, Ã­ndices, transacciones y la trampa del N+1.",
+    "summary": "Relacionales vs documentos, índices, transacciones y la trampa del N+1.",
     "blocks": [
       {
         "type": "text",
-        "content": "La mayorÃ­a de aplicaciones sobreviven con una sola base de datos relacional (PostgreSQL, MySQL, SQLite). Recurre a almacenes de documentos o clave-valor solo cuando la forma de los datos lo exija de verdad, no porque suene moderno. La opciÃ³n aburrida escala mÃ¡s de lo que la gente cree."
+        "content": "La mayoría de aplicaciones sobreviven con una sola base de datos relacional (PostgreSQL, MySQL, SQLite). Recurre a almacenes de documentos o clave-valor solo cuando la forma de los datos lo exija de verdad, no porque suene moderno. La opción aburrida escala más de lo que la gente cree."
       },
       {
         "type": "list",
         "title": "Conceptos relacionales",
         "items": [
-          "Tablas, filas y columnas; las claves primarias identifican filas de forma Ãºnica.",
-          "Las claves forÃ¡neas mantienen referencias vÃ¡lidas; usa cascadas con cuidado.",
+          "Tablas, filas y columnas; las claves primarias identifican filas de forma única.",
+          "Las claves foráneas mantienen referencias válidas; usa cascadas con cuidado.",
           "Los JOIN combinan tablas; el planificador elige el algoritmo (nested loop, hash, merge).",
-          "Las transacciones agrupan escrituras; ACID = atÃ³mico, consistente, aislado y durable.",
+          "Las transacciones agrupan escrituras; ACID = atómico, consistente, aislado y durable.",
           "Las migraciones evolucionan el esquema en control de versiones (Flyway, Prisma, Alembic, Knex)."
         ]
       },
       {
         "type": "code",
         "lang": "sql",
-        "code": "-- El orden importa: filtra pronto, ordena y limita despuÃ©s\nSELECT u.id, u.email, COUNT(p.id) AS posts\nFROM users u\nLEFT JOIN posts p ON p.author_id = u.id\nWHERE u.created_at > NOW() - INTERVAL '30 days'\nGROUP BY u.id\nORDER BY posts DESC\nLIMIT 20;"
+        "code": "-- El orden importa: filtra pronto, ordena y limita después\nSELECT u.id, u.email, COUNT(p.id) AS posts\nFROM users u\nLEFT JOIN posts p ON p.author_id = u.id\nWHERE u.created_at > NOW() - INTERVAL '30 days'\nGROUP BY u.id\nORDER BY posts DESC\nLIMIT 20;"
       },
       {
         "type": "list",
@@ -588,13 +588,13 @@
           "B-tree (por defecto) â€” consultas de igualdad y rango sobre una columna.",
           "Ãndices compuestos â€” el orden de las columnas importa de izquierda a derecha.",
           "Ãndices parciales â€” `WHERE deleted_at IS NULL` mantiene el Ã­ndice pequeÃ±o.",
-          "Cada Ã­ndice acelera lecturas pero ralentiza escrituras; mide antes de aÃ±adir.",
-          "Usa `EXPLAIN ANALYZE` para confirmar que el planificador usa tu Ã­ndice."
+          "Cada índice acelera lecturas pero ralentiza escrituras; mide antes de añadir.",
+          "Usa `EXPLAIN ANALYZE` para confirmar que el planificador usa tu índice."
         ]
       },
       {
         "type": "text",
-        "content": "El problema N+1: una consulta para cargar una lista y luego una por cada elemento para cargar datos relacionados. SoluciÃ³nalo con JOIN, batching con `IN (...)`, o los helpers de tu ORM (`select_related`, `with`, `include`). Vigila el conteo de consultas en desarrollo con un logger."
+        "content": "El problema N+1: una consulta para cargar una lista y luego una por cada elemento para cargar datos relacionados. Soluciónalo con JOIN, batching con `IN (...)`, o los helpers de tu ORM (`select_related`, `with`, `include`). Vigila el conteo de consultas en desarrollo con un logger."
       },
       {
         "type": "list",
@@ -603,17 +603,17 @@
           "MongoDB â€” documentos flexibles tipo JSON; los Ã­ndices funcionan parecido a SQL.",
           "Redis â€” en memoria; perfecto para cachÃ©s, rate limits, colas y leaderboards.",
           "DynamoDB / Cosmos DB â€” clave-valor gestionado; diseÃ±a los patrones de acceso primero.",
-          "Sin esquema no significa sin esquema; lo tienes, solo vive en el cÃ³digo de la app."
+          "Sin esquema no significa sin esquema; lo tienes, solo vive en el código de la app."
         ]
       },
       {
         "type": "list",
         "title": "Higiene y supervivencia",
         "items": [
-          "Backups + simulacros de restauraciÃ³n (un backup que nunca restauraste es esperanza, no backup).",
+          "Backups + simulacros de restauración (un backup que nunca restauraste es esperanza, no backup).",
           "Pools de conexiones â€” recurso finito; dimensiona con cuidado bajo carga.",
           "Evita SELECT *; trae solo las columnas que realmente usas.",
-          "Nunca guardes contraseÃ±as en texto plano; no expongas IDs internos como URLs sin pensar."
+          "Nunca guardes contraseñas en texto plano; no expongas IDs internos como URLs sin pensar."
         ]
       }
     ]
@@ -623,20 +623,20 @@
     "parentId": "backend",
     "title": "APIs (REST y GraphQL)",
     "icon": "â‡„",
-    "summary": "DiseÃ±ar endpoints, elegir REST vs GraphQL y no romper a los clientes.",
+    "summary": "Diseñar endpoints, elegir REST vs GraphQL y no romper a los clientes.",
     "blocks": [
       {
         "type": "text",
-        "content": "Una API es un contrato entre sistemas. Lo difÃ­cil no es implementarla; es mantenerla estable mientras el cÃ³digo por debajo evoluciona. Elige un estilo que se ajuste a las necesidades del cliente y documÃ©ntalo donde los humanos lo lean de verdad."
+        "content": "Una API es un contrato entre sistemas. Lo difícil no es implementarla; es mantenerla estable mientras el código por debajo evoluciona. Elige un estilo que se ajuste a las necesidades del cliente y documéntalo donde los humanos lo lean de verdad."
       },
       {
         "type": "list",
-        "title": "REST en la prÃ¡ctica",
+        "title": "REST en la práctica",
         "items": [
           "Recursos como sustantivos: `/posts/123`, no `/getPost?id=123`.",
-          "Los verbos HTTP llevan la intenciÃ³n: GET (leer), POST (crear), PUT/PATCH (actualizar), DELETE.",
-          "Los cÃ³digos de estado son media documentaciÃ³n; Ãºsalos con honestidad.",
-          "La paginaciÃ³n por cursor escala mejor que `?page=N` en listas grandes.",
+          "Los verbos HTTP llevan la intención: GET (leer), POST (crear), PUT/PATCH (actualizar), DELETE.",
+          "Los códigos de estado son media documentación; úsalos con honestidad.",
+          "La paginación por cursor escala mejor que `?page=N` en listas grandes.",
           "Versiona en la ruta (`/v1/...`) o por cabecera â€” elige una y mantenla."
         ]
       },
@@ -649,10 +649,10 @@
         "type": "list",
         "title": "GraphQL â€” cuÃ¡ndo brilla",
         "items": [
-          "Los clientes piden exactamente los campos que necesitan; ideal para mÃ³vil y agregaciÃ³n.",
+          "Los clientes piden exactamente los campos que necesitan; ideal para móvil y agregación.",
           "Un solo endpoint (`/graphql`); el esquema es el contrato.",
-          "Evita el N+1 con DataLoader (batching + cachÃ© por request).",
-          "Las consultas persistidas protegen producciÃ³n; bloquea queries arbitrarias.",
+          "Evita el N+1 con DataLoader (batching + caché por request).",
+          "Las consultas persistidas protegen producción; bloquea queries arbitrarias.",
           "No expongas tu base de datos como esquema â€” diseÃ±a tipos intencionales."
         ]
       },
@@ -666,19 +666,19 @@
         "title": "Idempotencia y reintentos",
         "items": [
           "GET, PUT y DELETE son idempotentes por spec; POST normalmente no.",
-          "Para POSTs crÃ­ticos (pagos, pedidos): exige una cabecera `Idempotency-Key`.",
+          "Para POSTs críticos (pagos, pedidos): exige una cabecera `Idempotency-Key`.",
           "En el servidor, guarda la respuesta original asociada a esa clave.",
           "Los clientes deben reintentar en `5xx` y `429` con backoff exponencial + jitter."
         ]
       },
       {
         "type": "list",
-        "title": "Versionado sin lÃ¡grimas",
+        "title": "Versionado sin lágrimas",
         "items": [
-          "AÃ±ade, no cambies: campos opcionales nuevos son seguros; quitar rompe.",
-          "Deprecia primero (cabecera `Deprecation` / `@deprecated` en GraphQL), elimina despuÃ©s.",
-          "Documenta caminos de migraciÃ³n; da a los clientes al menos una versiÃ³n para adaptarse.",
-          "Spec-first: OpenAPI/GraphQL SDL genera cÃ³digo para clientes y tests."
+          "Añade, no cambies: campos opcionales nuevos son seguros; quitar rompe.",
+          "Deprecia primero (cabecera `Deprecation` / `@deprecated` en GraphQL), elimina después.",
+          "Documenta caminos de migración; da a los clientes al menos una versión para adaptarse.",
+          "Spec-first: OpenAPI/GraphQL SDL genera código para clientes y tests."
         ]
       },
       {
@@ -692,7 +692,7 @@
     "parentId": "backend",
     "title": "Auth (sesiones, JWT, OAuth)",
     "icon": "âš·",
-    "summary": "Flujos de login, hashing de contraseÃ±as, sesiones vs tokens y sign-in con terceros.",
+    "summary": "Flujos de login, hashing de contraseñas, sesiones vs tokens y sign-in con terceros.",
     "blocks": [
       {
         "type": "text",
@@ -703,8 +703,8 @@
         "title": "ContraseÃ±as â€” un solo algoritmo",
         "items": [
           "Hashea con `argon2id` (preferido) o `bcrypt` â€” nunca SHA/MD5 directo.",
-          "Guarda el hash, nunca la contraseÃ±a. TÃ­rala despuÃ©s de hashear.",
-          "Usa una librerÃ­a que gestione sal, factor de trabajo y comparaciÃ³n timing-safe.",
+          "Guarda el hash, nunca la contraseña. Tírala después de hashear.",
+          "Usa una librería que gestione sal, factor de trabajo y comparación timing-safe.",
           "Longitud sobre complejidad: una passphrase de 16+ caracteres gana a `P@ssw0rd!`.",
           "Compara con `crypto.timingSafeEqual` para evitar fugas de tiempo."
         ]
@@ -728,27 +728,27 @@
       {
         "type": "code",
         "lang": "ts",
-        "code": "// Ejemplo Express: cookie de sesiÃ³n\nimport session from \"express-session\";\n\napp.use(session({\n  name: \"sid\",\n  secret: process.env.SESSION_SECRET!,\n  cookie: {\n    httpOnly: true,\n    secure: process.env.NODE_ENV === \"production\",\n    sameSite: \"lax\",\n    maxAge: 1000 * 60 * 60 * 24 * 7,\n  },\n  resave: false,\n  saveUninitialized: false,\n}));"
+        "code": "// Ejemplo Express: cookie de sesión\nimport session from \"express-session\";\n\napp.use(session({\n  name: \"sid\",\n  secret: process.env.SESSION_SECRET!,\n  cookie: {\n    httpOnly: true,\n    secure: process.env.NODE_ENV === \"production\",\n    sameSite: \"lax\",\n    maxAge: 1000 * 60 * 60 * 24 * 7,\n  },\n  resave: false,\n  saveUninitialized: false,\n}));"
       },
       {
         "type": "list",
         "title": "OAuth 2.0 / OpenID Connect",
         "items": [
-          "Usa Authorization Code con PKCE para SPAs y mÃ³viles.",
+          "Usa Authorization Code con PKCE para SPAs y móviles.",
           "No implementes el flujo a mano para una app â€” usa Auth0, Clerk, NextAuth o Keycloak.",
           "Verifica siempre la firma del `id_token` y los claims `aud`/`iss`.",
-          "Mapea la identidad del tercero a tu propio usuario; no confÃ­es ciegamente en emails de upstream."
+          "Mapea la identidad del tercero a tu propio usuario; no confíes ciegamente en emails de upstream."
         ]
       },
       {
         "type": "list",
-        "title": "Modelo de autorizaciÃ³n",
+        "title": "Modelo de autorización",
         "items": [
           "RBAC â€” roles que mapean a permisos; simple, vale para casi todo.",
           "ABAC â€” reglas sobre atributos; flexible, mÃ¡s difÃ­cil de auditar.",
-          "Comprueba permisos en el backend siempre, aunque la UI esconda el botÃ³n.",
-          "Centraliza: una sola funciÃ³n `can(user, action, resource)` usada por cada endpoint.",
-          "Audita acciones sensibles: quiÃ©n hizo quÃ©, cuÃ¡ndo, desde dÃ³nde."
+          "Comprueba permisos en el backend siempre, aunque la UI esconda el botón.",
+          "Centraliza: una sola función `can(user, action, resource)` usada por cada endpoint.",
+          "Audita acciones sensibles: quién hizo qué, cuándo, desde dónde."
         ]
       },
       {
@@ -761,15 +761,15 @@
     "id": "testing",
     "title": "Testing",
     "icon": "âœ“",
-    "summary": "Unitarios, integraciÃ³n, end-to-end y la mentalidad detrÃ¡s de un buen suite de tests.",
+    "summary": "Unitarios, integración, end-to-end y la mentalidad detrás de un buen suite de tests.",
     "blocks": [
       {
         "type": "text",
-        "content": "Los tests son un contrato ejecutable. Los buenos describen comportamiento y sobreviven a refactors; los malos atan detalles de implementaciÃ³n y se pudren. Apunta a tests que no borrarÃ­as para hacer posible un refactor."
+        "content": "Los tests son un contrato ejecutable. Los buenos describen comportamiento y sobreviven a refactors; los malos atan detalles de implementación y se pudren. Apunta a tests que no borrarías para hacer posible un refactor."
       },
       {
         "type": "list",
-        "title": "La pirÃ¡mide de tests (sigue siendo Ãºtil)",
+        "title": "La pirámide de tests (sigue siendo útil)",
         "items": [
           "Unitarios â€” rÃ¡pidos, aislados, muchos. Funciones puras y clases pequeÃ±as.",
           "IntegraciÃ³n â€” varias unidades juntas con BD real o API mockeada.",
@@ -789,18 +789,18 @@
         "items": [
           "Los nombres describen comportamiento: `it(\"devuelve 404 cuando no existe el post\")`.",
           "Arrange / Act / Assert (AAA) mantiene los tests legibles.",
-          "Una aserciÃ³n por concepto lÃ³gico; varios `expect` por test estÃ¡ bien si se relacionan.",
-          "No pruebes el framework; prueba el contrato de tu cÃ³digo."
+          "Una aserción por concepto lógico; varios `expect` por test está bien si se relacionan.",
+          "No pruebes el framework; prueba el contrato de tu código."
         ]
       },
       {
         "type": "list",
         "title": "Mocks, stubs, fakes â€” usa el mÃ¡s ligero",
         "items": [
-          "Prefiere dependencias reales si son rÃ¡pidas (SQLite en memoria, reloj falso).",
+          "Prefiere dependencias reales si son rápidas (SQLite en memoria, reloj falso).",
           "Mockea en el borde (HTTP, sistema de archivos) â€” no helpers internos.",
           "MSW (Mock Service Worker) â€” intercepta HTTP en Node y navegadores.",
-          "Si necesitas mockear cinco cosas para probar una, el cÃ³digo pide un refactor."
+          "Si necesitas mockear cinco cosas para probar una, el código pide un refactor."
         ]
       },
       {
@@ -810,12 +810,12 @@
       },
       {
         "type": "list",
-        "title": "TDD sin religiÃ³n",
+        "title": "TDD sin religión",
         "items": [
           "Rojo â†’ Verde â†’ Refactor: escribe un test que falla, hazlo pasar, limpia.",
           "Ãšsalo cuando el diseÃ±o no estÃ¡ claro; te obliga a definir quÃ© quieres.",
           "SÃ¡ltatelo en spikes y cÃ³digo exploratorio â€” vas a tirarlo igual.",
-          "La cobertura es un olor, no una meta. 80% de tests bien nombrados gana a 100% de tests inÃºtiles."
+          "La cobertura es un olor, no una meta. 80% de tests bien nombrados gana a 100% de tests inútiles."
         ]
       },
       {
@@ -833,11 +833,11 @@
     "blocks": [
       {
         "type": "text",
-        "content": "El ecosistema de testing en JavaScript pasÃ³ de un monolito (Jest) a varias herramientas especializadas. Elige por runtime y caso de uso, no por moda: el suite mÃ¡s rÃ¡pido es el que tu equipo de verdad ejecuta."
+        "content": "El ecosistema de testing en JavaScript pasó de un monolito (Jest) a varias herramientas especializadas. Elige por runtime y caso de uso, no por moda: el suite más rápido es el que tu equipo de verdad ejecuta."
       },
       {
         "type": "list",
-        "title": "Runners de unitarios e integraciÃ³n",
+        "title": "Runners de unitarios e integración",
         "items": [
           "Vitest â€” nativo de Vite, API casi compatible con Jest, feedback instantÃ¡neo en watch.",
           "Jest â€” maduro, ecosistema enorme, arranca lento; los defaults aÃºn funcionan en todos lados.",
@@ -856,9 +856,9 @@
         "items": [
           "Testing Library (React/Vue/Svelte) â€” consulta por rol y etiqueta, no por clase.",
           "`screen.getByRole(\"button\", { name: /save/i })` â€” queries accesibles primero.",
-          "Evita `data-testid` salvo que no haya alternativa semÃ¡ntica.",
+          "Evita `data-testid` salvo que no haya alternativa semántica.",
           "`user-event` simula interacciones reales (teclear, focus, pegar).",
-          "Los snapshots son Ãºltimo recurso; fÃ¡ciles de escribir, dolorosos de leer."
+          "Los snapshots son último recurso; fáciles de escribir, dolorosos de leer."
         ]
       },
       {
@@ -867,7 +867,7 @@
         "items": [
           "Playwright â€” multinavegador (Chromium/Firefox/WebKit), paralelo por defecto, buenos traces.",
           "Cypress â€” un solo navegador, DX amigable, mejor para equipos de QA.",
-          "MantÃ©n un set pequeÃ±o; E2E es donde vive el flakiness.",
+          "Mantén un set pequeño; E2E es donde vive el flakiness.",
           "Graba video y `trace.zip` solo en fallos para no ralentizar CI."
         ]
       },
@@ -894,7 +894,7 @@
     "blocks": [
       {
         "type": "text",
-        "content": "La seguridad no es una feature; es una propiedad de cada feature. Asume que tu cÃ³digo se filtrarÃ¡, que tus dependencias serÃ¡n comprometidas y que tus usuarios elegirÃ¡n \"123456\" como contraseÃ±a. Defensa en profundidad significa hacer lo aburrido con consistencia."
+        "content": "La seguridad no es una feature; es una propiedad de cada feature. Asume que tu código se filtrará, que tus dependencias serán comprometidas y que tus usuarios elegirán \"123456\" como contraseña. Defensa en profundidad significa hacer lo aburrido con consistencia."
       },
       {
         "type": "list",
@@ -934,14 +934,14 @@
         "items": [
           "CORS protege al *navegador*, no a tu servidor.",
           "Las llamadas servidor a servidor ignoran CORS por completo.",
-          "Reflejar `Origin` ciegamente anula el sentido; allow-list explÃ­cita.",
+          "Reflejar `Origin` ciegamente anula el sentido; allow-list explícita.",
           "Preflight (`OPTIONS`) es el navegador pidiendo permiso antes de requests no-simples.",
-          "Con credenciales: `Access-Control-Allow-Credentials: true` Y origen especÃ­fico (no `*`)."
+          "Con credenciales: `Access-Control-Allow-Credentials: true` Y origen específico (no `*`)."
         ]
       },
       {
         "type": "list",
-        "title": "GestiÃ³n de secretos",
+        "title": "Gestión de secretos",
         "items": [
           "Nunca commitees secretos â€” `.env` en `.gitignore`, vault en producciÃ³n.",
           "Rota claves cada trimestre; rota inmediatamente tras la salida de empleados.",
@@ -952,7 +952,7 @@
       },
       {
         "type": "text",
-        "content": "Modela amenazas con tres preguntas: quÃ© protegemos, de quiÃ©n, y cÃ³mo lo conseguirÃ­a. ApÃºntalo. ActualÃ­zalo cuando cambie la arquitectura. La mitad de los bugs de seguridad publicados murieron aÃ±os antes en el modelo de amenazas de alguien."
+        "content": "Modela amenazas con tres preguntas: qué protegemos, de quién, y cómo lo conseguiría. Apúntalo. Actualízalo cuando cambie la arquitectura. La mitad de los bugs de seguridad publicados murieron años antes en el modelo de amenazas de alguien."
       }
     ]
   },
@@ -980,13 +980,13 @@
       {
         "type": "code",
         "lang": "bash",
-        "code": "# Ver, buscar, transformar texto\ncat file.txt                    # imprime todo\nless file.txt                   # vista paginada, q para salir\nhead -n 20 file.txt             # primeras 20 lÃ­neas\ntail -f /var/log/app.log        # sigue lÃ­neas nuevas\ngrep -RIn \"TODO\" src/           # bÃºsqueda recursiva\nsed -i 's/foo/bar/g' file.txt   # reemplazo in-place\nawk -F, '{ print $1, $3 }' data.csv"
+        "code": "# Ver, buscar, transformar texto\ncat file.txt                    # imprime todo\nless file.txt                   # vista paginada, q para salir\nhead -n 20 file.txt             # primeras 20 líneas\ntail -f /var/log/app.log        # sigue líneas nuevas\ngrep -RIn \"TODO\" src/           # búsqueda recursiva\nsed -i 's/foo/bar/g' file.txt   # reemplazo in-place\nawk -F, '{ print $1, $3 }' data.csv"
       },
       {
         "type": "list",
         "title": "Permisos",
         "items": [
-          "`ls -l` muestra el modo: `-rwxr-xr--` = dueÃ±o / grupo / otros.",
+          "`ls -l` muestra el modo: `-rwxr-xr--` = dueño / grupo / otros.",
           "`chmod +x script.sh` â€” ejecutable; `chmod 644 file` â€” rw-r--r--.",
           "`chown user:group ruta` â€” cambia propietario (suele requerir `sudo`).",
           "`umask 022` â€” mÃ¡scara por defecto para archivos nuevos.",
@@ -1006,13 +1006,13 @@
       },
       {
         "type": "list",
-        "title": "Pipes, redirecciÃ³n y exit codes",
+        "title": "Pipes, redirección y exit codes",
         "items": [
           "`cmd > file` â€” escribe stdout (sobrescribe); `>>` aÃ±ade.",
           "`cmd 2> err.log` â€” stderr; `cmd > all.log 2>&1` â€” todo en un archivo.",
           "`a | b` â€” pasa stdout de `a` a stdin de `b`.",
           "`$?` â€” exit code del Ãºltimo comando (0 = ok, â‰ 0 = error).",
-          "`&&` corre si Ã©xito; `||` corre si falla."
+          "`&&` corre si éxito; `||` corre si falla."
         ]
       },
       {
@@ -1039,9 +1039,9 @@
   },
   {
     "id": "mobile",
-    "title": "MÃ³vil y responsive",
+    "title": "Móvil y responsive",
     "icon": "â–­",
-    "summary": "Viewport, Ã¡reas tÃ¡ctiles, layouts responsive y PWAs que sÃ­ se sienten mÃ³viles.",
+    "summary": "Viewport, áreas táctiles, layouts responsive y PWAs que sí se sienten móviles.",
     "blocks": [
       {
         "type": "text",
@@ -1053,29 +1053,29 @@
         "items": [
           "`<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">` â€” innegociable.",
           "Prefiere `rem` para tipografÃ­a y espacios â€” escala con la fuente del usuario.",
-          "`vh` es buggy en mÃ³vil (barra de URL); usa `dvh` / `svh` / `lvh`.",
-          "`clamp(min, ideal, max)` da tipografÃ­a fluida sin breakpoints."
+          "`vh` es buggy en móvil (barra de URL); usa `dvh` / `svh` / `lvh`.",
+          "`clamp(min, ideal, max)` da tipografía fluida sin breakpoints."
         ]
       },
       {
         "type": "code",
         "lang": "css",
-        "code": "/* TipografÃ­a fluida y altura completa segura */\n:root { font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem); }\n\n.hero {\n  min-height: 100dvh;\n  padding: max(1rem, env(safe-area-inset-top)) 1rem;\n}\n\n.grid { display: grid; gap: 1rem; }\n@media (min-width: 48rem) {\n  .grid { grid-template-columns: repeat(3, 1fr); }\n}"
+        "code": "/* Tipografía fluida y altura completa segura */\n:root { font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem); }\n\n.hero {\n  min-height: 100dvh;\n  padding: max(1rem, env(safe-area-inset-top)) 1rem;\n}\n\n.grid { display: grid; gap: 1rem; }\n@media (min-width: 48rem) {\n  .grid { grid-template-columns: repeat(3, 1fr); }\n}"
       },
       {
         "type": "list",
-        "title": "Ãreas tÃ¡ctiles y gestos",
+        "title": "Áreas táctiles y gestos",
         "items": [
           "Ãrea mÃ­nima â‰ˆ 44Ã—44px (Apple HIG) / 48Ã—48dp (Android).",
-          "MÃ¡s espacio entre elementos tappables; los pulgares no son lÃ¡pices.",
+          "Más espacio entre elementos tappables; los pulgares no son lápices.",
           "`touch-action: pan-y` en widgets con swipe horizontal evita que el navegador se lo coma.",
-          "Evita affordances solo en `:hover`; los usuarios mÃ³viles no los ven.",
+          "Evita affordances solo en `:hover`; los usuarios móviles no los ven.",
           "`<input type=\"tel\">`, `\"email\"`, `\"number\"` muestran el teclado adecuado."
         ]
       },
       {
         "type": "list",
-        "title": "ImÃ¡genes responsive",
+        "title": "Imágenes responsive",
         "items": [
           "`srcset` + `sizes` â€” el navegador elige la resoluciÃ³n correcta.",
           "Formatos modernos: `<picture>` con `image/avif`, luego `image/webp`, luego JPEG.",
@@ -1095,8 +1095,8 @@
           "`manifest.webmanifest` â€” nombre, iconos, color del tema, display: standalone.",
           "Service Worker â€” cachÃ© offline, background sync; Workbox automatiza lo aburrido.",
           "Prompt de instalaciÃ³n â€” escucha `beforeinstallprompt` y muestra tu propio botÃ³n.",
-          "Prueba en un mÃ³vil real, no solo en el modo de dispositivo de DevTools.",
-          "La auditorÃ­a PWA de Lighthouse atrapa la mayorÃ­a de piezas faltantes."
+          "Prueba en un móvil real, no solo en el modo de dispositivo de DevTools.",
+          "La auditoría PWA de Lighthouse atrapa la mayoría de piezas faltantes."
         ]
       },
       {

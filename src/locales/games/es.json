@@ -28,21 +28,40 @@
         },
         {
           "q": "Vista rápida: ¿qué cambió antes de hacer `add`?",
-          "opts": ["git log -1", "git status -sb", "git blame .", "git remote -v"],
+          "opts": [
+            "git log -1",
+            "git status -sb",
+            "git blame .",
+            "git remote -v"
+          ],
           "correct": 1
         },
         {
           "q": "Renombra un archivo ya versionado con Git.",
-          "opts": ["mv a.txt b.txt", "git mv a.txt b.txt", "git rename a.txt b.txt", "git move a.txt b.txt"],
+          "opts": [
+            "mv a.txt b.txt",
+            "git mv a.txt b.txt",
+            "git rename a.txt b.txt",
+            "git move a.txt b.txt"
+          ],
           "correct": 1
         }
       ],
       "sequenceHint": "Parche pequeño: preparar todo → commit → push al remoto.",
-      "sequenceSteps": ["git add .", "git commit -m \"fix: typos\"", "git push"],
+      "sequenceSteps": [
+        "git add .",
+        "git commit -m \"fix: typos\"",
+        "git push"
+      ],
       "canvasBranchLabel": "main →",
       "branchQ": {
         "q": "HEAD está en el commit C (brilla). Quieres la rama `bugfix` aquí **sin** cambiar a ella aún.",
-        "opts": ["git switch bugfix", "git branch bugfix", "git merge bugfix", "git tag bugfix"],
+        "opts": [
+          "git switch bugfix",
+          "git branch bugfix",
+          "git merge bugfix",
+          "git tag bugfix"
+        ],
         "correct": 1
       }
     },
@@ -54,7 +73,12 @@
       "quiz": [
         {
           "q": "Bajar commits del remoto **sin** fusionar a tu rama todavía.",
-          "opts": ["git pull", "git fetch origin", "git push origin", "git clone ."],
+          "opts": [
+            "git pull",
+            "git fetch origin",
+            "git push origin",
+            "git clone ."
+          ],
           "correct": 1
         },
         {
@@ -79,16 +103,30 @@
         },
         {
           "q": "Listar ramas remotas que puedes rastrear.",
-          "opts": ["git branch", "git branch -r", "git tag -l", "git reflog"],
+          "opts": [
+            "git branch",
+            "git branch -r",
+            "git tag -l",
+            "git reflog"
+          ],
           "correct": 1
         }
       ],
       "sequenceHint": "Integra `main` remoto y publica tu rama.",
-      "sequenceSteps": ["git fetch origin", "git merge origin/main", "git push"],
+      "sequenceSteps": [
+        "git fetch origin",
+        "git merge origin/main",
+        "git push"
+      ],
       "canvasBranchLabel": "main →",
       "branchQ": {
         "q": "Mismo gráfico: en C con HEAD. Crea **y entra** a `hotfix` ya.",
-        "opts": ["git branch hotfix", "git switch -c hotfix", "git merge hotfix", "git cherry-pick hotfix"],
+        "opts": [
+          "git branch hotfix",
+          "git switch -c hotfix",
+          "git merge hotfix",
+          "git cherry-pick hotfix"
+        ],
         "correct": 1
       }
     },
@@ -110,7 +148,12 @@
         },
         {
           "q": "Push rechazado: el remoto avanzó. Reaplica tus commits encima (regla típica de equipo).",
-          "opts": ["git pull --rebase", "git push --force", "git clone --depth=1", "git submodule update"],
+          "opts": [
+            "git pull --rebase",
+            "git push --force",
+            "git clone --depth=1",
+            "git submodule update"
+          ],
           "correct": 0
         },
         {
@@ -125,16 +168,31 @@
         },
         {
           "q": "Ver **quién** tocó la línea 12 de `app.js`.",
-          "opts": ["git show HEAD:app.js", "git blame app.js", "git grep -n app.js", "git diff app.js"],
+          "opts": [
+            "git show HEAD:app.js",
+            "git blame app.js",
+            "git grep -n app.js",
+            "git diff app.js"
+          ],
           "correct": 1
         }
       ],
       "sequenceHint": "Cambio de contexto: guardar WIP → actualizar main → recuperar WIP.",
-      "sequenceSteps": ["git stash push -m wip", "git switch main", "git pull", "git stash pop"],
+      "sequenceSteps": [
+        "git stash push -m wip",
+        "git switch main",
+        "git pull",
+        "git stash pop"
+      ],
       "canvasBranchLabel": "main →",
       "branchQ": {
         "q": "Necesitas meter la punta de `topic` en la rama actual como **un** commit nuevo (elige la familia de comando).",
-        "opts": ["git merge --squash topic", "git branch topic", "git clean -fd", "git tag topic"],
+        "opts": [
+          "git merge --squash topic",
+          "git branch topic",
+          "git clean -fd",
+          "git tag topic"
+        ],
         "correct": 0
       }
     },

@@ -1,8 +1,8 @@
-﻿{
+{
   "levels": [
     {
       "id": 1,
-      "badge": "LVL 1 Â· ROOKIE",
+      "badge": "LVL 1 · ROOKIE",
       "quizTitle": "Command decode I",
       "quizRounds": 3,
       "quiz": [
@@ -28,33 +28,57 @@
         },
         {
           "q": "Quick check: see what's modified before you stage anything.",
-          "opts": ["git log -1", "git status -sb", "git blame .", "git remote -v"],
+          "opts": [
+            "git log -1",
+            "git status -sb",
+            "git blame .",
+            "git remote -v"
+          ],
           "correct": 1
         },
         {
           "q": "Rename a tracked file under version control.",
-          "opts": ["mv a.txt b.txt", "git mv a.txt b.txt", "git rename a.txt b.txt", "git move a.txt b.txt"],
+          "opts": [
+            "mv a.txt b.txt",
+            "git mv a.txt b.txt",
+            "git rename a.txt b.txt",
+            "git move a.txt b.txt"
+          ],
           "correct": 1
         }
       ],
       "sequenceHint": "Ship a tiny fix: stage everything â†’ commit â†’ push to remote.",
-      "sequenceSteps": ["git add .", "git commit -m \"fix: typos\"", "git push"],
+      "sequenceSteps": [
+        "git add .",
+        "git commit -m \"fix: typos\"",
+        "git push"
+      ],
       "canvasBranchLabel": "main â†’",
       "branchQ": {
         "q": "HEAD sits on commit C (see glow). You want branch `bugfix` here **without** switching to it yet.",
-        "opts": ["git switch bugfix", "git branch bugfix", "git merge bugfix", "git tag bugfix"],
+        "opts": [
+          "git switch bugfix",
+          "git branch bugfix",
+          "git merge bugfix",
+          "git tag bugfix"
+        ],
         "correct": 1
       }
     },
     {
       "id": 2,
-      "badge": "LVL 2 Â· RUNNER",
+      "badge": "LVL 2 · RUNNER",
       "quizTitle": "Command decode II",
       "quizRounds": 3,
       "quiz": [
         {
           "q": "Download remote commits but **don't** merge into your branch yet.",
-          "opts": ["git pull", "git fetch origin", "git push origin", "git clone ."],
+          "opts": [
+            "git pull",
+            "git fetch origin",
+            "git push origin",
+            "git clone ."
+          ],
           "correct": 1
         },
         {
@@ -79,22 +103,36 @@
         },
         {
           "q": "List which remote branches you can track.",
-          "opts": ["git branch", "git branch -r", "git tag -l", "git reflog"],
+          "opts": [
+            "git branch",
+            "git branch -r",
+            "git tag -l",
+            "git reflog"
+          ],
           "correct": 1
         }
       ],
       "sequenceHint": "Integrate remote `main` locally, then publish your branch (linear-ish flow).",
-      "sequenceSteps": ["git fetch origin", "git merge origin/main", "git push"],
+      "sequenceSteps": [
+        "git fetch origin",
+        "git merge origin/main",
+        "git push"
+      ],
       "canvasBranchLabel": "main â†’",
       "branchQ": {
         "q": "Same graph: you are on C with HEAD. Create **and switch** into `hotfix` immediately.",
-        "opts": ["git branch hotfix", "git switch -c hotfix", "git merge hotfix", "git cherry-pick hotfix"],
+        "opts": [
+          "git branch hotfix",
+          "git switch -c hotfix",
+          "git merge hotfix",
+          "git cherry-pick hotfix"
+        ],
         "correct": 1
       }
     },
     {
       "id": 3,
-      "badge": "LVL 3 Â· VETERAN",
+      "badge": "LVL 3 · VETERAN",
       "quizTitle": "Command decode III",
       "quizRounds": 3,
       "quiz": [
@@ -110,7 +148,12 @@
         },
         {
           "q": "Your push was rejected: remote moved. Re-apply your commits on top (common team rule).",
-          "opts": ["git pull --rebase", "git push --force", "git clone --depth=1", "git submodule update"],
+          "opts": [
+            "git pull --rebase",
+            "git push --force",
+            "git clone --depth=1",
+            "git submodule update"
+          ],
           "correct": 0
         },
         {
@@ -125,22 +168,37 @@
         },
         {
           "q": "See **who** last changed line 12 of `app.js`.",
-          "opts": ["git show HEAD:app.js", "git blame app.js", "git grep -n app.js", "git diff app.js"],
+          "opts": [
+            "git show HEAD:app.js",
+            "git blame app.js",
+            "git grep -n app.js",
+            "git diff app.js"
+          ],
           "correct": 1
         }
       ],
       "sequenceHint": "Context switch: park WIP â†’ update main â†’ restore WIP.",
-      "sequenceSteps": ["git stash push -m wip", "git switch main", "git pull", "git stash pop"],
+      "sequenceSteps": [
+        "git stash push -m wip",
+        "git switch main",
+        "git pull",
+        "git stash pop"
+      ],
       "canvasBranchLabel": "main â†’",
       "branchQ": {
         "q": "You need the tip of `topic` **into** current branch as **one** new commit (pick one command family).",
-        "opts": ["git merge --squash topic", "git branch topic", "git clean -fd", "git tag topic"],
+        "opts": [
+          "git merge --squash topic",
+          "git branch topic",
+          "git clean -fd",
+          "git tag topic"
+        ],
         "correct": 0
       }
     },
     {
       "id": 4,
-      "badge": "LVL 4 Â· TIME-LORD",
+      "badge": "LVL 4 · TIME-LORD",
       "quizTitle": "Command decode IV â€” rebase & cherry-pick",
       "quizRounds": 4,
       "quiz": [
