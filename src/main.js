@@ -434,7 +434,7 @@ function startTypewriter() {
   if (!target) return;
   const section = getSections().find((s) => s.id === activeId);
   const line = section
-    ? `> ${section.title.toUpperCase()} â€” ${section.summary}`
+    ? `> ${section.title.toUpperCase()} — ${section.summary}`
     : t("typewriterReady");
   if (typeTimer) clearInterval(typeTimer);
   target.textContent = "";

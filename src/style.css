@@ -21,7 +21,7 @@
   --scan-speed: 9s;
 }
 
-/* CRT teal â€” default (:root). Explicit data-theme for persistence after reload. */
+/* CRT teal — default (:root). Explicit data-theme for persistence after reload. */
 html[data-theme="crt"] {
   --bg-deep: #0a0d12;
   --bg-panel: #0f141c;
@@ -41,7 +41,7 @@ html[data-theme="crt"] {
   --input-bg: #0b0f14;
 }
 
-/* Ember â€” warm coral / amber on deep brown-red */
+/* Ember — warm coral / amber on deep brown-red */
 html[data-theme="ember"] {
   --bg-deep: #100805;
   --bg-panel: #180f0c;
@@ -61,7 +61,7 @@ html[data-theme="ember"] {
   --input-bg: #140b09;
 }
 
-/* Void â€” violet / ice accents on cold blue-black */
+/* Void — violet / ice accents on cold blue-black */
 html[data-theme="void"] {
   --bg-deep: #060714;
   --bg-panel: #0b0e1e;
