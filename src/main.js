@@ -287,7 +287,12 @@ function render() {
           "aria-label",
           open ? t("nav.collapseGroup") : t("nav.expandGroup"),
         );
-        chevron.textContent = "▸";
+        chevron.textContent = "";
+        const chevronIcon = document.createElement("span");
+        chevronIcon.className = "nav-btn__chevron-icon";
+        chevronIcon.setAttribute("aria-hidden", "true");
+        chevronIcon.textContent = "▸";
+        chevron.appendChild(chevronIcon);
 
         const parentActive = s.id === activeId;
         const childActive = children.some((c) => c.id === activeId);
