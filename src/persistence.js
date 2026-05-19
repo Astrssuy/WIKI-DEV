@@ -43,17 +43,21 @@ export function saveLastSearch(q) {
   safeSet(SEARCH_KEY, q);
 }
 
-export function getExpandedGroups() {
-  try {
-    const raw = safeGet(EXPANDED_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
+/** Grupo desplegado en la barra lateral (solo uno a la vez). */
+export function getExpandedGroup() {
+  const raw = safeGet(EXPANDED_KEY);
+  if (!raw) return "";
+  if (raw.startsWith("[")) {
+    try {
+      const arr = JSON.parse(raw);
+      return Array.isArray(arr) && arr.length ? String(arr[0]) : "";
+    } catch {
+      return "";
+    }
   }
+  return raw;
 }
 
-export function saveExpandedGroups(ids) {
-  safeSet(EXPANDED_KEY, JSON.stringify(ids));
+export function saveExpandedGroup(id) {
+  safeSet(EXPANDED_KEY, id || "");
 }

@@ -3,7 +3,7 @@ import { initI18n, t, getSections, setLanguage, getLocales, currentLanguage } fr
 import { getGamePack } from "./games-pack.js";
 import { mountGitGames } from "./git-games.js";
 import { applyTheme, getStoredTheme, normalizeTheme } from "./themes.js";
-import { getLastSection, saveLastSection, getLastSearch, saveLastSearch, getExpandedGroups, saveExpandedGroups } from "./persistence.js";
+import { getLastSection, saveLastSection, getLastSearch, saveLastSearch, getExpandedGroup, saveExpandedGroup } from "./persistence.js";
 import "./scroll-top.js";
 import "./footer.js";
 import "./hero-typewriter.js";
@@ -13,8 +13,8 @@ const app = document.querySelector("#app");
 let activeId = getLastSection();
 let searchQuery = getLastSearch();
 let sectionBlockFilter = "";
-/** Grupos del menu lateral expandidos (persistido en localStorage). */
-let expandedGroups = new Set(getExpandedGroups());
+/** Grupo desplegado en el menu lateral (solo uno abierto). */
+let expandedGroupId = getExpandedGroup();
 /** Limpieza de minijuegos Git (canvas / listeners). */
 let gitGamesUnmount = null;
 
@@ -75,18 +75,37 @@ function childrenOf(sections, parentId) {
 }
 
 function toggleNavGroup(id) {
-  if (expandedGroups.has(id)) expandedGroups.delete(id);
-  else expandedGroups.add(id);
-  saveExpandedGroups([...expandedGroups]);
+  expandedGroupId = expandedGroupId === id ? "" : id;
+  saveExpandedGroup(expandedGroupId);
+}
+
+/** Cierra grupos ajenos a la seccion activa (acordeon). */
+function syncExpandedGroup(sections) {
+  if (searchQuery.trim()) return;
+  const sec = sections.find((s) => s.id === activeId);
+  if (!sec) {
+    expandedGroupId = "";
+    saveExpandedGroup("");
+    return;
+  }
+  const kids = childrenOf(sections, sec.id);
+  const next = sec.parentId || (kids.length ? sec.id : "");
+  expandedGroupId = next;
+  saveExpandedGroup(expandedGroupId);
+}
+
+function navigateTo(id, sections) {
+  activeId = id;
+  saveLastSection(activeId);
+  sectionBlockFilter = "";
+  syncExpandedGroup(sections);
+  render();
 }
 
 function isNavGroupOpen(parentId, children) {
   if (!children.length) return false;
-  if (expandedGroups.has(parentId)) return true;
-  if (parentId === activeId) return true;
-  if (children.some((c) => c.id === activeId)) return true;
   if (searchQuery.trim()) return true;
-  return false;
+  return expandedGroupId === parentId;
 }
 
 /** @returns {Array<{ section: object, children: object[] }>} */
@@ -138,6 +157,7 @@ function render() {
   });
   if (!navFlatIds.has(activeId) && filtered.length) {
     activeId = filtered[0].section.id;
+    syncExpandedGroup(sections);
   }
 
   const section = sections.find((s) => s.id === activeId);
@@ -269,13 +289,15 @@ function render() {
         );
         chevron.textContent = "▸";
 
+        const parentActive = s.id === activeId;
+        const childActive = children.some((c) => c.id === activeId);
         const btn = document.createElement("button");
         btn.type = "button";
-        btn.className = `nav-btn nav-btn--parent${s.id === activeId ? " nav-btn--active" : ""}`;
+        btn.className = `nav-btn nav-btn--parent${parentActive ? " nav-btn--active" : childActive ? " nav-btn--parent-housing" : ""}`;
         btn.innerHTML = `
           <span class="nav-btn__body">
-            <strong>${escapeHtml(s.icon)} ${escapeHtml(s.title)}</strong>
-            <span class="nav-meta">${escapeHtml(s.summary)}</span>
+            <strong class="nav-btn__parent-title">${escapeHtml(s.icon)} ${escapeHtml(s.title)}</strong>
+            <span class="nav-badge">${children.length} ${escapeHtml(t("nav.topics"))}</span>
           </span>
           ${idx ? `<kbd>${idx}</kbd>` : ""}
         `;
@@ -286,16 +308,7 @@ function render() {
           render();
         });
 
-        btn.addEventListener("click", () => {
-          if (!expandedGroups.has(s.id)) {
-            expandedGroups.add(s.id);
-            saveExpandedGroups([...expandedGroups]);
-          }
-          activeId = s.id;
-          saveLastSection(activeId);
-          sectionBlockFilter = "";
-          render();
-        });
+        btn.addEventListener("click", () => navigateTo(s.id, getSections()));
 
         row.appendChild(chevron);
         row.appendChild(btn);
@@ -303,6 +316,8 @@ function render() {
 
         const sub = document.createElement("ul");
         sub.className = "nav-sub";
+        sub.setAttribute("role", "group");
+        sub.setAttribute("aria-label", s.title);
         if (!open) sub.hidden = true;
         children.forEach((c) => {
           const subLi = document.createElement("li");
@@ -310,21 +325,12 @@ function render() {
           subBtn.type = "button";
           subBtn.className = `nav-btn nav-btn--sub${c.id === activeId ? " nav-btn--active" : ""}`;
           subBtn.innerHTML = `
-            <span>
+            <span class="nav-btn__sub-label">
+              <span class="nav-btn__sub-bullet" aria-hidden="true">›</span>
               <strong>${escapeHtml(c.icon)} ${escapeHtml(c.title)}</strong>
-              <span class="nav-meta">${escapeHtml(c.summary)}</span>
             </span>
           `;
-          subBtn.addEventListener("click", () => {
-            if (!expandedGroups.has(s.id)) {
-              expandedGroups.add(s.id);
-              saveExpandedGroups([...expandedGroups]);
-            }
-            activeId = c.id;
-            saveLastSection(activeId);
-            sectionBlockFilter = "";
-            render();
-          });
+          subBtn.addEventListener("click", () => navigateTo(c.id, getSections()));
           subLi.appendChild(subBtn);
           sub.appendChild(subLi);
         });
@@ -340,12 +346,7 @@ function render() {
           </span>
           ${idx ? `<kbd>${idx}</kbd>` : ""}
         `;
-        btn.addEventListener("click", () => {
-          activeId = s.id;
-          saveLastSection(activeId);
-          sectionBlockFilter = "";
-          render();
-        });
+        btn.addEventListener("click", () => navigateTo(s.id, getSections()));
         li.appendChild(btn);
       }
 
@@ -461,6 +462,7 @@ function onKey(e) {
       q.blur();
       searchQuery = "";
       saveLastSearch("");
+      syncExpandedGroup(getSections());
       render();
       return;
     }
@@ -492,12 +494,7 @@ function onKey(e) {
     if (tEl && ["INPUT", "TEXTAREA", "SELECT"].includes(tEl.tagName)) return;
     const filtered = getFilteredNav(getSections());
     const pick = filtered[n - 1]?.section;
-    if (pick) {
-      activeId = pick.id;
-      saveLastSection(activeId);
-      sectionBlockFilter = "";
-      render();
-    }
+    if (pick) navigateTo(pick.id, getSections());
   }
 }
 
@@ -511,6 +508,7 @@ async function boot() {
     activeId = sections[0]?.id ?? "";
     saveLastSection(activeId);
   }
+  syncExpandedGroup(sections);
   render();
 }
 

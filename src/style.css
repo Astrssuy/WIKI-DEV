@@ -335,7 +335,15 @@ body::after {
 .nav-item--group {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.15rem;
+  margin-bottom: 0.15rem;
+}
+
+.nav-item--group.nav-item--expanded {
+  padding: 0.2rem 0.25rem 0.35rem;
+  border-radius: var(--r);
+  border: 1px solid color-mix(in srgb, var(--glow) 35%, transparent);
+  background: color-mix(in srgb, var(--glow) 6%, transparent);
 }
 
 .nav-group-row {
@@ -349,9 +357,9 @@ body::after {
   width: 1.65rem;
   min-height: 2.35rem;
   padding: 0;
-  border: 1px solid transparent;
+  border: 1px solid color-mix(in srgb, var(--glow) 30%, transparent);
   border-radius: var(--r);
-  background: transparent;
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
   color: var(--accent);
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -364,17 +372,50 @@ body::after {
 }
 
 .nav-btn__chevron:hover {
-  background: rgba(var(--glow-rgb), 0.08);
-  border-color: var(--border);
+  background: rgba(var(--glow-rgb), 0.12);
+  border-color: var(--glow);
 }
 
 .nav-item--expanded > .nav-group-row .nav-btn__chevron {
   transform: rotate(90deg);
+  border-color: var(--glow);
+  background: rgba(var(--glow-rgb), 0.14);
 }
 
 .nav-btn--parent {
   flex: 1;
   min-width: 0;
+  border-left: 3px solid color-mix(in srgb, var(--glow) 45%, transparent);
+  background: color-mix(in srgb, var(--bg) 65%, transparent);
+}
+
+.nav-btn--parent:hover {
+  border-left-color: var(--glow);
+}
+
+.nav-btn--parent-housing {
+  border-left-color: var(--glow);
+  background: rgba(var(--glow-rgb), 0.05);
+}
+
+.nav-btn__parent-title {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.nav-badge {
+  display: inline-block;
+  margin-top: 0.2rem;
+  padding: 0.08rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--glow) 40%, transparent);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.9;
 }
 
 .nav-btn__body {
@@ -384,12 +425,12 @@ body::after {
 
 .nav-sub {
   list-style: none;
-  margin: 0 0 0.2rem 0;
-  padding: 0 0 0 0.55rem;
-  border-left: 2px solid var(--border);
+  margin: 0.15rem 0 0 0.35rem;
+  padding: 0.25rem 0 0.25rem 0.65rem;
+  border-left: 2px dashed color-mix(in srgb, var(--glow) 50%, transparent);
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.15rem;
 }
 
 .nav-sub[hidden] {
@@ -397,17 +438,46 @@ body::after {
 }
 
 .nav-btn--sub {
-  font-size: 0.78rem;
-  padding: 0.4rem 0.5rem;
-  margin-left: 0.1rem;
+  font-size: 0.82rem;
+  padding: 0.35rem 0.45rem 0.35rem 0.25rem;
+  margin-left: 0;
+  border-left: 2px solid transparent;
+  opacity: 0.88;
+}
+
+.nav-btn--sub:hover {
+  opacity: 1;
+  border-left-color: color-mix(in srgb, var(--glow) 60%, transparent);
+}
+
+.nav-btn--sub.nav-btn--active {
+  opacity: 1;
+  border-left-color: var(--glow);
+  background: rgba(var(--glow-rgb), 0.12);
+}
+
+.nav-btn__sub-label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.nav-btn__sub-bullet {
+  flex-shrink: 0;
+  color: var(--accent);
+  font-size: 0.9rem;
+  line-height: 1;
+  opacity: 0.75;
 }
 
 .nav-btn--sub strong {
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 0.82rem;
 }
 
 .nav-btn--sub .nav-meta {
-  font-size: 0.66rem;
+  display: none;
 }
 
 .nav-meta {
